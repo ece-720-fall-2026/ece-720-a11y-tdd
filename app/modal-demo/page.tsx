@@ -1,9 +1,10 @@
-import Modal from "@/components/Modal";
+// import Modal from "@/components/Modal";
 
 export default function ModalDemoPage() {
   return (
     <main>
-      <Modal />
+      Test
+      {/* <Modal /> */}
     </main>
-  );
+  )
 }
