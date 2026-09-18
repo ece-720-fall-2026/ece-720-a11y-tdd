@@ -57,12 +57,12 @@ To test our hypotheses, we will create a prototype based on an existing example 
 
 For the purpose of this study, we will identify an existing website (e.g., an e-commerce site) and utilise it to develop a 
 comprehensive list of requirements, which will be used when generating the code from the LLM. We intend to generate code via 
-the LLM in five different ways. These scenarios enable us to test our hypotheses well [CHANGE SENTENCE] by providing 
-comparisons amongst all of them. The five scenarios are broken down below:
+the LLM in five different ways. These five scenarios enable us to test our hypotheses well [CHANGE SENTENCE] by providing 
+comparisons amongst all of them. The scenarios are broken down below:
  \begin{itemize}
   \item Baseline: the requirements of the website are provided to the LLM to generate the relevant code.
   \item TDD Red Small a11y spec: the LLM would be provided with the requirements of the website and a prompt to follow 
-  general WCAG (Web Content Accessibility Guidelines) accessibility rules when devising the test.
+  general WCAG (Web Content Accessibility Guidelines) accessibility rules when devising the test [ADD WCAG CITATION HERE].
   \item TDD Red Comprehensive a11y spec: alongside the requirement of the website, the LLM would be provided a more sophisticated
   prompt with component specifics. 
   \item TDD Green Small a11y spec: [INCORRECT?, RESHMI] after the code generated during the baseline setup, the LLM would be prompted to alter the code following WCAG accessibility rules.
@@ -71,22 +71,32 @@ comparisons amongst all of them. The five scenarios are broken down below:
 
 \section{Planned Evaluation}
 
-The evaluation of the quality of the code, vis-à-vis accessibility, would be conducted through the evaluation of the following 
-two metrics.
+The evaluation of the quality of the code, vis-à-vis accessibility, would be conducted through the evaluation of two metrics;
+HTML (Static and Runtime) Accessibility Check and Keyboard Accessibility Check. For these two metrics, each scenario's code
+would be generated thrice and every rendition of generated code would be tested for the checks mentioned below. As both these
+checks require large human reviews, which would be extremely time-consuming, we have limited each scenario's code checks to three.
 
-\subsection{HTML (Static and Runtime Accessibility Check)} 
-We intend to utilise two accessibility validators at this stage; 
-eslint-plugin-jsx-a11y and Axe-Core. Both of these validators inspect the static HTML for accessibility errors, however, Axe-Core also inspects
+\subsection{HTML (Static and Runtime) Accessibility Check} 
+We intend to utilise two accessibility validators at this stage; eslint-plugin-jsx-a11y and Axe-Core. 
+Both of these validators inspect the static HTML for accessibility errors, however, Axe-Core also inspects
 the fully rendered DOM. The latter is a critical part of the accessibility check, as this is what an end-user would interact
 with. The checks with the two validators would be run independently of each other. The results of the Axe-Core test would 
 be segregated into four categories: 
 
 \begin{itemize}
-  \item Violations: elements with definite accessibility errors
+  \item Violations: web elements with definite accessibility errors
   \item Passes: elements that have adhered to WCAG guidelines
-  \item Incomplete: elements that stuck to WCAG guidlines but requires human intervention in determining its accuracy.
+  \item Incomplete: elements that stuck to WCAG guidelines but requires human intervention in determining its accuracy.
   \item Inapplicable: all the rules that were skipped as the elements for which they exist are not on the site page.
 \end{itemize}
+
+The "inapplicable" results will be omitted as they have no bearing on determining the level of accessibility of the site.
+After we review the "incomplete" results, their elements would be categorized under either "violations" or "passes". From 
+this categorization, we can highlight the accessibility of the site as a percentage:
+\begin{math}
+  Axe-Core Accessibility Score (Percentage) = \frac{Violations}{Violations + Passes} \times 100
+\end{math}
+
 
 [RESHMI, PLEASE DESCRIBE HOW TO OBTAIN A SCORE USING eslint-plugin-jsx-a11y HERE]
 
@@ -94,12 +104,19 @@ If, during the testing of our prototype, the eslint-plugin-jsx-a11y does not pro
 Axe-Core provides, we will cease the incorporation of the eslint-plugin-jsx-a11y validator in our study, 
 as it would be redundant.
 
-\subsection{Playwright Keyboard Check}
+\subsection{Keyboard Accessibility Check}
 Employing Playwright, an open-source automation library, we will check the accessibility
-level of the generated site through its responsiveness to simulated keyboard presses. This check would [CHANGE SENTENCE] identify how many elements
-should have been manipulable with a keyboard press and how many actually were. 
+level of the generated site through its responsiveness to simulated keyboard presses. This would
+identify how many elements should have been manipulable with a keyboard press and how many actually were. As a score, 
+the level of accessibility would be represented by the following formula:
 
+\begin{math}
+  Keyboard Accessibility Score (Percentage) = \frac{Successfully Manipulated Elements}{All Manipulable Elements} \times 100
+\end{math}
 
+Utilising the scores from above, we would average the accessibility scores for each scenario, and represent the results of 
+the averages in the form of a bar graph. The graph would allow us to compare the accessibility scores of our scenarios
+and determine if our hypotheses were credible.  
 
 \section{Project Timeline}
 
