@@ -55,19 +55,33 @@ Our research is based on the following cornerstone hypotheses:
 
 To test our hypotheses, we will create a prototype based on an existing example and evaluate how much more accessible code can be generated when we do not specify any rules (baseline), when we specify them before writing tests (red phase), and when we specify them before writing the code (green phase).
 
-We intend to generate code via the LLM in five different ways. These scenarios enable us to test our
-hypotheses well [CHANGE SENTENCE] by providing comparisons amongst all of them. The five scenarios are broken down below:
+For the purpose of this study, we will identify an existing website (e.g., an e-commerce site) and utilise it to develop a 
+comprehensive list of requirements, which will be used when generating the code from the LLM. We intend to generate code via 
+the LLM in five different ways. These scenarios enable us to test our hypotheses well [CHANGE SENTENCE] by providing 
+comparisons amongst all of them. The five scenarios are broken down below:
  \begin{itemize}
   \item Baseline: the requirements of the website are provided to the LLM to generate the relevant code.
   \item TDD Red Small a11y spec: the LLM would be provided with the requirements of the website and a prompt to follow 
-  general WGAC accessibility rules when devising the test.
+  general WCAG (Web Content Accessibility Guidelines) accessibility rules when devising the test.
   \item TDD Red Comprehensive a11y spec: alongside the requirement of the website, the LLM would be provided a more sophisticated
   prompt with component specifics. 
-  \item TDD Green Small a11y spec: after the code generated during the baseline setup, the LLM would be prompted to alter the code following WGAC accessibility rules.
-  \item TDD Green Comprehensive a11y spec: the LLM would be provided with a comprehensive prompt regarding accessibility rules to alter the code generated during the baseline setup.
+  \item TDD Green Small a11y spec: [INCORRECT?, RESHMI] after the code generated during the baseline setup, the LLM would be prompted to alter the code following WCAG accessibility rules.
+  \item TDD Green Comprehensive a11y spec: [INCORRECT?, RESHMI] the LLM would be provided with a comprehensive prompt regarding accessibility rules to alter the code generated during the baseline setup.
  \end{itemize}
 
 \section{Planned Evaluation}
+
+The evaluation of the quality of the code, vis-à-vis accessibility, would be conducted through the evaluation of the following 
+two metrics: 
+\begin{itemize}
+  \item HTML (Static and Runtime) Accessibility Check: we intend to utilise accessibility validators at this stage; 
+  eslint-plugin-jsx-a11y and Axe-Core. Both of these validators inspect the static HTML for accessibility errors, however, Axe-Core also inspects
+  the fully rendered DOM. The latter is a critical part of the accessibility check, as this what an end-user would interact
+  with. If, during the testing our prototype, the eslint-plugin-jsx-a11y does not provide any additional insight from what 
+  Axe-Core provides, we will cease the incorporation of the eslint-plugin-jsx-a11y validator in our study, 
+  as it would be redundant. 
+  \item Playwright Keyboard Check: 
+\end{itemize}
 
 
 \section{Project Timeline}
