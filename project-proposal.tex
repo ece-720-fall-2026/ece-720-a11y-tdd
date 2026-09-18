@@ -1,17 +1,17 @@
 \documentclass[conference]{IEEEtran}
 
-\title{Accessibility-First Test-Driven Development for Web Applications}
+\title{a11y-TDD: An Accessibility-First Approach to Test-Driven Web Development}
 
 \author{
+  \IEEEauthorblockN{Josbel Luna}
+  \IEEEauthorblockA{Department of Electrical and Computer Engineering\\
+  University of Alberta}
+  \and
   \IEEEauthorblockN{Kaparthini Reshmi}
   \IEEEauthorblockA{Department of Electrical and Computer Engineering\\
   University of Alberta}
   \and
   \IEEEauthorblockN{Onesh Punchinilame}
-  \IEEEauthorblockA{Department of Electrical and Computer Engineering\\
-  University of Alberta}
-  \and
-  \IEEEauthorblockN{Josbel Luna}
   \IEEEauthorblockA{Department of Electrical and Computer Engineering\\
   University of Alberta}
 }
@@ -22,7 +22,28 @@
 
 \section{Background}
 
-Test
+% Problem statement
+
+Web accessibility is a core principle of web development that ensures websites can be used by everyone. 
+This is important because the World Health Organization estimates that 1.3 billion people worldwide experience a significant disability~\cite{who2023disability}. 
+Despite the relevance of this, web accessibility remains an unsolved problem.
+Martins and Duarte found that only 0.5\% of 2.88 million web pages had no automatically detectable accessibility errors~\cite{martins2024accessibility}.
+
+% LLM generated code for web
+With the rise of LLMs, one might hope that they could solve web accessibility issues by following those rules closely, but this is far from reality.
+In a study where developers prompted LLMs to generate websites, Aljedaani et al. reported that 84\% of the resulting websites had accessibility issues~\cite{aljedaani2024chatgpt}.
+Related research by Guriță and Vatavu also demonstrated that although accessibility-oriented prompts reduced violations, semantic accessibility barriers remained~\cite{gurita2025barriers}.
+ 
+% LLM for TDD
+
+
+
+% [Research x] says that LLM generated tests for TDD are good fo code.
+
+% These studies examine either accessibility-oriented prompting or test-driven code generation, but there appears to be limited work evaluating whether accessibility tests used as explicit TDD requirements cause LLMs to generate more accessible web applications than ordinary prompting.
+
+% Ideas:
+
 
 \section{Planned Approach}
 
@@ -31,5 +52,20 @@ Test
 \section{Project Timeline}
 
 \section*{References}
+
+\begin{thebibliography}{1}
+  \bibitem{who2023disability}
+World Health Organization, ``Disability,'' Mar. 7, 2023. [Online]. Available: https://www.who.int/news-room/fact-sheets/detail/disability-and-health
+
+  \bibitem{martins2024accessibility}
+  B. Martins and C. Duarte, ``A large-scale web accessibility analysis considering technology adoption,'' \emph{Universal Access in the Information Society}, vol. 23, no. 4, pp. 1857--1872, 2024, doi: 10.1007/s10209-023-01010-0.
+
+  \bibitem{aljedaani2024chatgpt}
+  W. Aljedaani, A. Habib, A. Aljohani, M. M. Eler, and Y. Feng, ``Does ChatGPT generate accessible code? Investigating accessibility challenges in LLM-generated source code,'' in \emph{Proc. 21st Int. Web for All Conf. (W4A '24)}, 2024, pp. 165--176, doi: 10.1145/3677846.3677854.
+
+  \bibitem{gurita2025barriers}
+  A.-E. Guriță and R.-D. Vatavu, ``When LLM-generated code perpetuates user interface accessibility barriers, how can we break the cycle?'' in \emph{Proc. 22nd Int. Web for All Conf. (W4A '25)}, 2025, pp. 124--134, doi: 10.1145/3744257.3744266.
+\end{thebibliography}
+
 
 \end{document}
