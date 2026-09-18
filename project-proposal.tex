@@ -26,26 +26,35 @@
 
 Web accessibility is a core principle of web development that ensures websites can be used by everyone. 
 This is important because the World Health Organization estimates that 1.3 billion people worldwide experience a significant disability~\cite{who2023disability}. 
-Despite the relevance of this, web accessibility remains an unsolved problem.
-Martins and Duarte found that only 0.5\% of 2.88 million web pages had no automatically detectable accessibility errors~\cite{martins2024accessibility}.
+Despite its importance, web accessibility remains an unsolved problem.
+Martins and Duarte found that only 0.5\% of 2.88 million web pages had no automatically detectable accessibility errors~\cite{martins2024accessibility}, which highlights the need for a more systematic approach to web accessibility.
 
 % LLM generated code for web
-With the rise of LLMs, one might hope that they could solve web accessibility issues by following those rules closely, but this is far from reality.
+With the rise of LLMs, one might hope that they could solve these issues by following those rules closely, but this is far from reality.
 In a study where developers prompted LLMs to generate websites, Aljedaani et al. reported that 84\% of the resulting websites had accessibility issues~\cite{aljedaani2024chatgpt}.
-Related research by Guriță and Vatavu also demonstrated that although accessibility-oriented prompts reduced violations, semantic accessibility barriers remained~\cite{gurita2025barriers}.
+Related research by Guriță and Vatavu also suggests that although accessibility-oriented prompts reduced violations, semantic accessibility barriers remained~\cite{gurita2025barriers}.
+Even though LLMs have been shown to generate more accessible code, they still need to be guided by accessibility rules more strictly.
  
 % LLM for TDD
-
-
-
-% [Research x] says that LLM generated tests for TDD are good fo code.
-
-% These studies examine either accessibility-oriented prompting or test-driven code generation, but there appears to be limited work evaluating whether accessibility tests used as explicit TDD requirements cause LLMs to generate more accessible web applications than ordinary prompting.
-
-% Ideas:
+LLMs are used not only to write code, but also to generate tests, and they have been shown to do so with reasonable accuracy.
+This has made practices like Test-Driven Development (TDD) easier to implement than ever before.
+TDD not only allows for more reliable code, but also provides context for the code written by the LLM.
+Mathews and Nagappan found that providing tests during LLM code generation improved functional correctness by 9.15 to 29.57 percentage points~\cite{mathews2024tdd}.
+This is a promising approach, but research in this area is still limited, and generating better code while following accessibility rules has not been thoroughly explored.
 
 
 \section{Planned Approach}
+
+This project will explore the intersection of three topics in software engineering that have been widely studied separately: web accessibility, test-driven development, and large language models.
+Our research is based on the following cornerstone hypotheses:
+\begin{itemize}
+  \item LLMs are trained on large datasets of existing code, which often contain accessibility issues, so they tend to generate inaccessible code.
+  \item TDD can help LLMs generate more accessible code by acting not only as a test, but also as a requirement the model must satisfy to pass.
+  \item Writing accessibility requirements during the Red phase may guide LLMs to generate more accessible code than writing them during the Green or Refactor phase.
+\end{itemize}
+
+To test our hypotheses, we will create a prototype based on an existing example and evaluate how much more accessible code can be generated when we do not specify any rules (baseline), when we specify them before writing tests (red phase), and when we specify them before writing the code (green phase).
+
 
 \section{Planned Evaluation}
 
@@ -65,7 +74,9 @@ World Health Organization, ``Disability,'' Mar. 7, 2023. [Online]. Available: ht
 
   \bibitem{gurita2025barriers}
   A.-E. Guriță and R.-D. Vatavu, ``When LLM-generated code perpetuates user interface accessibility barriers, how can we break the cycle?'' in \emph{Proc. 22nd Int. Web for All Conf. (W4A '25)}, 2025, pp. 124--134, doi: 10.1145/3744257.3744266.
+
+  \bibitem{mathews2024tdd}
+  N. S. Mathews and M. Nagappan, ``Test-driven development and LLM-based code generation,'' in \emph{Proc. 39th IEEE/ACM Int. Conf. Automated Software Engineering (ASE '24)}, 2024, pp. 1583--1594, doi: 10.1145/3691620.3695527.
+
 \end{thebibliography}
-
-
 \end{document}
