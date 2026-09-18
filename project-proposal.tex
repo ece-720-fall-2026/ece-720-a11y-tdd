@@ -55,8 +55,20 @@ Our research is based on the following cornerstone hypotheses:
 
 To test our hypotheses, we will create a prototype based on an existing example and evaluate how much more accessible code can be generated when we do not specify any rules (baseline), when we specify them before writing tests (red phase), and when we specify them before writing the code (green phase).
 
+We intend to generate code via the LLM in five different ways. These scenarios enable us to test our
+hypotheses well [CHANGE SENTENCE] by providing comparisons amongst all of them. The five scenarios are broken down below:
+ \begin{itemize}
+  \item Baseline: the requirements of the website are provided to the LLM to generate the relevant code.
+  \item TDD Red Small a11y spec: the LLM would be provided with the requirements of the website and a prompt to follow 
+  general WGAC accessibility rules when devising the test.
+  \item TDD Red Comprehensive a11y spec: alongside the requirement of the website, the LLM would be provided a more sophisticated
+  prompt with component specifics. 
+  \item TDD Green Small a11y spec: after the code generated during the baseline setup, the LLM would be prompted to alter the code following WGAC accessibility rules.
+  \item TDD Green Comprehensive a11y spec: the LLM would be provided with a comprehensive prompt regarding accessibility rules to alter the code generated during the baseline setup.
+ \end{itemize}
 
 \section{Planned Evaluation}
+
 
 \section{Project Timeline}
 
