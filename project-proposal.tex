@@ -74,14 +74,26 @@ comparisons amongst all of them. The five scenarios are broken down below:
 The evaluation of the quality of the code, vis-à-vis accessibility, would be conducted through the evaluation of the following 
 two metrics.
 
-\subsection{HTML (Static and Runtime)} 
-Accessibility Check: we intend to utilise accessibility validators at this stage; 
+\subsection{HTML (Static and Runtime Accessibility Check)} 
+We intend to utilise two accessibility validators at this stage; 
 eslint-plugin-jsx-a11y and Axe-Core. Both of these validators inspect the static HTML for accessibility errors, however, Axe-Core also inspects
 the fully rendered DOM. The latter is a critical part of the accessibility check, as this is what an end-user would interact
-with. The results of the test would be segregated into four categories: violations, passes, incomplete, inapplicable. 
-If, during the testing our prototype, the eslint-plugin-jsx-a11y does not provide any additional insight from what 
+with. The checks with the two validators would be run independently of each other. The results of the Axe-Core test would 
+be segregated into four categories: 
+
+\begin{itemize}
+  \item Violations: elements with definite accessibility errors
+  \item Passes: elements that have adhered to WCAG guidelines
+  \item Incomplete: elements that stuck to WCAG guidlines but requires human intervention in determining its accuracy.
+  \item Inapplicable: all the rules that were skipped as the elements for which they exist are not on the site page.
+\end{itemize}
+
+[RESHMI, PLEASE DESCRIBE HOW TO OBTAIN A SCORE USING eslint-plugin-jsx-a11y HERE]
+
+If, during the testing of our prototype, the eslint-plugin-jsx-a11y does not provide any additional insight from what 
 Axe-Core provides, we will cease the incorporation of the eslint-plugin-jsx-a11y validator in our study, 
-as it would be redundant. 
+as it would be redundant.
+
 \subsection{Playwright Keyboard Check}
 Employing Playwright, an open-source automation library, we will check the accessibility
 level of the generated site through its responsiveness to simulated keyboard presses. This check would [CHANGE SENTENCE] identify how many elements
