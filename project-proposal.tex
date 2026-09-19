@@ -1,5 +1,8 @@
 \documentclass[conference]{IEEEtran}
 
+%package
+\usepackage{tabularx}
+
 \title{a11y-TDD: An Accessibility-First Approach to Test-Driven Web Development}
 
 \author{
@@ -57,7 +60,7 @@ To test our hypotheses, we will create a prototype based on an existing example 
 
 For the purpose of this study, we will identify an existing website (e.g., an e-commerce site) and utilise it to develop a 
 comprehensive list of requirements, which will be used when generating the code from the LLM. We intend to generate code via 
-the LLM in five different ways. These five scenarios enable us to test our hypotheses well [CHANGE SENTENCE] by providing 
+the LLM in five different ways. These five scenarios enable us t0 validate our hypotheses by providing 
 comparisons amongst all of them. The scenarios are broken down below:
  \begin{itemize}
   \item Baseline: the requirements of the website are provided to the LLM to generate the relevant code.
@@ -65,8 +68,8 @@ comparisons amongst all of them. The scenarios are broken down below:
   general WCAG (Web Content Accessibility Guidelines) accessibility rules when devising the test [ADD WCAG CITATION HERE].
   \item TDD Red Comprehensive a11y spec: alongside the requirement of the website, the LLM would be provided a more sophisticated
   prompt with component specifics. 
-  \item TDD Green Small a11y spec: [INCORRECT?, RESHMI] after the code generated during the baseline setup, the LLM would be prompted to alter the code following WCAG accessibility rules.
-  \item TDD Green Comprehensive a11y spec: [INCORRECT?, RESHMI] the LLM would be provided with a comprehensive prompt regarding accessibility rules to alter the code generated during the baseline setup.
+  \item TDD Green Small a11y spec: the LLM would be prompted to alter the code generated during the baseline setup to follow WCAG accessibility rules.
+  \item TDD Green Comprehensive a11y spec: the LLM would be provided with a comprehensive prompt regarding accessibility rules to alter the code generated during the baseline setup.
  \end{itemize}
 
 \section{Planned Evaluation}
@@ -97,10 +100,19 @@ this categorization, we can highlight the accessibility of the site as a percent
   Axe-Core Accessibility Score (Percentage) = \frac{Violations}{Violations + Passes} \times 100
 \end{math}
 
+For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios.
+The primary analysis of the validator is to detect the accessibility related code issues specifically the invalid ARIA attributes, missing 
+alternative texts, inaccessible interactive elements and keyboard interactions rather than running the application.The same configuration and
+rules will be applied for all of the above mentioned scenarios. As the plugin detects only the source code errors, the runtime and behavioural
+accessibility can be achieved when combined with a dynamnic validator and keyboard check validator.
 
-[RESHMI, PLEASE DESCRIBE HOW TO OBTAIN A SCORE USING eslint-plugin-jsx-a11y HERE]
+The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y, meanwhile neglecting
+the elements that have violations. Therefore, the accessibility score for the static validator is as follows:
+\begin{math}
+ ESLint Accessibility Score (Percentage) = \frac{Accessibility elements with no jsx-a11y violations}{Total accessibility elements checked} \times 100
+\end{math}
 
-If, during the testing of our prototype, the eslint-plugin-jsx-a11y does not provide any additional insight from what 
+During the testing of our prototype, if the eslint-plugin-jsx-a11y does not provide any additional insight from what 
 Axe-Core provides, we will cease the incorporation of the eslint-plugin-jsx-a11y validator in our study, 
 as it would be redundant.
 
@@ -119,6 +131,34 @@ the averages in the form of a bar graph. The graph would allow us to compare the
 and determine if our hypotheses were credible.  
 
 \section{Project Timeline}
+\begin{table}[htbp]
+\caption{Project Timeline}
+\label{tab:project_timeline}
+\centering
+\small
+
+\begin{tabularx}{\columnwidth}{|c|X|}
+\hline
+\textbf{Week} & \textbf{Planned Activity}\\ \hline
+
+Week 1 & Conduct mini experiment and finalize the procedures. \\ \hline
+
+Week 2 & Collect the accessibility requirements for the selected web application. \\ \hline
+
+Week 3 & Generation and Evaluation - Baseline scenarios. \\ \hline
+
+Week 4 & Implementation and Evaluation - Red phase with small and comprehensive accessibility specifications. \\ \hline
+
+Week 5 & Implementation and Evaluation - Green phase with small and comprehensive accessibility specifications. \\ \hline
+
+Week 6 & Execution and collection of validators' results for all the five scenarios for multiple executions. \\ \hline
+
+Week 7 &  Consolidation and comparison of the static, runtime and behavioural accessibility metrics for all scenarios. \\ \hline
+
+Week 8 & Interpretation of final results, evaluation of hypothesis and completion of final project report. \\ \hline
+
+\end{tabularx}
+\end{table}
 
 \section*{References}
 
