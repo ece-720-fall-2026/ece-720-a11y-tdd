@@ -80,7 +80,7 @@ would be generated thrice and every rendition of generated code would be tested 
 checks require large human reviews, which would be extremely time-consuming, we have limited each scenario's code checks to three.
 
 \subsection{HTML (Static and Runtime) Accessibility Check} 
-We intend to utilise two accessibility validators at this stage; eslint-plugin-jsx-a11y and Axe-Core. 
+We intend to utilise two accessibility validators at this stage; eslint-plugin-jsx-a11y and Axe-Core [RESHMI, CITATION HERE PLEASE, THANK YOU]. 
 Both of these validators inspect the static HTML for accessibility errors, however, Axe-Core also inspects
 the fully rendered DOM. The latter is a critical part of the accessibility check, as this is what an end-user would interact
 with. The checks with the two validators would be run independently of each other. The results of the Axe-Core test would 
@@ -90,7 +90,7 @@ be segregated into four categories:
   \item Violations: web elements with definite accessibility errors
   \item Passes: elements that have adhered to WCAG guidelines
   \item Incomplete: elements that stuck to WCAG guidelines but requires human intervention in determining its accuracy.
-  \item Inapplicable: all the rules that were skipped as the elements for which they exist are not on the site page.
+  \item Inapplicable: all the accessibility rules that were skipped as the elements for which they exist are not on the site page.
 \end{itemize}
 
 The "inapplicable" results will be omitted as they have no bearing on determining the level of accessibility of the site.
@@ -102,7 +102,7 @@ this categorization, we can highlight the accessibility of the site as a percent
 
 For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios.
 The primary analysis of the validator is to detect the accessibility related code issues specifically the invalid ARIA attributes, missing 
-alternative texts, inaccessible interactive elements and keyboard interactions ~\cite{jsxa11y} rather than running the application.The same configuration and
+alternative texts, inaccessible interactive elements and keyboard interactions rather than running the application. The same configuration and
 rules will be applied for all of the above mentioned scenarios. As the plugin detects only the source code errors, the runtime and behavioural
 accessibility can be achieved when combined with a dynamnic validator and keyboard check validator.~\cite{jsxa11y}
 
