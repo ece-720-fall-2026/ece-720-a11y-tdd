@@ -102,12 +102,12 @@ this categorization, we can highlight the accessibility of the site as a percent
 
 For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios.
 The primary analysis of the validator is to detect the accessibility related code issues specifically the invalid ARIA attributes, missing 
-alternative texts, inaccessible interactive elements and keyboard interactions rather than running the application.The same configuration and
+alternative texts, inaccessible interactive elements and keyboard interactions ~\cite{jsxa11y} rather than running the application.The same configuration and
 rules will be applied for all of the above mentioned scenarios. As the plugin detects only the source code errors, the runtime and behavioural
-accessibility can be achieved when combined with a dynamnic validator and keyboard check validator.
+accessibility can be achieved when combined with a dynamnic validator and keyboard check validator.~\cite{jsxa11y}
 
 The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y, meanwhile neglecting
-the elements that have violations. Therefore, the accessibility score for the static validator is as follows:
+the elements that have violations. Therefore, the study defined metric accessibility score for the static validator is as follows:
 \begin{math}
  ESLint Accessibility Score (Percentage) = \frac{Accessibility elements with no jsx-a11y violations}{Total accessibility elements checked} \times 100
 \end{math}
@@ -177,6 +177,13 @@ World Health Organization, ``Disability,'' Mar. 7, 2023. [Online]. Available: ht
 
   \bibitem{mathews2024tdd}
   N. S. Mathews and M. Nagappan, ``Test-driven development and LLM-based code generation,'' in \emph{Proc. 39th IEEE/ACM Int. Conf. Automated Software Engineering (ASE '24)}, 2024, pp. 1583--1594, doi: 10.1145/3691620.3695527.
+
+  \bibitem{jsxa11y}
+  jsx-eslint,
+``eslint-plugin-jsx-a11y: Static AST checker for accessibility rules on JSX elements,''
+GitHub. [Online]. Available:
+\url{https://github.com/jsx-eslint/eslint-plugin-jsx-a11y}
+  
 
 \end{thebibliography}
 \end{document}
