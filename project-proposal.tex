@@ -60,7 +60,7 @@ To test our hypotheses, we will create a prototype based on an existing example 
 
 For the purpose of this study, we will identify an existing website (e.g., an e-commerce site) and utilise it to develop a 
 comprehensive list of requirements, which will be used when generating the code from the LLM. We intend to generate code via 
-the LLM in five different ways. These five scenarios enable us t0 validate our hypotheses by providing 
+the LLM in five different ways. These five scenarios enable us to validate our hypotheses by providing 
 comparisons amongst all of them. The scenarios are broken down below:
  \begin{itemize}
   \item Baseline: the requirements of the website are provided to the LLM to generate the relevant code.
@@ -104,7 +104,7 @@ For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y fo
 The primary analysis of the validator is to detect the accessibility related code issues specifically the invalid ARIA attributes, missing 
 alternative texts, inaccessible interactive elements and keyboard interactions rather than running the application. The same configuration and
 rules will be applied for all of the above mentioned scenarios. As the plugin detects only the source code errors, the runtime and behavioural
-accessibility can be achieved when combined with a dynamnic validator and keyboard check validator.~\cite{jsxa11y}
+accessibility can be achieved when combined with a dynamic validator and keyboard check validator.~\cite{jsxa11y}
 
 The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y, meanwhile neglecting
 the elements that have violations. Therefore, the study defined metric accessibility score for the static validator is as follows:
