@@ -95,22 +95,21 @@ be segregated into four categories:
 
 The "inapplicable" results will be omitted as they have no bearing on determining the level of accessibility of the site.
 After we review the "incomplete" results, their elements would be categorized under either "violations" or "passes". From 
-this categorization, we can highlight the accessibility of the site as a percentage:
-\begin{math}
-  Axe-Core Accessibility Score (Percentage) = \frac{Violations}{Violations + Passes} \times 100
-\end{math}
+this categorization, we can highlight Axe-Core's accessibility score (ACAS) of the site as a percentage:
 
-For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios.
+\[ ACAS (Percentage) = \frac{Violations} {Violations + Passes} \times 100 \]
+
+
+For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios ~\cite{jsxa11y}.
 The primary analysis of the validator is to detect the accessibility related code issues specifically the invalid ARIA attributes, missing 
 alternative texts, inaccessible interactive elements and keyboard interactions rather than running the application. The same configuration and
 rules will be applied for all of the above mentioned scenarios. As the plugin detects only the source code errors, the runtime and behavioural
-accessibility can be achieved when combined with a dynamic validator and keyboard check validator.~\cite{jsxa11y}
+accessibility can be achieved when combined with a dynamic validator and keyboard check validator.
 
-The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y, meanwhile neglecting
-the elements that have violations. Therefore, the study defined metric accessibility score for the static validator is as follows:
-\begin{math}
- ESLint Accessibility Score (Percentage) = \frac{Accessibility elements with no jsx-a11y violations}{Total accessibility elements checked} \times 100
-\end{math}
+The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y, while neglecting
+the elements that have violations. Therefore, the study defined metric accessibility score for the static validator (EAS) is as follows:
+
+\[EAS (Percentage) = \frac{Elements with No Violations}{Total elements checked} \times 100 \]
 
 During the testing of our prototype, if the eslint-plugin-jsx-a11y does not provide any additional insight from what 
 Axe-Core provides, we will cease the incorporation of the eslint-plugin-jsx-a11y validator in our study, 
@@ -120,17 +119,19 @@ as it would be redundant.
 Employing Playwright, an open-source automation library, we will check the accessibility
 level of the generated site through its responsiveness to simulated keyboard presses. This would
 identify how many elements should have been manipulable with a keyboard press and how many actually were. As a score, 
-the level of accessibility would be represented by the following formula:
+the level of accessibility (KAS) would be represented by the following formula:
 
-\begin{math}
-  Keyboard Accessibility Score (Percentage) = \frac{Successfully Manipulated Elements}{All Manipulable Elements} \times 100
-\end{math}
+\[KAS (Percentage) = \frac{Manipulated Elements}{All Manipulable Elements} \times 100 \]
 
 Utilising the scores from above, we would average the accessibility scores for each scenario, and represent the results of 
 the averages in the form of a bar graph. The graph would allow us to compare the accessibility scores of our scenarios
 and determine if our hypotheses were credible.  
 
 \section{Project Timeline}
+
+The table below highlights the key tasks we intend to complete by their respective weeks,
+with week 1 commencing on the 21\textsuperscript{st} of September 2026.
+
 \begin{table}[htbp]
 \caption{Project Timeline}
 \label{tab:project_timeline}
@@ -179,10 +180,8 @@ World Health Organization, ``Disability,'' Mar. 7, 2023. [Online]. Available: ht
   N. S. Mathews and M. Nagappan, ``Test-driven development and LLM-based code generation,'' in \emph{Proc. 39th IEEE/ACM Int. Conf. Automated Software Engineering (ASE '24)}, 2024, pp. 1583--1594, doi: 10.1145/3691620.3695527.
 
   \bibitem{jsxa11y}
-  jsx-eslint,
-``eslint-plugin-jsx-a11y: Static AST checker for accessibility rules on JSX elements,''
-GitHub. [Online]. Available:
-\url{https://github.com/jsx-eslint/eslint-plugin-jsx-a11y}
+  jsx-eslint, ``eslint-plugin-jsx-a11y: Static AST checker for accessibility rules on JSX elements,''
+GitHub. [Online]. Available: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
   
 
 \end{thebibliography}
