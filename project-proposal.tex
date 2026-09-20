@@ -65,7 +65,7 @@ comparisons amongst all of them. The scenarios are broken down below:
  \begin{itemize}
   \item Baseline: the requirements of the website are provided to the LLM to generate the relevant code.
   \item TDD Red Small a11y spec: the LLM would be provided with the requirements of the website and a prompt to follow 
-  general WCAG (Web Content Accessibility Guidelines) accessibility rules when devising the test [ADD WCAG CITATION HERE].
+  general WCAG (Web Content Accessibility Guidelines) accessibility rules when devising the test~\cite{w3c2024accessibility}.
   \item TDD Red Comprehensive a11y spec: alongside the requirement of the website, the LLM would be provided a more sophisticated
   prompt with component specifics. 
   \item TDD Green Small a11y spec: the LLM would be prompted to alter the code generated during the baseline setup to follow WCAG accessibility rules.
@@ -80,8 +80,8 @@ would be generated thrice and every rendition of generated code would be tested 
 checks require large human reviews, which would be extremely time-consuming, we have limited each scenario's code checks to three.
 
 \subsection{HTML (Static and Runtime) Accessibility Check} 
-We intend to utilise two accessibility validators at this stage; eslint-plugin-jsx-a11y and Axe-Core [RESHMI, CITATION HERE PLEASE, THANK YOU]. 
-Both of these validators inspect the static HTML for accessibility errors, however, Axe-Core also inspects
+We intend to utilise two accessibility validators at this stage; eslint-plugin-jsx-a11y~\cite{jsxa11y} and Axe-Core~\cite{deque2026accessibility}. 
+While both of these validators inspect the static HTML for accessibility errors, Axe-Core also inspects
 the fully rendered DOM. The latter is a critical part of the accessibility check, as this is what an end-user would interact
 with. The checks with the two validators would be run independently of each other. The results of the Axe-Core test would 
 be segregated into four categories: 
@@ -97,10 +97,10 @@ The "inapplicable" results will be omitted as they have no bearing on determinin
 After we review the "incomplete" results, their elements would be categorized under either "violations" or "passes". From 
 this categorization, we can highlight Axe-Core's accessibility score (ACAS) of the site as a percentage:
 
-\[ ACAS (Percentage) = \frac{Violations} {Violations + Passes} \times 100 \]
+\[ ACAS (\%) = \frac{Violations} {Violations + Passes} \times 100 \]
 
 
-For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios ~\cite{jsxa11y}.
+For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios.
 The primary analysis of the validator is to detect the accessibility related code issues specifically the invalid ARIA attributes, missing 
 alternative texts, inaccessible interactive elements and keyboard interactions rather than running the application. The same configuration and
 rules will be applied for all of the above mentioned scenarios. As the plugin detects only the source code errors, the runtime and behavioural
@@ -109,7 +109,7 @@ accessibility can be achieved when combined with a dynamic validator and keyboar
 The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y, while neglecting
 the elements that have violations. Therefore, the study defined metric accessibility score for the static validator (EAS) is as follows:
 
-\[EAS (Percentage) = \frac{Elements with No Violations}{Total elements checked} \times 100 \]
+\[EAS (\%) = \frac{Elements with No Violations}{Total elements checked} \times 100 \]
 
 During the testing of our prototype, if the eslint-plugin-jsx-a11y does not provide any additional insight from what 
 Axe-Core provides, we will cease the incorporation of the eslint-plugin-jsx-a11y validator in our study, 
@@ -117,20 +117,20 @@ as it would be redundant.
 
 \subsection{Keyboard Accessibility Check}
 Employing Playwright, an open-source automation library, we will check the accessibility
-level of the generated site through its responsiveness to simulated keyboard presses. This would
+level of the generated site through its responsiveness to simulated keyboard presses~\cite{microsoft2026playwright}. This would
 identify how many elements should have been manipulable with a keyboard press and how many actually were. As a score, 
 the level of accessibility (KAS) would be represented by the following formula:
 
-\[KAS (Percentage) = \frac{Manipulated Elements}{All Manipulable Elements} \times 100 \]
+\[KAS (\%) = \frac{Manipulated Elements}{All Manipulable Elements} \times 100 \]
 
-Utilising the scores from above, we would average the accessibility scores for each scenario, and represent the results of 
+Utilising the scores from above, we would average the accessibility scores for each scenario and validator, and represent the results of 
 the averages in the form of a bar graph. The graph would allow us to compare the accessibility scores of our scenarios
 and determine if our hypotheses were credible.  
 
 \section{Project Timeline}
 
 The table below highlights the key tasks we intend to complete by their respective weeks,
-with week 1 commencing on the 21\textsuperscript{st} of September 2026.
+with Week 1 commencing on the 21\textsuperscript{st} of September 2026.
 
 \begin{table}[htbp]
 \caption{Project Timeline}
@@ -180,8 +180,16 @@ World Health Organization, ``Disability,'' Mar. 7, 2023. [Online]. Available: ht
   N. S. Mathews and M. Nagappan, ``Test-driven development and LLM-based code generation,'' in \emph{Proc. 39th IEEE/ACM Int. Conf. Automated Software Engineering (ASE '24)}, 2024, pp. 1583--1594, doi: 10.1145/3691620.3695527.
 
   \bibitem{jsxa11y}
-  jsx-eslint, ``eslint-plugin-jsx-a11y: Static AST checker for accessibility rules on JSX elements,''
-GitHub. [Online]. Available: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
+  jsx-eslint, ``eslint-plugin-jsx-a11y: Static AST checker for accessibility rules on JSX elements,'' GitHub. [Online]. Available: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
+  
+  \bibitem{w3c2024accessibility}
+  World Wide Web Consortium, ``Web Content Accessibility Guidelines," 12 Dec 2024. [Online]. Available: https://www.w3.org/TR/WCAG22/
+
+  \bibitem{deque2026accessibility}
+  Dequelabs, ``Axe-core,". [Online]. Available: https://github.com/dequelabs/axe-core [Accessed: Sep. 12, 2026]
+
+  \bibitem{microsoft2026playwright}
+  Microsoft, ``Playwright,". [Online]. Available: https://github.com/microsoft/playwright [Accessed: Sep. 14, 2026]
   
 
 \end{thebibliography}
