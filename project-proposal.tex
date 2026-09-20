@@ -74,13 +74,13 @@ comparisons amongst all of them. The scenarios are broken down below:
 
 \section{Planned Evaluation}
 
-The evaluation of the quality of the code, vis-à-vis accessibility, would be conducted through the evaluation of two metrics;
+The evaluation of the quality of the code, vis-à-vis accessibility, would be conducted through the assessment of two metrics;
 HTML (Static and Runtime) Accessibility Check and Keyboard Accessibility Check. For these two metrics, each scenario's code
 would be generated thrice and every rendition of generated code would be tested for the checks mentioned below. As both these
 checks require large human reviews, which would be extremely time-consuming, we have limited each scenario's code checks to three.
 
 \subsection{HTML (Static and Runtime) Accessibility Check} 
-We intend to utilise two accessibility validators at this stage; eslint-plugin-jsx-a11y~\cite{jsxa11y} and Axe-Core~\cite{deque2026accessibility}. 
+We intend to utilise two accessibility validators at this stage: eslint-plugin-jsx-a11y~\cite{jsxa11y} and Axe-Core~\cite{deque2026accessibility}. 
 While both of these validators inspect the static HTML for accessibility errors, Axe-Core also inspects
 the fully rendered DOM. The latter is a critical part of the accessibility check, as this is what an end-user would interact
 with. The checks with the two validators would be run independently of each other. The results of the Axe-Core test would 
@@ -97,8 +97,7 @@ The "inapplicable" results will be omitted as they have no bearing on determinin
 After we review the "incomplete" results, their elements would be categorized under either "violations" or "passes". From 
 this categorization, we can highlight Axe-Core's accessibility score (ACAS) of the site as a percentage:
 
-\[ ACAS (\%) = \frac{Violations} {Violations + Passes} \times 100 \]
-
+\[ ACAS (\%) = \frac{Passes} {Violations + Passes} \times 100 \]
 
 For a static accessibility validator, we intend to use eslint-plugin-jsx-a11y for React/JSX code for all the five experimental scenarios.
 The primary analysis of the validator is to detect the accessibility related code issues specifically the invalid ARIA attributes, missing 
@@ -106,8 +105,8 @@ alternative texts, inaccessible interactive elements and keyboard interactions r
 rules will be applied for all of the above mentioned scenarios. As the plugin detects only the source code errors, the runtime and behavioural
 accessibility can be achieved when combined with a dynamic validator and keyboard check validator.
 
-The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y, while neglecting
-the elements that have violations. Therefore, the study defined metric accessibility score for the static validator (EAS) is as follows:
+The accessibility elements with no violations are taken into account to calculate the accessibility score of eslint-plugin-jsx-a11y (EAS), while neglecting
+the elements that have violations. Therefore, the study defined metric accessibility score for the static validator is as follows:
 
 \[EAS (\%) = \frac{Elements with No Violations}{Total elements checked} \times 100 \]
 
@@ -119,11 +118,11 @@ as it would be redundant.
 Employing Playwright, an open-source automation library, we will check the accessibility
 level of the generated site through its responsiveness to simulated keyboard presses~\cite{microsoft2026playwright}. This would
 identify how many elements should have been manipulable with a keyboard press and how many actually were. As a score, 
-the level of accessibility (KAS) would be represented by the following formula:
+the level of keyboard accessibility (KAS) would be represented by the following formula:
 
 \[KAS (\%) = \frac{Manipulated Elements}{All Manipulable Elements} \times 100 \]
 
-Utilising the scores from above, we would average the accessibility scores for each scenario and validator, and represent the results of 
+Utilising the scores from above, we would average the accessibility scores for each scenario and validator and represent the results of 
 the averages in the form of a bar graph. The graph would allow us to compare the accessibility scores of our scenarios
 and determine if our hypotheses were credible.  
 
@@ -154,13 +153,14 @@ Week 5 & Implementation and Evaluation - Green phase with small and comprehensiv
 
 Week 6 & Execution and collection of validators' results for all the five scenarios for multiple executions. \\ \hline
 
-Week 7 &  Consolidation and comparison of the static, runtime and behavioural accessibility metrics for all scenarios. \\ \hline
+Week 7 &  Consolidation and comparison of the static, runtime, and behavioural accessibility metrics for all scenarios. \\ \hline
 
 Week 8 & Interpretation of final results, evaluation of hypothesis and completion of final project report. \\ \hline
 
 \end{tabularx}
 \end{table}
 
+\section*{References}
 
 \begin{thebibliography}{1}
   \bibitem{who2023disability}
