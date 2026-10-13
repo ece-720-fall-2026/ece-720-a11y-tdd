@@ -1,49 +1,43 @@
-You are working in a Next.js (App Router) + React + Tailwind CSS storefront repository. The feature to build is described in `REQUIREMENTS.md` at the repository root. Read it, `README.md` and `AGENTS.md` first.
+You are working in a Next.js (App Router) + React + Tailwind CSS storefront repository. The feature to build is described in `REQUIREMENTS.md` at the repository root; `README.md` and `AGENTS.md` explain how to run the project.
 
-We are doing test-driven development. This is the **red phase**: write the tests only.
+We are building this feature with Test-Driven Development (TDD). TDD works in cycles of three phases: **Red** (write tests that describe the desired behavior; they fail because the feature is not built yet), **Green** (write the implementation that makes those tests pass) and **Refactor** (clean up while keeping the tests green).
+
+**You are in the Red phase.** Your job is to write the tests. The implementation will be written afterwards, in the Green phase, using your tests as its specification, so the tests need to capture every expected behavior.
 
 Task:
-1. Write Playwright end-to-end tests in `tests/product.spec.ts` that specify every requirement in `REQUIREMENTS.md`. Tests run against `/product` (base URL `http://localhost:4001`; `playwright.config.ts` starts the dev server).
+1. Read `REQUIREMENTS.md`, `README.md` and `AGENTS.md`.
+2. Write Playwright end-to-end tests in `tests/product.spec.ts` that cover every requirement in `REQUIREMENTS.md`. Tests run against `/product` (base URL `http://localhost:4001`; `playwright.config.ts` starts the dev server).
 
-   The tests must also specify and verify the following accessibility requirements, so that an implementation can only pass if it meets them:
+   Apply web accessibility (a11y) as part of this TDD phase, following the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA:
 
-   The widget must conform to the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA. In particular:
+   **Semantics and structure**
+   - Use native HTML elements for their purpose: `<button>` for actions, `<a>` for navigation, `<input>`/`<select>`/`<textarea>` for data entry, `<fieldset>` + `<legend>` for groups of related controls.
+   - Mark up the page with landmarks (`<header>`, `<nav>`, `<main>`, `<footer>`) and a logical heading hierarchy that starts with one `<h1>`.
+   - Prefer native semantics over ARIA. When ARIA is needed, use valid roles, states and properties that match the element's behavior.
 
-   **Page structure**
-   - The store header is a `<header>` landmark and the product area is inside `<main>`.
-   - The product name is the page's single `<h1>`. Do not skip heading levels.
-   - The tab order follows the visual order. Do not use a positive `tabindex`.
+   **Names, labels and text alternatives**
+   - Give every interactive element an accessible name. Icon-only controls get an `aria-label`.
+   - Give every form field a visible, programmatically associated `<label>`.
+   - Give informative images a meaningful `alt`; give decorative images `alt=""` and decorative SVG icons `aria-hidden="true"`.
 
-   **Image gallery**
-   - The main image has an `alt` that describes the product and the current view, for example "Trail Runner 2, side view". It updates when the image changes.
-   - Every thumbnail is a native `<button>` with an accessible name such as "Show side view". Thumbnail images are decorative (`alt=""`) because the button carries the name.
-   - The selected thumbnail has `aria-pressed="true"` (all others `"false"`). It must not be shown by border color alone.
+   **Keyboard**
+   - Make every function operable with the keyboard alone, in a focus order that matches the visual order.
+   - Show a clearly visible focus indicator on every focusable element.
+   - Composite widgets (radio groups, tabs, menus, listboxes) follow the WAI-ARIA Authoring Practices keyboard patterns, such as arrow keys to move within the group.
+   - Use `tabindex` only with the values `0` and `-1`.
 
-   **Size picker**
-   - Use a `<fieldset>` with a `<legend>` "Size" that contains native `<input type="radio">` elements with visible `<label>`s. The chips can be styled labels, but the radios must stay in the accessibility tree and keyboard focusable (visually hidden, not `display:none`).
-   - Arrow keys move between sizes, as native radio groups do.
-   - Size 11 is `disabled`, and its accessible name includes "out of stock", for example "11, out of stock".
+   **State, errors and dynamic content**
+   - Expose the current state of controls programmatically (`checked`, `disabled`, `aria-pressed`, `aria-expanded`, `aria-selected`, `aria-current`).
+   - Identify errors in text, associate the message with its field or group (`aria-describedby`, `aria-invalid="true"`), and move focus to where the user can fix the problem.
+   - Announce status messages (confirmations, counts, results) through a live region (`role="status"` or `aria-live="polite"`) that is already present in the DOM before the message is inserted.
 
-   **Quantity stepper**
-   - The numeric field is an `<input type="number" min="1" max="5">` with a visible `<label>` "Quantity".
-   - The − and + buttons are native `<button>`s with the accessible names "Decrease quantity" and "Increase quantity". They are `disabled` at 1 and 5 respectively.
+   **Visual presentation**
+   - Text contrast is at least 4.5:1 (3:1 for large text). UI component boundaries and focus indicators are at least 3:1 against adjacent colors.
+   - Convey information with more than color alone, for example text, icons, shape or pattern alongside color.
+   - Interactive targets are at least 24×24 CSS pixels.
+   - Content stays usable when text is zoomed to 200% and at a 320px-wide viewport.
 
-   **Add to cart, error and confirmation**
-   - "Add to cart" is a native `<button type="button">`.
-   - When no size is selected, the "Please select a size" message is linked to the size group with `aria-describedby`, the group gets `aria-invalid="true"`, and keyboard focus moves to the first available size radio.
-   - The confirmation message is rendered inside an element with `role="status"` (`aria-live="polite"`). That element is present in the DOM from the first render, even when empty, so screen readers announce the message when it is inserted.
-   - The cart button or link has an accessible name that includes the count, for example "Cart, 2 items". The badge number by itself is hidden from the accessibility tree.
-
-   **Wishlist**
-   - The heart is a native `<button>` with `aria-label="Save to wishlist"` and `aria-pressed` reflecting the saved state. The SVG icon is `aria-hidden="true"`.
-
-   **Visual**
-   - Every focusable element has a clearly visible focus indicator (for example, a 2px outline with an offset) with at least 3:1 contrast against the background.
-   - Normal text has at least 4.5:1 contrast. This includes the red error text, the price, the description, and the out-of-stock chip label.
-   - Interactive targets are at least 24×24 CSS pixels (WCAG 2.5.8).
-   - Do not rely on color alone to convey state (selected size, selected thumbnail, saved wishlist, error).
-
-2. Do **not** implement the feature. Do not create or modify anything outside `tests/`, and do not add new dependencies.
-3. Run `pnpm exec playwright test` and confirm the tests fail because the feature is not implemented yet (not because of syntax or configuration errors).
+3. Keep all of your changes inside `tests/`, use only the dependencies already installed, and leave `components/ProductQuickView.tsx` as the existing stub for the Green phase.
+4. Run `pnpm exec playwright test` and confirm the tests fail because the feature is missing, which is the expected Red result, rather than because of syntax or configuration errors.
 
 When you finish, briefly list the test cases you wrote.

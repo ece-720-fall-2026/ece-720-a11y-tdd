@@ -1,15 +1,16 @@
-You are working in a Next.js (App Router) + React + Tailwind CSS storefront repository. The feature to build is described in `REQUIREMENTS.md` at the repository root. Read it, `README.md` and `AGENTS.md` first.
+You are working in a Next.js (App Router) + React + Tailwind CSS storefront repository. The feature to build is described in `REQUIREMENTS.md` at the repository root; `README.md` and `AGENTS.md` explain how to run the project.
 
-We are doing test-driven development. The tests in `tests/` were written first and define the expected behavior. This is the **green phase**: write the implementation.
+We are building this feature with Test-Driven Development (TDD). TDD works in cycles of three phases: **Red** (write tests that describe the desired behavior; they fail because the feature is not built yet), **Green** (write the implementation that makes those tests pass) and **Refactor** (clean up while keeping the tests green).
+
+**You are in the Green phase.** The Red phase is complete: the tests in `tests/` were written first and are the specification for this feature. Your job is to write the implementation that makes all of them pass.
 
 Task:
-1. Implement the feature in `components/ProductQuickView.tsx` (and `app/product/page.tsx` if needed) so that **all** tests in `tests/` pass.
+1. Read `REQUIREMENTS.md`, `README.md`, `AGENTS.md` and the tests in `tests/`.
+2. Implement the feature in `components/ProductQuickView.tsx` (and `app/product/page.tsx` if needed) so that every test in `tests/` passes.
 
-   The implementation must also satisfy the following accessibility requirements:
+   Apply web accessibility (a11y) as part of this TDD phase.
 
-   The widget must conform to the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA. It must be fully operable with a keyboard alone and understandable by screen-reader users.
-
-2. Do **not** modify, delete, skip or add anything in `tests/` or `playwright.config.ts`. Do not add new dependencies.
-3. Run `pnpm exec playwright test` until every test passes, then run `pnpm lint` and fix any issues in your code.
+3. Treat `tests/` and `playwright.config.ts` as fixed: when a test fails, change the implementation. Use only the dependencies already installed.
+4. Run `pnpm exec playwright test` until every test passes, then run `pnpm lint` and fix any issues in your code.
 
 When you finish, briefly summarize what you implemented.

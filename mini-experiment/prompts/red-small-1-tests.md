@@ -1,15 +1,16 @@
-You are working in a Next.js (App Router) + React + Tailwind CSS storefront repository. The feature to build is described in `REQUIREMENTS.md` at the repository root. Read it, `README.md` and `AGENTS.md` first.
+You are working in a Next.js (App Router) + React + Tailwind CSS storefront repository. The feature to build is described in `REQUIREMENTS.md` at the repository root; `README.md` and `AGENTS.md` explain how to run the project.
 
-We are doing test-driven development. This is the **red phase**: write the tests only.
+We are building this feature with Test-Driven Development (TDD). TDD works in cycles of three phases: **Red** (write tests that describe the desired behavior; they fail because the feature is not built yet), **Green** (write the implementation that makes those tests pass) and **Refactor** (clean up while keeping the tests green).
+
+**You are in the Red phase.** Your job is to write the tests. The implementation will be written afterwards, in the Green phase, using your tests as its specification, so the tests need to capture every expected behavior.
 
 Task:
-1. Write Playwright end-to-end tests in `tests/product.spec.ts` that specify every requirement in `REQUIREMENTS.md`. Tests run against `/product` (base URL `http://localhost:4001`; `playwright.config.ts` starts the dev server).
+1. Read `REQUIREMENTS.md`, `README.md` and `AGENTS.md`.
+2. Write Playwright end-to-end tests in `tests/product.spec.ts` that cover every requirement in `REQUIREMENTS.md`. Tests run against `/product` (base URL `http://localhost:4001`; `playwright.config.ts` starts the dev server).
 
-   The tests must also specify and verify the following accessibility requirements, so that an implementation can only pass if it meets them:
+   Apply web accessibility (a11y) as part of this TDD phase.
 
-   The widget must conform to the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA. It must be fully operable with a keyboard alone and understandable by screen-reader users.
-
-2. Do **not** implement the feature. Do not create or modify anything outside `tests/`, and do not add new dependencies.
-3. Run `pnpm exec playwright test` and confirm the tests fail because the feature is not implemented yet (not because of syntax or configuration errors).
+3. Keep all of your changes inside `tests/`, use only the dependencies already installed, and leave `components/ProductQuickView.tsx` as the existing stub for the Green phase.
+4. Run `pnpm exec playwright test` and confirm the tests fail because the feature is missing, which is the expected Red result, rather than because of syntax or configuration errors.
 
 When you finish, briefly list the test cases you wrote.

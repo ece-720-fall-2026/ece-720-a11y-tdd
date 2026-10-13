@@ -26,9 +26,12 @@ All scenario branches start from `mini-experiment-base`: a clean storefront skel
 | `mini-experiment-green-small` | [green-1-tests.md](prompts/green-1-tests.md): functional tests only | [green-small-2-code.md](prompts/green-small-2-code.md): code + small spec |
 | `mini-experiment-green-comprehensive` | [green-1-tests.md](prompts/green-1-tests.md): functional tests only | [green-comprehensive-2-code.md](prompts/green-comprehensive-2-code.md): code + comprehensive spec |
 
-The spec texts are [a11y-spec-small.md](a11y-spec-small.md) and [a11y-spec-comprehensive.md](a11y-spec-comprehensive.md). They are already pasted verbatim into the prompt files, so copy each prompt file as-is.
+The spec texts are already pasted verbatim into the prompt files, so copy each prompt file as-is.
 
-The Red code prompts and the Green test prompt are word-for-word identical. In TDD scenarios, the only difference between the arms is where the accessibility spec appears.
+- [a11y-spec-small.md](a11y-spec-small.md) is a single sentence asking to apply accessibility (a11y) in the current TDD phase.
+- [a11y-spec-comprehensive.md](a11y-spec-comprehensive.md) is a generic WCAG 2.2 AA checklist covering semantics, names, keyboard, state and errors, and visual presentation. It is not specific to this task, so it can be reused unchanged on the full site.
+
+Every TDD prompt explains the Red, Green and Refactor cycle and states which phase the session is in. All instructions are worded positively ("keep your changes inside `tests/`", "treat `tests/` as fixed"). There are only two prompt templates: one for the Red phase (tests) and one for the Green phase (code). The scenarios differ only in which phase receives the accessibility spec. The Red code prompts and the Green test prompt are the plain templates and carry no accessibility wording.
 
 ## Protocol (per scenario)
 
@@ -98,7 +101,7 @@ The 12 keyboard controls come from `REQUIREMENTS.md`: thumbnails 1â€“3, sizes 7â
 | Implementation | ACAS | EAS | KAS |
 | --- | --- | --- | --- |
 | Base stub (renders nothing) | 100 (14 nodes, empty page) | 100 (3 elements) | 0 / 12 |
-| `accessible.tsx` (follows the comprehensive spec) | 100 (136 passes) | 100 (34 elements) | 12 / 12 |
+| `accessible.tsx` (hand-written accessible version) | 100 (136 passes) | 100 (34 elements) | 12 / 12 |
 | `inaccessible.tsx` (div soup) | 76.19 (color-contrast, image-alt, label) | 80 (6 / 30 flagged) | 2 / 12 (only the native input and button) |
 
 To recalibrate after changing the harness, copy a calibration file into `components/ProductQuickView.tsx` of a throwaway base worktree and run `run.sh` on it. Delete the resulting `results/` folder afterwards.
