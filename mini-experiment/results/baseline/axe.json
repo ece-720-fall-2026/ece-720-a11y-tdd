@@ -1,0 +1,1153 @@
+{
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "statesReached": {
+    "initial": true,
+    "sizeError": true,
+    "sizeSelected": true,
+    "confirmation": true
+  },
+  "summary": {
+    "violationNodes": 0,
+    "passNodes": 170,
+    "incompleteNodes": 4,
+    "violatedRules": [],
+    "acas": 100
+  },
+  "violations": [],
+  "incomplete": [
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "sizeSelected"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".grid-cols-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    }
+  ],
+  "passes": [
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "sizeSelected"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".grid-cols-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "sizeSelected"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".grid-cols-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-deprecated-role",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-hidden-body",
+      "impact": null,
+      "target": "body",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"] > svg",
+      "state": "sizeSelected"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "impact": null,
+      "target": ".right-0 > svg",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".cursor-not-allowed",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-required-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-roles",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "sizeSelected"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".grid-cols-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "sizeSelected"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".grid-cols-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "confirmation"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[alt=\"Trail Runner 2 shoe, side view\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[src$=\"shoe-1.svg\"][alt=\"\"][loading=\"lazy\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[src$=\"shoe-2.svg\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[src$=\"shoe-3.svg\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "next-route-announcer",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".py-3\\.5",
+      "state": "confirmation"
+    },
+    {
+      "rule": "bypass",
+      "impact": null,
+      "target": "html",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "a",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "span",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".uppercase",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "h1",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".text-2xl",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mt-5",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "legend",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "label",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".py-3\\.5",
+      "state": "confirmation"
+    },
+    {
+      "rule": "document-title",
+      "impact": null,
+      "target": "html",
+      "state": "confirmation"
+    },
+    {
+      "rule": "duplicate-id-aria",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "form-field-multiple-labels",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "html-has-lang",
+      "impact": null,
+      "target": "html",
+      "state": "confirmation"
+    },
+    {
+      "rule": "html-lang-valid",
+      "impact": null,
+      "target": "html",
+      "state": "confirmation"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[alt=\"Trail Runner 2 shoe, side view\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[src$=\"shoe-1.svg\"][alt=\"\"][loading=\"lazy\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[src$=\"shoe-2.svg\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[src$=\"shoe-3.svg\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "label",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "link-name",
+      "impact": null,
+      "target": "a",
+      "state": "confirmation"
+    },
+    {
+      "rule": "meta-viewport",
+      "impact": null,
+      "target": "meta[name=\"viewport\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "img[alt=\"Trail Runner 2 shoe, side view\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".py-3\\.5",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "a",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-slate-900",
+      "state": "sizeError"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-transparent.hover\\:border-slate-400.rounded-lg:nth-child(3)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".right-0",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Size 7\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Size 8\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Size 9\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Size 10\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "#quantity",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".py-3\\.5",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-deprecated-role",
+      "impact": null,
+      "target": ".mt-2",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-required-attr",
+      "impact": null,
+      "target": ".mt-2",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-roles",
+      "impact": null,
+      "target": ".mt-2",
+      "state": "sizeError"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mt-2",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-slate-900.rounded-lg.border-2",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-deprecated-role",
+      "impact": null,
+      "target": ".mt-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"] > svg",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-required-attr",
+      "impact": null,
+      "target": ".mt-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-roles",
+      "impact": null,
+      "target": ".mt-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mt-3",
+      "state": "confirmation"
+    }
+  ],
+  "perState": {
+    "initial": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]",
+            ".grid-cols-3"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "sizeError": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]",
+            ".grid-cols-3"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "sizeSelected": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]",
+            ".grid-cols-3"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "confirmation": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 1 items\"]",
+            ".grid-cols-3"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    }
+  }
+}

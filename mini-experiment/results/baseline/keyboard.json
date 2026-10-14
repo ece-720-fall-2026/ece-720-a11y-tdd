@@ -1,0 +1,373 @@
+{
+  "summary": {
+    "manipulated": 12,
+    "total": 12,
+    "reachable": 12,
+    "kas": 100,
+    "tabStops": 13,
+    "tabStopsWithFocusIndicator": 13
+  },
+  "controls": [
+    {
+      "id": "thumbnail-1",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 1,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:0>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "View Trail Runner 2 shoe, side view",
+        "thumbOf": 1,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "thumbnail-2",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 2,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:0>DIV:1>BUTTON:1",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "View Trail Runner 2 shoe, top view",
+        "thumbOf": 2,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "thumbnail-3",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 3,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:0>DIV:1>BUTTON:2",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "View Trail Runner 2 shoe, sole view",
+        "thumbOf": 3,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-7",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 5,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Size 7",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-8",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 6,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:1",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Size 8",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-9",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 7,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:2",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Size 9",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-10",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 8,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:3",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Size 10",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "decrease",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 9,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>DIV:6>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Decrease quantity",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "quantity-field",
+      "reachable": true,
+      "manipulated": true,
+      "via": "ArrowUp",
+      "tabs": 10,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>DIV:6>DIV:1>INPUT:1",
+        "tag": "input",
+        "type": "number",
+        "role": null,
+        "name": "Quantity",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "increase",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 11,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>DIV:6>DIV:1>BUTTON:2",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Increase quantity",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "add-to-cart",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 12,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>BUTTON:7",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Add to cart",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "wishlist",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 4,
+      "focused": {
+        "sig": "MAIN:1>SECTION:1>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Save to wishlist",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": true,
+        "focusIndicator": true
+      }
+    }
+  ],
+  "tabOrder": [
+    {
+      "sig": "MAIN:1>HEADER:0>DIV:0>A:0",
+      "tag": "a",
+      "type": null,
+      "role": null,
+      "name": "Stride",
+      "thumbOf": null,
+      "inHeader": true,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:0>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "View Trail Runner 2 shoe, side view",
+      "thumbOf": 1,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:0>DIV:1>BUTTON:1",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "View Trail Runner 2 shoe, top view",
+      "thumbOf": 2,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:0>DIV:1>BUTTON:2",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "View Trail Runner 2 shoe, sole view",
+      "thumbOf": 3,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Save to wishlist",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": true,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Size 7",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:1",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Size 8",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:2",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Size 9",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>FIELDSET:5>DIV:1>BUTTON:3",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Size 10",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>DIV:6>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Decrease quantity",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>DIV:6>DIV:1>INPUT:1",
+      "tag": "input",
+      "type": "number",
+      "role": null,
+      "name": "Quantity",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>DIV:6>DIV:1>BUTTON:2",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Increase quantity",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>SECTION:1>DIV:1>BUTTON:7",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Add to cart",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    }
+  ]
+}

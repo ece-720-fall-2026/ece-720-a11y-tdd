@@ -1,0 +1,39 @@
+{
+  "summary": {
+    "elementsChecked": 41,
+    "elementsWithViolations": 0,
+    "messages": 0,
+    "ruleCounts": {},
+    "eas": 100
+  },
+  "files": [
+    {
+      "file": "app/layout.tsx",
+      "elements": 2,
+      "elementsWithViolations": 0,
+      "messages": [],
+      "unmappedMessages": 0
+    },
+    {
+      "file": "app/page.tsx",
+      "elements": 1,
+      "elementsWithViolations": 0,
+      "messages": [],
+      "unmappedMessages": 0
+    },
+    {
+      "file": "app/product/page.tsx",
+      "elements": 0,
+      "elementsWithViolations": 0,
+      "messages": [],
+      "unmappedMessages": 0
+    },
+    {
+      "file": "components/ProductQuickView.tsx",
+      "elements": 38,
+      "elementsWithViolations": 0,
+      "messages": [],
+      "unmappedMessages": 0
+    }
+  ]
+}

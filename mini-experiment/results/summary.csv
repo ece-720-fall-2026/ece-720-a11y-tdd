@@ -1,0 +1,2 @@
+setup,label,commit,build_ok,acas,axe_violation_nodes,axe_pass_nodes,axe_incomplete_nodes,axe_violated_rules,eas,eslint_elements,eslint_elements_with_violations,kas,kb_manipulated,kb_total,kb_tab_stops,kb_tab_stops_with_focus_indicator,gen_tests,gen_tests_role_queries,gen_tests_aria_snapshots,gen_tests_keyboard_steps
+baseline,,b41fb67,true,100,0,170,4,,100,41,0,100,12,12,13,13,0,0,0,0
