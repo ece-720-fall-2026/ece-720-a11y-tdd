@@ -1,0 +1,555 @@
+{
+  "summary": {
+    "manipulated": 17,
+    "total": 18,
+    "reachable": 18,
+    "kas": 94.44,
+    "tabStops": 19,
+    "tabStopsWithFocusIndicator": 18,
+    "dialogPassed": 0,
+    "dialogTotal": 4
+  },
+  "controls": [
+    {
+      "id": "thumbnail-1",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 1,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:0>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Show Side view",
+        "thumbOf": 1,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "thumbnail-2",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 2,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:0>DIV:1>BUTTON:1",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Show Top view",
+        "thumbOf": 2,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "thumbnail-3",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 3,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:0>DIV:1>BUTTON:2",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Show Sole view",
+        "thumbOf": 3,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-7",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 8,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "7",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-8",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 9,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:1",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "8",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-9",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 10,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:2",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "9",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-10",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Space",
+      "tabs": 11,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:3",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "10",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "decrease",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 12,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:5>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Decrease quantity",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "quantity-field",
+      "reachable": true,
+      "manipulated": true,
+      "via": "ArrowUp",
+      "tabs": 13,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:5>DIV:1>INPUT:1",
+        "tag": "input",
+        "type": "number",
+        "role": null,
+        "name": "Quantity",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": false
+      }
+    },
+    {
+      "id": "increase",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 14,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:5>DIV:1>BUTTON:2",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Increase quantity",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "add-to-cart",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 15,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>BUTTON:6",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Add to cart",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "wishlist",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 4,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:0>BUTTON:1",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Add to wishlist",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "price-tooltip",
+      "reachable": true,
+      "manipulated": true,
+      "via": "focus",
+      "tabs": 5,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:1>SPAN:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Price information",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "color-dropdown",
+      "reachable": true,
+      "manipulated": false,
+      "tabs": 6,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:3>DIV:1>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Blue⌄",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-guide-open",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 7,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:0>BUTTON:1",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Size guide",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "size-guide-close",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 19,
+      "focused": {
+        "sig": "MAIN:1>DIV:2>DIV:0>BUTTON:0",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Close size guide",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "tab-reviews",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 17,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>SECTION:1>DIV:0>BUTTON:1",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Reviews",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    },
+    {
+      "id": "tab-shipping",
+      "reachable": true,
+      "manipulated": true,
+      "via": "Enter",
+      "tabs": 18,
+      "focused": {
+        "sig": "MAIN:1>DIV:1>SECTION:1>DIV:0>BUTTON:2",
+        "tag": "button",
+        "type": "button",
+        "role": null,
+        "name": "Shipping",
+        "thumbOf": null,
+        "inHeader": false,
+        "iconOnly": false,
+        "focusIndicator": true
+      }
+    }
+  ],
+  "dialog": {
+    "opened": true,
+    "focusMovesIn": false,
+    "focusTrapped": false,
+    "escapeCloses": false,
+    "focusReturns": false
+  },
+  "tabOrder": [
+    {
+      "sig": "MAIN:1>HEADER:0>DIV:0>A:0",
+      "tag": "a",
+      "type": null,
+      "role": null,
+      "name": "Stride",
+      "thumbOf": null,
+      "inHeader": true,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:0>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Show Side view",
+      "thumbOf": 1,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:0>DIV:1>BUTTON:1",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Show Top view",
+      "thumbOf": 2,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:0>DIV:1>BUTTON:2",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Show Sole view",
+      "thumbOf": 3,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:0>BUTTON:1",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Add to wishlist",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:1>SPAN:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Price information",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:3>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Blue⌄",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:0>BUTTON:1",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Size guide",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "7",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:1",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "8",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:2",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "9",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:4>DIV:1>BUTTON:3",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "10",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:5>DIV:1>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Decrease quantity",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:5>DIV:1>INPUT:1",
+      "tag": "input",
+      "type": "number",
+      "role": null,
+      "name": "Quantity",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": false
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>DIV:5>DIV:1>BUTTON:2",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Increase quantity",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>DIV:0>SECTION:1>BUTTON:6",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Add to cart",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>SECTION:1>DIV:0>BUTTON:0",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Details",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>SECTION:1>DIV:0>BUTTON:1",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Reviews",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    },
+    {
+      "sig": "MAIN:1>DIV:1>SECTION:1>DIV:0>BUTTON:2",
+      "tag": "button",
+      "type": "button",
+      "role": null,
+      "name": "Shipping",
+      "thumbOf": null,
+      "inHeader": false,
+      "iconOnly": false,
+      "focusIndicator": true
+    }
+  ]
+}

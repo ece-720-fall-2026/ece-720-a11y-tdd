@@ -1,0 +1,2185 @@
+{
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "statesReached": {
+    "initial": true,
+    "sizeError": true,
+    "sizeSelected": true,
+    "confirmation": true,
+    "sizeGuideOpen": true,
+    "colorDropdownOpen": true,
+    "reviewsTab": true
+  },
+  "summary": {
+    "violationNodes": 0,
+    "passNodes": 324,
+    "incompleteNodes": 9,
+    "violatedRules": [],
+    "acas": 100
+  },
+  "violations": [],
+  "incomplete": [
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "span[aria-hidden=\"true\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "#color-button > span[aria-hidden=\"true\"]",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(1) > span[aria-hidden=\"true\"]",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mb-3.justify-between.items-center > .font-semibold",
+      "state": "colorDropdownOpen"
+    }
+  ],
+  "passes": [
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "section[aria-label=\"Product gallery\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "section[aria-labelledby=\"product-title\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".mt-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".mt-14",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "section[aria-label=\"Product gallery\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "section[aria-labelledby=\"product-title\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".mt-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".mt-14",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-deprecated-role",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-hidden-body",
+      "impact": null,
+      "target": "body",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "impact": null,
+      "target": "svg",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "impact": null,
+      "target": "span[aria-hidden=\"true\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "section[aria-label=\"Product gallery\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "section[aria-labelledby=\"product-title\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".cursor-not-allowed",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".mt-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".mt-14",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-required-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-roles",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "section[aria-label=\"Product gallery\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "section[aria-labelledby=\"product-title\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".mt-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".mt-14",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "section[aria-label=\"Product gallery\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "section[aria-labelledby=\"product-title\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".mt-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".mt-14",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "next-route-announcer,#__next-route-announcer__",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[alt=\"Trail Runner 2 Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[src$=\"shoe-1.svg\"][alt=\"\"][loading=\"lazy\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[src$=\"shoe-2.svg\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "img[src$=\"shoe-3.svg\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": ".h-4",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "next-route-announcer",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".underline",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".py-3\\.5",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-slate-900.border-b-2.pb-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(2)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "bypass",
+      "impact": null,
+      "target": "html",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "a",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "div[aria-label=\"Cart, 0 items\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".min-w-5",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".uppercase",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "#product-title",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mt-5 > .text-2xl",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".max-w-lg",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "label",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".gap-3.items-center",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mb-3.justify-between.items-center > span",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".underline",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".block.mb-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".py-3\\.5",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-900.border-b-2.pb-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(2)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".max-w-3xl",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "document-title",
+      "impact": null,
+      "target": "html",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "duplicate-id-aria",
+      "impact": null,
+      "target": "#product-title",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "duplicate-id-aria",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "form-field-multiple-labels",
+      "impact": null,
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "html-has-lang",
+      "impact": null,
+      "target": "html",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "html-lang-valid",
+      "impact": null,
+      "target": "html",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[alt=\"Trail Runner 2 Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[src$=\"shoe-1.svg\"][alt=\"\"][loading=\"lazy\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[src$=\"shoe-2.svg\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "image-alt",
+      "impact": null,
+      "target": "img[src$=\"shoe-3.svg\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "label",
+      "impact": null,
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "link-name",
+      "impact": null,
+      "target": "a",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "meta-viewport",
+      "impact": null,
+      "target": "meta[name=\"viewport\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "img[alt=\"Trail Runner 2 Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".underline",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".cursor-not-allowed",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".py-3\\.5",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-slate-900.border-b-2.pb-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(2)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "a",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Show Side view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Show Top view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Show Sole view\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".p-2",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-slate-400",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "#color-button",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".underline",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(2)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".w-12.h-11.border-slate-300:nth-child(4)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Decrease quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "input",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": "button[aria-label=\"Increase quantity\"]",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".py-3\\.5",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-slate-900.border-b-2.pb-3",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(2)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(3)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mt-2",
+      "state": "sizeError"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-slate-900",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-b-2.pb-3.border-slate-900",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-slate-900",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(1)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(2)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-slate-900.bg-slate-900.text-white",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".w-12.border-slate-300.h-11:nth-child(4)",
+      "state": "confirmation"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-slate-900",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "div[aria-label=\"Cart, 1 items\"]",
+      "state": "confirmation"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mt-3",
+      "state": "confirmation"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "impact": null,
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-conditional-attr",
+      "impact": null,
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-deprecated-role",
+      "impact": null,
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-prohibited-attr",
+      "impact": "serious",
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-required-attr",
+      "impact": null,
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-roles",
+      "impact": null,
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-valid-attr-value",
+      "impact": null,
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".fixed",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-valid-attr",
+      "impact": null,
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "body",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".mt-4.max-w-lg.leading-7",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "#color-button > .gap-3",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "h2",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "th:nth-child(1)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "th:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "th:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(1) > td:nth-child(1)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(1) > td:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(1) > td:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(2) > td:nth-child(1)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(2) > td:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(2) > td:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(3) > td:nth-child(1)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(3) > td:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(3) > td:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(4) > td:nth-child(1)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(4) > td:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(4) > td:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(5) > td:nth-child(1)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(5) > td:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-slate-100.last\\:border-0:nth-child(5) > td:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(2)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-b-2.border-transparent.pb-3:nth-child(3)",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".right-4",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "td-headers-attr",
+      "impact": null,
+      "target": "table",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "th-has-data-cells",
+      "impact": null,
+      "target": "table",
+      "state": "sizeGuideOpen"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "impact": null,
+      "target": "#color-button > span[aria-hidden=\"true\"]",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(1) > span[aria-hidden=\"true\"]",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": "#color-button > .gap-3.items-center > .h-4.w-4.border-black\\/10",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(1) > .gap-3.items-center > .h-4.w-4.border-black\\/10",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(2) > .gap-3.items-center > .h-4.w-4.border-black\\/10",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "avoid-inline-spacing",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(3) > .gap-3.items-center > .h-4.w-4.border-black\\/10",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(1)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(2)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(3)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".text-2xl.font-semibold",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": "#color-button > .gap-3.items-center",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(1) > .gap-3.items-center",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(2) > .gap-3.items-center",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(3) > .gap-3.items-center",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".block.mb-3.font-semibold",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(1)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(2)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(3)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(1)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(2)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".rounded-md.px-3.py-2\\.5:nth-child(3)",
+      "state": "colorDropdownOpen"
+    },
+    {
+      "rule": "button-name",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "color-contrast",
+      "impact": "serious",
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "nested-interactive",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(1)",
+      "state": "reviewsTab"
+    },
+    {
+      "rule": "target-size",
+      "impact": null,
+      "target": ".border-b-2.pb-3.border-transparent:nth-child(1)",
+      "state": "reviewsTab"
+    }
+  ],
+  "perState": {
+    "initial": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".p-2",
+            "span[aria-hidden=\"true\"]",
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "sizeError": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".p-2",
+            "span[aria-hidden=\"true\"]",
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "sizeSelected": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".p-2",
+            "span[aria-hidden=\"true\"]",
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "confirmation": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 1 items\"]"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".p-2",
+            "span[aria-hidden=\"true\"]",
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "sizeGuideOpen": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".p-2",
+            "span[aria-hidden=\"true\"]",
+            "button[aria-label=\"Decrease quantity\"]",
+            ".right-4"
+          ]
+        }
+      ]
+    },
+    "colorDropdownOpen": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".p-2",
+            "#color-button > span[aria-hidden=\"true\"]",
+            ".rounded-md.px-3.py-2\\.5:nth-child(1) > span[aria-hidden=\"true\"]",
+            ".mb-3.justify-between.items-center > .font-semibold",
+            ".underline",
+            ".w-12.h-11.border-slate-300:nth-child(1)",
+            ".w-12.h-11.border-slate-300:nth-child(2)",
+            ".w-12.h-11.border-slate-300:nth-child(3)",
+            ".w-12.h-11.border-slate-300:nth-child(4)",
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    },
+    "reviewsTab": {
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "help": "Elements must only use permitted ARIA attributes",
+          "nodes": [
+            "div[aria-label=\"Cart, 0 items\"]"
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            ".p-2",
+            "span[aria-hidden=\"true\"]",
+            "button[aria-label=\"Decrease quantity\"]"
+          ]
+        }
+      ]
+    }
+  }
+}
