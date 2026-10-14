@@ -11,4 +11,4 @@ Task:
    Apply web accessibility (a11y) as part of this TDD phase.
 
 3. Treat `tests/` and `playwright.config.ts` as fixed: when a test fails, change the implementation. Use only the dependencies already installed.
-4. Run `pnpm exec playwright test` until every test passes, then run `pnpm lint` and fix any issues in your code.
+4. Run `pnpm exec playwright test` until every test passes.
