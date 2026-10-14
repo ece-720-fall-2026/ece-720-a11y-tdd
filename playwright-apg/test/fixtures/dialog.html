@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Modal dialog fixture</title>
+  <style>
+    [hidden] { display: none !important; }
+    .backdrop { position: fixed; inset: 0; background: rgb(0 0 0 / 0.5); }
+    .panel { position: fixed; top: 20%; left: 20%; background: #fff; padding: 20px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Product</h1>
+    <button type="button">Before</button>
+    <button type="button" id="trigger">Size guide</button>
+    <button type="button">After</button>
+  </main>
+  <div id="backdrop" class="backdrop" hidden>
+    <div id="dialog" class="panel" role="dialog" aria-modal="true" aria-labelledby="title">
+      <h2 id="title">Size guide</h2>
+      <p>US 7 is EU 40.</p>
+      <a href="#chart" id="first">Full chart</a>
+      <button type="button" id="close">Close</button>
+    </div>
+  </div>
+  <dialog id="native" aria-labelledby="native-title">
+    <h2 id="native-title">Size guide</h2>
+    <a href="#chart">Full chart</a>
+    <button type="button" id="native-close">Close</button>
+  </dialog>
+  <script>
+    const broken = new Set((new URLSearchParams(location.search).get("break") || "").split(",").filter(Boolean));
+    const native = new URLSearchParams(location.search).has("native");
+    const trigger = document.getElementById("trigger");
+    const dialog = native ? document.getElementById("native") : document.getElementById("dialog");
+    const backdrop = document.getElementById("backdrop");
+
+    if (broken.has("no-name")) dialog.removeAttribute("aria-labelledby");
+    if (broken.has("no-modal")) dialog.removeAttribute("aria-modal");
+    if (broken.has("mouse-only")) {
+      trigger.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") e.preventDefault(); });
+    }
+
+    function tabbable() {
+      return Array.from(dialog.querySelectorAll("a[href], button"));
+    }
+    function open() {
+      if (native) broken.has("no-modal") ? dialog.show() : dialog.showModal();
+      else backdrop.hidden = false;
+      if (!broken.has("no-focus-in")) tabbable()[0].focus();
+      else if (native) trigger.focus();
+    }
+    function close() {
+      if (native) dialog.close();
+      else backdrop.hidden = true;
+      if (!broken.has("no-return")) trigger.focus();
+      else document.activeElement.blur();
+    }
+
+    trigger.addEventListener("click", open);
+    dialog.querySelector("button").addEventListener("click", close);
+    if (native) dialog.addEventListener("cancel", (e) => { e.preventDefault(); if (!broken.has("no-escape")) close(); });
+    dialog.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !native && !broken.has("no-escape")) close();
+      if (e.key !== "Tab" || broken.has("no-trap")) return;
+      const items = tabbable();
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  </script>
+</body>
+</html>

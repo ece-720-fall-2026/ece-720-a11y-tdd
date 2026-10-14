@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tabs fixture</title>
+  <style>[hidden] { display: none !important; }</style>
+</head>
+<body>
+  <main>
+    <button type="button">Before</button>
+    <div id="tablist" role="tablist" aria-label="Product information">
+      <button type="button" role="tab" id="tab-0" aria-controls="panel-0">Details</button>
+      <button type="button" role="tab" id="tab-1" aria-controls="panel-1">Reviews</button>
+      <button type="button" role="tab" id="tab-2" aria-controls="panel-2">Shipping</button>
+    </div>
+    <div role="tabpanel" id="panel-0" aria-labelledby="tab-0" tabindex="0">Breathable mesh upper.</div>
+    <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">Rated 4.6 out of 5 by 128 runners.</div>
+    <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0">Free shipping on orders over $100.</div>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const broken = new Set((params.get("break") || "").split(",").filter(Boolean));
+    const manual = params.has("manual");
+    const tablist = document.getElementById("tablist");
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    const panels = tabs.map((t) => document.getElementById(t.getAttribute("aria-controls")));
+
+    if (broken.has("no-name")) tablist.removeAttribute("aria-label");
+    if (broken.has("no-panel-label")) panels.forEach((p) => p.removeAttribute("aria-labelledby"));
+
+    function select(index) {
+      tabs.forEach((t, i) => {
+        t.setAttribute("aria-selected", String(i === index));
+        t.tabIndex = broken.has("no-roving") || i === index ? 0 : -1;
+        panels[i].hidden = i !== index;
+      });
+    }
+    tabs.forEach((t, i) => t.addEventListener("click", () => select(i)));
+    tablist.addEventListener("keydown", (e) => {
+      if (broken.has("no-arrows")) return;
+      const current = tabs.indexOf(document.activeElement);
+      const last = tabs.length - 1;
+      let next;
+      if (e.key === "ArrowRight") next = current === last ? (broken.has("no-wrap") ? last : 0) : current + 1;
+      else if (e.key === "ArrowLeft") next = current === 0 ? (broken.has("no-wrap") ? 0 : last) : current - 1;
+      else if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = last;
+      else return;
+      e.preventDefault();
+      tabs[next].focus();
+      if (!manual) select(next);
+    });
+    select(0);
+  </script>
+</body>
+</html>

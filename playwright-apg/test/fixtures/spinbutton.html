@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Spinbutton fixture</title>
+</head>
+<body>
+  <main id="root">
+    <span id="label">Quantity</span>
+    <div id="spinbutton" role="spinbutton" tabindex="0" aria-labelledby="label" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5">1</div>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const broken = new Set((params.get("break") || "").split(",").filter(Boolean));
+
+    if (params.has("native")) {
+      document.getElementById("root").innerHTML =
+        '<label for="qty">Quantity</label><input id="qty" type="number" min="1" max="5" value="1"><button type="button">After</button>';
+    } else {
+      const spin = document.getElementById("spinbutton");
+      const min = 1;
+      const max = 5;
+      let value = 1;
+      function set(next) {
+        value = broken.has("no-bounds") ? next : Math.min(max, Math.max(min, next));
+        spin.textContent = String(value);
+        if (!broken.has("no-valuenow-update")) spin.setAttribute("aria-valuenow", String(value));
+      }
+      spin.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowUp") set(value + 1);
+        else if (e.key === "ArrowDown") set(value - 1);
+        else if (e.key === "Home" && !broken.has("no-home-end")) set(min);
+        else if (e.key === "End" && !broken.has("no-home-end")) set(max);
+        else return;
+        e.preventDefault();
+      });
+    }
+  </script>
+</body>
+</html>

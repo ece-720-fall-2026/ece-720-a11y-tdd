@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tooltip fixture</title>
+  <style>
+    .wrap { position: relative; display: inline-block; }
+    .tip { position: absolute; top: 100%; left: 0; white-space: nowrap; background: #111; color: #fff; padding: 6px; display: none; }
+    .tip.shown { display: block; }
+    body { padding: 40px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p>
+      $129.00
+      <span class="wrap" id="wrap">
+        <button type="button" id="trigger" aria-label="Price information" aria-describedby="tip">i</button>
+        <span role="tooltip" id="tip" class="tip">Price includes taxes</span>
+      </span>
+    </p>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const broken = new Set((new URLSearchParams(location.search).get("break") || "").split(",").filter(Boolean));
+    const trigger = document.getElementById("trigger");
+    const tip = document.getElementById("tip");
+    const hoverArea = broken.has("not-hoverable") ? trigger : document.getElementById("wrap");
+    const show = () => tip.classList.add("shown");
+    const hide = () => tip.classList.remove("shown");
+
+    if (broken.has("no-describedby")) trigger.removeAttribute("aria-describedby");
+    if (!broken.has("no-focus")) {
+      trigger.addEventListener("focus", show);
+      trigger.addEventListener("blur", hide);
+    }
+    trigger.addEventListener("keydown", (e) => { if (e.key === "Escape" && !broken.has("no-escape")) hide(); });
+    hoverArea.addEventListener("mouseenter", show);
+    hoverArea.addEventListener("mouseleave", () => { if (document.activeElement !== trigger || broken.has("no-focus")) hide(); });
+  </script>
+</body>
+</html>

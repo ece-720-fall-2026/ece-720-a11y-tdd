@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Radio group fixture</title>
+  <style>[role="radio"][aria-checked="true"] { font-weight: bold; }</style>
+</head>
+<body>
+  <main id="root">
+    <button type="button">Before</button>
+    <div id="group" role="radiogroup" aria-labelledby="group-label">
+      <h3 id="group-label">Size</h3>
+      <div role="radio" aria-checked="false">7</div>
+      <div role="radio" aria-checked="false">8</div>
+      <div role="radio" aria-checked="false">9</div>
+      <div role="radio" aria-checked="false">10</div>
+      <div role="radio" aria-checked="false" aria-disabled="true">11</div>
+    </div>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const broken = new Set((params.get("break") || "").split(",").filter(Boolean));
+
+    if (params.has("native")) {
+      document.getElementById("root").innerHTML = `
+        <button type="button">Before</button>
+        <fieldset id="group"><legend>Size</legend>
+          ${[7, 8, 9, 10, 11].map((s) => `<label><input type="radio" name="size" value="${s}"${s === 11 ? " disabled" : ""}> ${s}</label>`).join("")}
+        </fieldset>
+        <button type="button">After</button>`;
+    } else {
+      const radios = Array.from(document.querySelectorAll('[role="radio"]'));
+      const enabled = radios.filter((r) => r.getAttribute("aria-disabled") !== "true");
+      let checked = -1;
+
+      function render(focusIndex) {
+        radios.forEach((r, i) => {
+          if (broken.has("no-aria-checked")) r.removeAttribute("aria-checked");
+          else r.setAttribute("aria-checked", String(i === checked));
+          const tabStop = checked >= 0 ? i === checked : r === enabled[0];
+          r.tabIndex = broken.has("no-roving") || tabStop ? 0 : -1;
+        });
+        if (focusIndex !== undefined) radios[focusIndex].focus();
+      }
+      function check(i) {
+        if (radios[i].getAttribute("aria-disabled") === "true") return;
+        checked = i;
+        render(i);
+      }
+      radios.forEach((r, i) => r.addEventListener("click", () => check(i)));
+      document.getElementById("group").addEventListener("keydown", (e) => {
+        const current = enabled.indexOf(document.activeElement);
+        if (current < 0) return;
+        const last = enabled.length - 1;
+        let next;
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") next = current === last ? (broken.has("no-wrap") ? last : 0) : current + 1;
+        else if (e.key === "ArrowUp" || e.key === "ArrowLeft") next = current === 0 ? (broken.has("no-wrap") ? 0 : last) : current - 1;
+        else if (e.key === " ") { e.preventDefault(); check(radios.indexOf(document.activeElement)); return; }
+        else return;
+        e.preventDefault();
+        const index = radios.indexOf(enabled[next]);
+        if (broken.has("arrows-dont-check")) radios[index].focus();
+        else check(index);
+      });
+      render();
+    }
+  </script>
+</body>
+</html>

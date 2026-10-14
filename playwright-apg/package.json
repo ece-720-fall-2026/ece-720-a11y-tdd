@@ -1,0 +1,35 @@
+{
+  "name": "playwright-apg",
+  "version": "0.1.0",
+  "description": "Playwright matchers that check components against the WAI-ARIA Authoring Practices Guide (APG) patterns.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "docs": "node scripts/docs.mjs",
+    "test": "playwright test --project=fixtures",
+    "test:live": "playwright test --project=apg-live",
+    "test:calibration": "./scripts/calibration.sh",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.49.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "~1.63.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "pnpm@11.5.2"
+}

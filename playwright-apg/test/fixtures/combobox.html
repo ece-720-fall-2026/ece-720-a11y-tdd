@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Combobox fixture</title>
+  <style>
+    [hidden] { display: none !important; }
+    [role="option"].active { outline: 2px solid #000; }
+  </style>
+</head>
+<body>
+  <main id="root">
+    <span id="label">Color</span>
+    <div id="combobox" role="combobox" tabindex="0" aria-labelledby="label" aria-controls="listbox" aria-expanded="false" aria-haspopup="listbox"></div>
+    <div id="listbox" role="listbox" aria-labelledby="label" hidden></div>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const broken = new Set((params.get("break") || "").split(",").filter(Boolean));
+    const names = ["Blue", "Black", "Grey"];
+
+    if (params.has("native")) {
+      document.getElementById("root").innerHTML =
+        '<label for="color">Color</label><select id="color">' + names.map((n) => `<option>${n}</option>`).join("") + "</select><button type=\"button\">After</button>";
+    } else {
+      const combobox = document.getElementById("combobox");
+      const listbox = document.getElementById("listbox");
+      if (broken.has("no-name")) combobox.removeAttribute("aria-labelledby");
+      listbox.innerHTML = names.map((n, i) => `<div role="option" id="option-${i}">${n}</div>`).join("");
+      const options = Array.from(listbox.children);
+      let value = 0;
+      let active = 0;
+      let open = false;
+
+      function render() {
+        combobox.textContent = names[value];
+        if (broken.has("no-expanded")) combobox.removeAttribute("aria-expanded");
+        else combobox.setAttribute("aria-expanded", String(open));
+        listbox.hidden = !open;
+        options.forEach((o, i) => {
+          if (broken.has("no-selected")) o.removeAttribute("aria-selected");
+          else o.setAttribute("aria-selected", String(i === value));
+          o.classList.toggle("active", open && i === active);
+        });
+        if (open && !broken.has("no-activedescendant")) combobox.setAttribute("aria-activedescendant", options[active].id);
+        else combobox.removeAttribute("aria-activedescendant");
+      }
+      function setOpen(next, start = value) {
+        open = next;
+        active = start;
+        render();
+        if (open && broken.has("focus-moves")) { options[active].tabIndex = -1; options[active].focus(); }
+      }
+      function select(i) {
+        value = i;
+        setOpen(false);
+        combobox.focus();
+      }
+
+      combobox.addEventListener("click", () => setOpen(!open));
+      options.forEach((o, i) => o.addEventListener("click", () => select(i)));
+      combobox.addEventListener("keydown", (e) => {
+        const last = names.length - 1;
+        if (!open) {
+          if (["ArrowDown", "Enter", " "].includes(e.key)) setOpen(true);
+          else if (e.key === "ArrowUp" || e.key === "Home") setOpen(true, 0);
+          else if (e.key === "End") setOpen(true, last);
+          else return;
+        } else {
+          if (e.key === "ArrowDown") active = Math.min(last, active + 1);
+          else if (e.key === "ArrowUp") active = Math.max(0, active - 1);
+          else if (e.key === "Home") active = 0;
+          else if (e.key === "End") active = last;
+          else if (e.key === "Enter" || e.key === " ") return void (e.preventDefault(), select(active));
+          else if (e.key === "Escape") return void (e.preventDefault(), broken.has("escape-selects") ? select(active) : setOpen(false));
+          else if (e.key === "Tab") { value = active; setOpen(false); return; }
+          else return;
+          render();
+        }
+        e.preventDefault();
+      });
+      combobox.addEventListener("blur", () => { if (open && !broken.has("focus-moves")) setOpen(false); });
+      render();
+    }
+  </script>
+</body>
+</html>
