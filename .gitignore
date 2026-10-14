@@ -59,3 +59,9 @@ node_modules/
 *.pdf
 *.synctex.gz
 *.toc
+
+# mini experiment: scenario-branch folders left on disk after switching back to main
+/storefront/
+/prompts/
+# keep only validation results (JSON + summary.csv)
+/mini-experiment/results/**/*.log
