@@ -1,24 +1,24 @@
 # Mini Experiment
 
-Each branch contains `prompts/` and `storefront/`. `storefront/` holds the Next.js app and the task in `REQUIREMENTS.md`; it is the only folder the AI works in.
+The app lives in a separate repository, `~/code/stride`, which contains only the Next.js app and `REQUIREMENTS.md`. Each scenario runs on its own branch there. The prompts and this mapping stay here, outside the AI's reach.
 
-| Branch | Chat 1 | Chat 2 |
-| --- | --- | --- |
-| `mini-experiment-baseline` | `prompts/prompt-1-code.md` | none |
-| `mini-experiment-red-small` | `prompts/prompt-1-red-phase-tests.md` | `prompts/prompt-2-green-phase-code.md` |
-| `mini-experiment-red-comprehensive` | `prompts/prompt-1-red-phase-tests.md` | `prompts/prompt-2-green-phase-code.md` |
-| `mini-experiment-green-small` | `prompts/prompt-1-red-phase-tests.md` | `prompts/prompt-2-green-phase-code.md` |
-| `mini-experiment-green-comprehensive` | `prompts/prompt-1-red-phase-tests.md` | `prompts/prompt-2-green-phase-code.md` |
+| Setup | Branch in `~/code/stride` | Chat 1 | Chat 2 |
+| --- | --- | --- | --- |
+| baseline | `run-1` | `prompts/run-1-baseline/prompt-1-code.md` | none |
+| red-small | `run-2` | `prompts/run-2-red-small/prompt-1-red-phase-tests.md` | `prompts/run-2-red-small/prompt-2-green-phase-code.md` |
+| red-comprehensive | `run-3` | `prompts/run-3-red-comprehensive/prompt-1-red-phase-tests.md` | `prompts/run-3-red-comprehensive/prompt-2-green-phase-code.md` |
+| green-small | `run-4` | `prompts/run-4-green-small/prompt-1-red-phase-tests.md` | `prompts/run-4-green-small/prompt-2-green-phase-code.md` |
+| green-comprehensive | `run-5` | `prompts/run-5-green-comprehensive/prompt-1-red-phase-tests.md` | `prompts/run-5-green-comprehensive/prompt-2-green-phase-code.md` |
 
-## Steps (per branch)
+## Steps (per run)
 
-1. In this repo, run `git checkout mini-experiment-<setup>`, then `cd storefront && pnpm install`.
-2. Open `storefront/` in a **new Cursor window** (File → New Window → Open Folder). Work only in that window.
+1. `cd ~/code/stride && git checkout run-N && pnpm install`.
+2. Open `~/code/stride` in a **new Cursor window** (File → New Window → Open Folder). Work only in that window.
 3. Open a **new chat** and paste the contents of the Chat 1 prompt. When the AI is done, run `git add -A && git commit -m "P1"`.
-4. If the branch has a Chat 2 prompt: open a **new chat**, paste it, and when the AI is done, run `git add -A && git commit -m "P2"`.
-5. Back in this repo, run `git checkout main`, then `mini-experiment/eval/run.sh <setup>`.
+4. If there is a Chat 2 prompt: open a **new chat**, paste it, and when the AI is done, run `git add -A && git commit -m "P2"`.
+5. From this repo, run `mini-experiment/eval/run.sh <setup>`.
 
-Use the same model for every branch. To label a run, add a second argument: `mini-experiment/eval/run.sh red-small opus`.
+Use the same model for every run. To label a run, add a second argument: `mini-experiment/eval/run.sh red-small opus`. For repetitions, create a new branch from `main` in `~/code/stride` (for example `run-6`) and add it to the mapping in `eval/run.sh`.
 
 ## Output
 

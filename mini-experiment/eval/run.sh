@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# Scores one scenario branch. Run from main:
+# Scores one scenario. Run from this repo:
 #   mini-experiment/eval/run.sh <setup> [label]
 #   e.g. mini-experiment/eval/run.sh red-small
 #        mini-experiment/eval/run.sh red-small opus
-# Scores the committed state of branch mini-experiment-<setup>, writes
-# mini-experiment/results/<setup>[--<label>]/ and regenerates results/summary.csv.
+# Scores the committed state of the scenario's run-N branch in $STOREFRONT_REPO
+# (default ~/code/stride), writes mini-experiment/results/<setup>[--<label>]/
+# and regenerates results/summary.csv.
 set -euo pipefail
 
 if [ $# -lt 1 ]; then
@@ -15,14 +16,22 @@ fi
 HERE="$(cd "$(dirname "$0")" && pwd)"
 SETUP="$1"
 LABEL="${2:-}"
-BRANCH="mini-experiment-$SETUP"
+STOREFRONT_REPO="${STOREFRONT_REPO:-$HOME/code/stride}"
+case "$SETUP" in
+  baseline) BRANCH=run-1 ;;
+  red-small) BRANCH=run-2 ;;
+  red-comprehensive) BRANCH=run-3 ;;
+  green-small) BRANCH=run-4 ;;
+  green-comprehensive) BRANCH=run-5 ;;
+  *) echo "Unknown setup: $SETUP" >&2; exit 1 ;;
+esac
 NAME="$SETUP${LABEL:+--$LABEL}"
 OUT="$HERE/../results/$NAME"
 PORT="${PORT:-4001}"
 URL="http://localhost:$PORT"
 WT="$(mktemp -d)/checkout"
 
-git rev-parse --verify -q "$BRANCH" >/dev/null || { echo "No branch $BRANCH" >&2; exit 1; }
+git -C "$STOREFRONT_REPO" rev-parse --verify -q "$BRANCH" >/dev/null || { echo "No branch $BRANCH" >&2; exit 1; }
 if lsof -ti "tcp:$PORT" >/dev/null 2>&1; then
   echo "Port $PORT is in use; stop that server first (or set PORT=...)." >&2
   exit 1
@@ -30,13 +39,13 @@ fi
 
 cleanup() {
   lsof -ti "tcp:$PORT" | xargs kill 2>/dev/null || true
-  git worktree remove --force "$WT" 2>/dev/null || true
+  git -C "$STOREFRONT_REPO" worktree remove --force "$WT" 2>/dev/null || true
 }
 trap cleanup EXIT
 
 [ -d "$HERE/node_modules" ] || (cd "$HERE" && pnpm install)
-git worktree add -q --detach "$WT" "$BRANCH"
-APP="$WT/storefront"
+git -C "$STOREFRONT_REPO" worktree add -q --detach "$WT" "$BRANCH"
+APP="$WT"
 (cd "$APP" && pnpm install --frozen-lockfile >/dev/null)
 
 rm -rf "$OUT"
