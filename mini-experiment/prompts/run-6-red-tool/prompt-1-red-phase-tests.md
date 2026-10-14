@@ -8,7 +8,7 @@ Task:
 1. Read `REQUIREMENTS.md`.
 2. Write Playwright end-to-end tests in `tests/product.spec.ts` that cover every requirement in `REQUIREMENTS.md`. Tests run against `/product` (base URL `http://localhost:4001`; `playwright.config.ts` starts the dev server).
 
-   Import `expect` from `playwright-apg` instead of `@playwright/test`. It extends Playwright's `expect` with one matcher per component type: `toOpenModalDialog`, `toBeCombobox`, `toBeTabs`, `toHaveTooltip`, `toBeRadioGroup` and `toBeSpinbutton`. Use the matching one for each component on the page; `node_modules/playwright-apg/README.md` documents each matcher and what it checks.
+   Use `playwright-apg` in the tests.
 
 3. Keep all of your changes inside `tests/`, use only the dependencies already installed, and leave `components/ProductQuickView.tsx` as the existing stub for the Green phase.
 4. Run `pnpm exec playwright test` and confirm the tests fail because the feature is missing, which is the expected Red result, rather than because of syntax or configuration errors.

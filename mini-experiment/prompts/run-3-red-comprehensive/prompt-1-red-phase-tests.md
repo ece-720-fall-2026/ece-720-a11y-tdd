@@ -8,7 +8,7 @@ Task:
 1. Read `REQUIREMENTS.md`.
 2. Write Playwright end-to-end tests in `tests/product.spec.ts` that cover every requirement in `REQUIREMENTS.md`. Tests run against `/product` (base URL `http://localhost:4001`; `playwright.config.ts` starts the dev server).
 
-   Import `expect` from `playwright-apg` instead of `@playwright/test`. It extends Playwright's `expect` with one matcher per component type: `toOpenModalDialog`, `toBeCombobox`, `toBeTabs`, `toHaveTooltip`, `toBeRadioGroup` and `toBeSpinbutton`. Use the matching one for each component on the page; `node_modules/playwright-apg/README.md` documents each matcher and what it checks.
+   Use `playwright-apg` in the tests.
 
    Make every component follow its WAI-ARIA Authoring Practices Guide (APG) pattern as part of this TDD phase (https://www.w3.org/WAI/ARIA/apg/patterns/). Each pattern defines the roles, states and properties to expose and the keyboard interaction to support:
 
