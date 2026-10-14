@@ -131,6 +131,53 @@ export async function quantity(page: Page): Promise<number | null> {
   });
 }
 
+export async function isTextVisible(page: Page, pattern: RegExp): Promise<boolean> {
+  const matches = page.getByText(pattern);
+  const count = await matches.count();
+  for (let i = 0; i < count; i++) {
+    if (await matches.nth(i).isVisible()) return true;
+  }
+  return false;
+}
+
+export const SIZE_GUIDE_TEXT = /foot length/i;
+
+export async function openSizeGuide(page: Page) {
+  await clickByText(page, /^size guide$/i);
+  await page.waitForTimeout(200);
+  return isTextVisible(page, SIZE_GUIDE_TEXT);
+}
+
+/** Opens the color dropdown by clicking the closed control that shows "Blue". */
+export async function openColorDropdown(page: Page) {
+  await clickByText(page, /^blue$/i);
+  await page.waitForTimeout(200);
+  return isTextVisible(page, /^grey$/i);
+}
+
+/** True when the active element is inside the size guide modal. */
+export async function focusInSizeGuide(page: Page): Promise<boolean> {
+  return page.evaluate((source) => {
+    const re = new RegExp(source, "i");
+    const all = Array.from(document.querySelectorAll("*")).filter((el) =>
+      re.test(el.textContent ?? ""),
+    );
+    const label = all.find((el) => !all.some((o) => o !== el && el.contains(o)));
+    if (!label) return false;
+    let root: Element | null = label;
+    for (let e: Element | null = label; e && e !== document.body; e = e.parentElement) {
+      if (
+        e.tagName === "DIALOG" ||
+        e.getAttribute("role") === "dialog" ||
+        getComputedStyle(e).position === "fixed"
+      ) {
+        root = e;
+      }
+    }
+    return !!document.activeElement && root !== label && root.contains(document.activeElement);
+  }, SIZE_GUIDE_TEXT.source);
+}
+
 export async function bodyText(page: Page): Promise<string> {
   return (await page.locator("body").innerText()).replace(/\s+/g, " ");
 }

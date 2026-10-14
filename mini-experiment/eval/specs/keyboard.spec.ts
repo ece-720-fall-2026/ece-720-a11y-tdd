@@ -1,24 +1,32 @@
 import { test, type Page } from "@playwright/test";
 import {
   SIZES_IN_STOCK,
+  SIZE_GUIDE_TEXT,
   bodyText,
   clickAddToCart,
+  clickByText,
   clickIncrease,
   clickSize,
   clickThumbnail,
+  focusInSizeGuide,
   gotoProduct,
+  isTextVisible,
   mainImage,
+  openSizeGuide,
   quantity,
   writeResult,
 } from "./helpers";
 
 /**
  * Keyboard Accessibility Score (KAS). The denominator is fixed by
- * REQUIREMENTS.md so every scenario is scored against the same 12 controls:
+ * REQUIREMENTS.md so every scenario is scored against the same 18 controls:
  * 3 thumbnails, 4 in-stock sizes, decrease, quantity field, increase,
- * add to cart and wishlist. A control is "manipulated" when it can be reached
- * with Tab (plus arrow keys inside a radio group) and operated with
- * Enter/Space/typing so that its visible outcome happens.
+ * add to cart, wishlist, price tooltip, color dropdown, size guide open,
+ * size guide close, Reviews tab and Shipping tab. A control is "manipulated"
+ * when it can be reached with Tab (plus arrow keys inside radio groups and
+ * tab lists) and operated with Enter/Space/arrows/typing so that its visible
+ * outcome happens. The size guide modal's focus handling is scored separately
+ * as the dialog score (4 checks).
  */
 
 const MAX_TABS = 60;
@@ -116,10 +124,21 @@ type Target = {
   /** Keys tried in order once the control is focused; outcome is checked after each. */
   operate: Array<string | ((page: Page) => Promise<void>)>;
   outcome: (page: Page) => Promise<boolean>;
-  radioGroup?: boolean;
+  /** Arrow keys are tried from a focused element matching this, as in radio groups and tab lists. */
+  arrowWithin?: (d: Desc) => boolean;
+  /** Check the outcome as soon as the control is focused (tooltips, automatically activated tabs). */
+  checkOnReach?: boolean;
 };
 
 const notCart = (name: string) => !/add to cart/i.test(name);
+const TOOLTIP_NAME = /info|tax|price|ⓘ|^i$/i;
+const isTab = (d: Desc) => d.role === "tab";
+
+async function chooseBlackAndCheck(page: Page) {
+  await clickAddToCart(page);
+  await page.waitForTimeout(150);
+  return /added[^)]*black[^)]*\)/i.test(await bodyText(page));
+}
 
 const targets: Target[] = [
   ...[1, 2, 3].map<Target>((n) => ({
@@ -131,7 +150,7 @@ const targets: Target[] = [
   })),
   ...SIZES_IN_STOCK.map<Target>((s) => ({
     id: `size-${s}`,
-    radioGroup: true,
+    arrowWithin: isRadio,
     match: (d) =>
       new RegExp(`^(size\\s*)?${s}\\b`, "i").test(d.name) && !/out of stock/i.test(d.name),
     operate: ["Space", "Enter"],
@@ -180,7 +199,7 @@ const targets: Target[] = [
     id: "wishlist",
     match: (d) =>
       /wish|save|favou?rite|heart|like/i.test(d.name) ||
-      (d.iconOnly && !d.inHeader && d.thumbOf === null),
+      (d.iconOnly && !d.inHeader && d.thumbOf === null && !TOOLTIP_NAME.test(d.name)),
     operate: ["Enter", "Space"],
     outcome: async (page) =>
       page.evaluate(
@@ -188,6 +207,63 @@ const targets: Target[] = [
           document.activeElement?.outerHTML !==
           (window as unknown as { __kbBefore: string }).__kbBefore,
       ),
+  },
+  {
+    id: "price-tooltip",
+    checkOnReach: true,
+    match: (d) => TOOLTIP_NAME.test(d.name) && notCart(d.name) && !/wish/i.test(d.name),
+    operate: ["Enter", "Space"],
+    outcome: (page) => isTextVisible(page, /price includes taxes/i),
+  },
+  {
+    id: "color-dropdown",
+    setup: (page) => clickSize(page, "9"),
+    match: (d) => /^colou?r\b|\bblue\b/i.test(d.name),
+    operate: [
+      async (page) => {
+        await page.keyboard.press("Enter");
+        await page.waitForTimeout(150);
+        await page.keyboard.press("ArrowDown");
+        await page.keyboard.press("Enter");
+      },
+      async (page) => {
+        await page.keyboard.press("Space");
+        await page.waitForTimeout(150);
+        await page.keyboard.press("ArrowDown");
+        await page.keyboard.press("Enter");
+      },
+      "ArrowDown",
+    ],
+    outcome: chooseBlackAndCheck,
+  },
+  {
+    id: "size-guide-open",
+    match: (d) => /size guide/i.test(d.name),
+    operate: ["Enter", "Space"],
+    outcome: (page) => isTextVisible(page, SIZE_GUIDE_TEXT),
+  },
+  {
+    id: "size-guide-close",
+    setup: openSizeGuide,
+    match: (d) => /^(×|✕|✖|x)$|close|dismiss/i.test(d.name),
+    operate: ["Enter", "Space"],
+    outcome: async (page) => !(await isTextVisible(page, SIZE_GUIDE_TEXT)),
+  },
+  {
+    id: "tab-reviews",
+    arrowWithin: isTab,
+    checkOnReach: true,
+    match: (d) => /^reviews$/i.test(d.name),
+    operate: ["Enter", "Space"],
+    outcome: (page) => isTextVisible(page, /128 runners/i),
+  },
+  {
+    id: "tab-shipping",
+    arrowWithin: isTab,
+    checkOnReach: true,
+    match: (d) => /^shipping$/i.test(d.name),
+    operate: ["Enter", "Space"],
+    outcome: (page) => isTextVisible(page, /orders over \$100/i),
   },
 ];
 
@@ -210,7 +286,7 @@ async function attempt(page: Page, target: Target) {
       reached = d;
       break;
     }
-    if (target.radioGroup && isRadio(d)) {
+    if (target.arrowWithin?.(d)) {
       for (let i = 0; i < 6; i++) {
         await page.keyboard.press("ArrowRight");
         const r = await describeFocus(page);
@@ -222,6 +298,9 @@ async function attempt(page: Page, target: Target) {
     }
   }
   if (!reached) return { id: target.id, reachable: false, manipulated: false, tabs };
+  if (target.checkOnReach && (await target.outcome(page))) {
+    return { id: target.id, reachable: true, manipulated: true, via: "focus", tabs, focused: reached };
+  }
 
   for (const step of target.operate) {
     await page.evaluate(() => {
@@ -238,9 +317,55 @@ async function attempt(page: Page, target: Target) {
   return { id: target.id, reachable: true, manipulated: false, tabs, focused: reached };
 }
 
-test("keyboard-only operability of the 12 required controls", async ({ page }) => {
+async function dialogChecks(page: Page) {
+  const result = { opened: false, focusMovesIn: false, focusTrapped: false, escapeCloses: false, focusReturns: false };
+  await gotoProduct(page);
+  await resetFocus(page);
+  let trigger: Desc | null = null;
+  for (let i = 0; i < MAX_TABS && !trigger; i++) {
+    await page.keyboard.press("Tab");
+    const d = await describeFocus(page);
+    if (d && /size guide/i.test(d.name)) trigger = d;
+  }
+  if (!trigger) return result;
+
+  for (const key of ["Enter", "Space"]) {
+    await page.keyboard.press(key);
+    await page.waitForTimeout(200);
+    if ((result.opened = await isTextVisible(page, SIZE_GUIDE_TEXT))) break;
+  }
+  if (!result.opened) return result;
+
+  result.focusMovesIn = await focusInSizeGuide(page);
+  for (let i = 0; i < 10 && !(await focusInSizeGuide(page)); i++) await page.keyboard.press("Tab");
+  if (await focusInSizeGuide(page)) {
+    result.focusTrapped = true;
+    for (const key of [...Array(12).fill("Tab"), ...Array(4).fill("Shift+Tab")]) {
+      await page.keyboard.press(key);
+      if (!(await focusInSizeGuide(page))) {
+        result.focusTrapped = false;
+        break;
+      }
+    }
+  }
+
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(200);
+  result.escapeCloses = !(await isTextVisible(page, SIZE_GUIDE_TEXT));
+  if (!result.escapeCloses) {
+    await clickByText(page, /^(×|✕|✖|close)$/i);
+    await page.waitForTimeout(200);
+  }
+  const after = await describeFocus(page);
+  result.focusReturns = !(await isTextVisible(page, SIZE_GUIDE_TEXT)) && after?.sig === trigger.sig;
+  return result;
+}
+
+test("keyboard-only operability of the required controls", async ({ page }) => {
   const controls = [];
   for (const target of targets) controls.push(await attempt(page, target));
+  const dialog = await dialogChecks(page);
+  const dialogPassed = [dialog.focusMovesIn, dialog.focusTrapped, dialog.escapeCloses, dialog.focusReturns].filter(Boolean).length;
 
   await gotoProduct(page);
   await resetFocus(page);
@@ -263,8 +388,11 @@ test("keyboard-only operability of the 12 required controls", async ({ page }) =
       tabStops: tabOrder.length,
       // Heuristic: only detects outline / box-shadow focus styles, not border or background changes.
       tabStopsWithFocusIndicator: tabOrder.filter((t) => t.focusIndicator).length,
+      dialogPassed,
+      dialogTotal: 4,
     },
     controls,
+    dialog,
     tabOrder,
   });
 });

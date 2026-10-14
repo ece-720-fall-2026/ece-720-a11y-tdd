@@ -25,6 +25,8 @@ Task:
    - Show a clearly visible focus indicator on every focusable element.
    - Composite widgets (radio groups, tabs, menus, listboxes) follow the WAI-ARIA Authoring Practices keyboard patterns, such as arrow keys to move within the group.
    - Use `tabindex` only with the values `0` and `-1`.
+   - Modal dialogs use `<dialog>` or `role="dialog"` with `aria-modal="true"` and an accessible name. When a dialog opens, focus moves into it, stays inside it while it is open, Escape closes it, and focus returns to the element that opened it.
+   - Content that appears on hover, such as tooltips, also appears on keyboard focus, can be dismissed with Escape, and stays visible while the pointer is over it.
 
    **State, errors and dynamic content**
    - Expose the current state of controls programmatically (`checked`, `disabled`, `aria-pressed`, `aria-expanded`, `aria-selected`, `aria-current`).

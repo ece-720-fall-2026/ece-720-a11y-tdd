@@ -1,8 +1,8 @@
 # Mini Experiment
 
-The app lives in a separate repository, `~/code/stride`, which contains only the Next.js app and `REQUIREMENTS.md`. Each scenario runs on its own branch there. The prompts and this mapping stay here, outside the AI's reach.
+The app lives in a separate repository, `~/code/ualberta/stride`, which contains only the Next.js app and `REQUIREMENTS.md`. Each scenario runs on its own branch there. The prompts and this mapping stay here, outside the AI's reach.
 
-| Setup | Branch in `~/code/stride` | Chat 1 | Chat 2 |
+| Setup | Branch in `~/code/ualberta/stride` | Chat 1 | Chat 2 |
 | --- | --- | --- | --- |
 | baseline | `run-1` | `prompts/run-1-baseline/prompt-1-code.md` | none |
 | red-small | `run-2` | `prompts/run-2-red-small/prompt-1-red-phase-tests.md` | `prompts/run-2-red-small/prompt-2-green-phase-code.md` |
@@ -12,13 +12,13 @@ The app lives in a separate repository, `~/code/stride`, which contains only the
 
 ## Steps (per run)
 
-1. `cd ~/code/stride && git checkout run-N && pnpm install`.
-2. Open `~/code/stride` in a **new Cursor window** (File → New Window → Open Folder). Work only in that window.
+1. `cd ~/code/ualberta/stride && git checkout run-N && pnpm install`.
+2. Open `~/code/ualberta/stride` in a **new Cursor window** (File → New Window → Open Folder). Work only in that window.
 3. Open a **new chat** and paste the contents of the Chat 1 prompt. When the AI is done, run `git add -A && git commit -m "P1"`.
 4. If there is a Chat 2 prompt: open a **new chat**, paste it, and when the AI is done, run `git add -A && git commit -m "P2"`.
 5. From this repo, run `mini-experiment/eval/run.sh <setup>`.
 
-Use the same model for every run. To label a run, add a second argument: `mini-experiment/eval/run.sh red-small opus`. For repetitions, create a new branch from `main` in `~/code/stride` (for example `run-6`) and add it to the mapping in `eval/run.sh`.
+Use the same model for every run. To label a run, add a second argument: `mini-experiment/eval/run.sh red-small opus`. For repetitions, create a new branch from `main` in `~/code/ualberta/stride` (for example `run-6`) and add it to the mapping in `eval/run.sh`.
 
 ## Output
 

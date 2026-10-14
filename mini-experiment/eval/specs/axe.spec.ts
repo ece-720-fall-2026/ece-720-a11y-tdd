@@ -3,8 +3,12 @@ import { test, type Page } from "@playwright/test";
 import {
   bodyText,
   clickAddToCart,
+  clickByText,
   clickSize,
   gotoProduct,
+  isTextVisible,
+  openColorDropdown,
+  openSizeGuide,
   writeResult,
 } from "./helpers";
 
@@ -52,6 +56,25 @@ test("axe-core runtime scan across widget states", async ({ page }) => {
   await page.waitForTimeout(300);
   states.confirmation = { reached: /added .*to cart/i.test(await bodyText(page)) };
   if (states.confirmation.reached) states.confirmation.run = await analyze(page);
+
+  const fresh: Array<[string, () => Promise<boolean>]> = [
+    ["sizeGuideOpen", () => openSizeGuide(page)],
+    ["colorDropdownOpen", () => openColorDropdown(page)],
+    [
+      "reviewsTab",
+      async () => {
+        await clickByText(page, /^reviews$/i);
+        await page.waitForTimeout(200);
+        return isTextVisible(page, /128 runners/i);
+      },
+    ],
+  ];
+  for (const [state, open] of fresh) {
+    await gotoProduct(page);
+    const reached = await open();
+    states[state] = { reached };
+    if (reached) states[state].run = await analyze(page);
+  }
 
   // A node counts once per rule across all states; a violation in any state wins.
   const key = (n: NodeRecord) => `${n.rule}|${n.target}`;

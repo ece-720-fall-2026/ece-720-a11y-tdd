@@ -4,7 +4,7 @@
 #   e.g. mini-experiment/eval/run.sh red-small
 #        mini-experiment/eval/run.sh red-small opus
 # Scores the committed state of the scenario's run-N branch in $STOREFRONT_REPO
-# (default ~/code/stride), writes mini-experiment/results/<setup>[--<label>]/
+# (default ~/code/ualberta/stride), writes mini-experiment/results/<setup>[--<label>]/
 # and regenerates results/summary.csv.
 set -euo pipefail
 
@@ -16,14 +16,14 @@ fi
 HERE="$(cd "$(dirname "$0")" && pwd)"
 SETUP="$1"
 LABEL="${2:-}"
-STOREFRONT_REPO="${STOREFRONT_REPO:-$HOME/code/stride}"
+STOREFRONT_REPO="${STOREFRONT_REPO:-$HOME/code/ualberta/stride}"
 case "$SETUP" in
   baseline) BRANCH=run-1 ;;
   red-small) BRANCH=run-2 ;;
   red-comprehensive) BRANCH=run-3 ;;
   green-small) BRANCH=run-4 ;;
   green-comprehensive) BRANCH=run-5 ;;
-  *) echo "Unknown setup: $SETUP" >&2; exit 1 ;;
+  *) [ -n "${BRANCH:-}" ] || { echo "Unknown setup: $SETUP (or set BRANCH=...)" >&2; exit 1; } ;;
 esac
 NAME="$SETUP${LABEL:+--$LABEL}"
 OUT="$HERE/../results/$NAME"
