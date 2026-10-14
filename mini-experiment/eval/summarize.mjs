@@ -33,6 +33,7 @@ const columns = [
   "gen_tests_role_queries",
   "gen_tests_aria_snapshots",
   "gen_tests_keyboard_steps",
+  "gen_tests_apg_matchers",
 ];
 
 const rows = [];
@@ -68,6 +69,7 @@ for (const dir of fs.readdirSync(resultsRoot).sort()) {
     gen_tests_role_queries: tp && tp.counts.getByRole + tp.counts.getByLabel,
     gen_tests_aria_snapshots: tp?.counts.ariaSnapshot,
     gen_tests_keyboard_steps: tp && tp.counts.keyboardPress + tp.counts.toBeFocused,
+    gen_tests_apg_matchers: tp?.counts.apgMatcher,
   });
 }
 

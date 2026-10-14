@@ -23,6 +23,7 @@ case "$SETUP" in
   red-comprehensive) BRANCH=run-3 ;;
   green-small) BRANCH=run-4 ;;
   green-comprehensive) BRANCH=run-5 ;;
+  red-tool) BRANCH=run-6 ;;
   *) [ -n "${BRANCH:-}" ] || { echo "Unknown setup: $SETUP (or set BRANCH=...)" >&2; exit 1; } ;;
 esac
 NAME="$SETUP${LABEL:+--$LABEL}"

@@ -140,11 +140,11 @@ Generated from `src/patterns.ts` by `pnpm run docs`.
 |---|---|
 | `pnpm test` | HTML fixtures in `test/fixtures/`: one conforming implementation per pattern must pass. Variants that break one behaviour (`?break=…`) must fail exactly the matching check. |
 | `pnpm test:live` | The W3C's own APG examples must pass: modal dialog, select-only combobox, automatic and manual tabs, radio group, and date-picker spinbuttons. The APG has no tooltip example. Needs network access. |
-| `pnpm test:calibration` | The mini-experiment calibration components in the stride app (`../mini-experiment/eval/calibration/`). Their known results are recorded in `test/calibration.spec.ts`. |
+| `pnpm test:calibration` | Calibration components with known results, recorded in `test/calibration.spec.ts`. |
 
 ## Scope and limitations
 
-- **Patterns covered:** six APG patterns, the ones on the mini-experiment product page. The full project extends this to every APG pattern.
+- **Patterns covered:** six APG patterns: modal dialog, combobox, tabs, tooltip, radio group and spinbutton. Other APG patterns aren't covered yet.
 - **Combobox:** `toBeCombobox` covers the select-only combobox. Editable comboboxes with autocomplete aren't covered yet.
 - **Tabs:** Home and End are optional in the APG Tabs pattern and aren't checked.
 - **Spinbutton:** Home and End are checked. A native `<input type="number">` doesn't support them, so it fails `home-end`.

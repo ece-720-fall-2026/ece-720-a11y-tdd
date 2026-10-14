@@ -17,6 +17,7 @@ const patterns = {
   accessibleName: /toHaveAccessibleName\(|toHaveAccessibleDescription\(/g,
   cssOrTestIdSelector: /locator\(\s*['"`][.#[]|getByTestId\(/g,
   getByText: /getByText\(/g,
+  apgMatcher: /\.(toOpenModalDialog|toBeCombobox|toBeTabs|toHaveTooltip|toBeRadioGroup|toBeSpinbutton)\(/g,
 };
 
 const files = fs.existsSync(testsDir)
