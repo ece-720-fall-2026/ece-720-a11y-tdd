@@ -27,7 +27,7 @@ case "$SETUP" in
 esac
 NAME="$SETUP${LABEL:+--$LABEL}"
 OUT="$HERE/../results/$NAME"
-PORT="${PORT:-4001}"
+PORT="${PORT:-4101}"
 URL="http://localhost:$PORT"
 WT="$(mktemp -d)/checkout"
 

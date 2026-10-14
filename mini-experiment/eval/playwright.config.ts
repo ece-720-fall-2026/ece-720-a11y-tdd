@@ -8,7 +8,7 @@ export default defineConfig({
   reporter: "list",
   timeout: 120_000,
   use: {
-    baseURL: process.env.EVAL_BASE_URL ?? "http://localhost:4001",
+    baseURL: process.env.EVAL_BASE_URL ?? "http://localhost:4101",
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
 });
