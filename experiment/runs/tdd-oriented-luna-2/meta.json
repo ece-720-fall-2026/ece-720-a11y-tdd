@@ -1,0 +1,12 @@
+{
+  "name": "tdd-oriented-luna-2",
+  "condition": "tdd-oriented",
+  "run": 2,
+  "model": "gpt-5.6-luna-medium",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:ed9dbb57c4761340384545be72635b55829cefb97d4653d14252abec6954f2d7",
+  "stride_base": "740d5704d4fe08f466e17b5a06a95fdb32dd9945",
+  "sessions": {"1":{"prompt_sha256":"00df70bc9c663b6499d3a12c1cb92e175c765b61f7457320dc5da2937296dd53","commit":"25a4f6047c048d4bdb98189f826c137de8e9767b","started_at":"2026-10-23T16:51:15Z","wall_s":191,"ended":"exit","agent_duration_s":174,"usage":{"inputTokens":48,"outputTokens":4927,"cacheReadTokens":261936,"cacheWriteTokens":21621}},"2":{"prompt_sha256":"46e237ea2b27b205f343bdb8dce09e43216cd0ed8dd55c4f40776517075353a1","commit":"b9b789ef43b3aa9db4f0a545a204f76e1c1652ff","started_at":"2026-10-23T16:54:26Z","wall_s":816,"ended":"idle","agent_duration_s":null,"usage":null}},
+  "wall_s": 1008,
+  "date": "2026-10-23T17:08:03Z"
+}

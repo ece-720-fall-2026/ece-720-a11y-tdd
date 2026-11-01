@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Toggle button fixture</title>
+</head>
+<body>
+  <main id="root">
+    <button type="button" id="wish" aria-pressed="false" aria-label="Save to wishlist">♡</button>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const broken = new Set((new URLSearchParams(location.search).get("break") || "").split(",").filter(Boolean));
+    let button = document.getElementById("wish");
+    let saved = false;
+    if (broken.has("no-pressed")) button.removeAttribute("aria-pressed");
+    if (broken.has("div")) {
+      button.outerHTML = '<div id="wish" aria-pressed="false" aria-label="Save to wishlist">♡</div>';
+      button = document.getElementById("wish");
+    }
+    function toggle() {
+      saved = !saved;
+      if (!broken.has("no-pressed")) button.setAttribute("aria-pressed", String(saved));
+      button.textContent = saved ? "♥" : "♡";
+      if (broken.has("name-changes")) button.setAttribute("aria-label", saved ? "Remove from wishlist" : "Save to wishlist");
+      if (broken.has("loses-focus")) button.blur();
+    }
+    button.addEventListener("click", toggle);
+  </script>
+</body>
+</html>

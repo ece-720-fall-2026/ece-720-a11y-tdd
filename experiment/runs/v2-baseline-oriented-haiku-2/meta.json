@@ -1,0 +1,13 @@
+{
+  "name": "v2-baseline-oriented-haiku-2",
+  "condition": "baseline-oriented",
+  "run": 2,
+  "model": "haiku",
+  "cli_version": "2.1.309 (Claude Code)",
+  "image": "sha256:c39094c7a9f3ed6737653f76f5092bca19b01c2966f6c5416aa65f394b94c48c",
+  "stride_base_branch": "main",
+  "stride_base": "f2e0b66559c76a6c7aca745d31f9ec6ed6179775",
+  "sessions": {"1":{"prompt_sha256":"2a757c0753bf376e330490e0f82abd133794038971485bd29b087ab5a2245faf","commit":"11932331a5452b5f863d5825498ebc7ff5b2bd26","started_at":"2026-10-29T18:06:01Z","wall_s":382,"ended":"exit","nudges":0,"agent_duration_s":377,"usage":{"input_tokens":64,"cache_creation_input_tokens":73535,"cache_read_input_tokens":1160147,"output_tokens":61523,"output_tokens_details":{"thinking_tokens":27828},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":73535},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}}},
+  "wall_s": 382,
+  "date": "2026-10-29T18:12:24Z"
+}

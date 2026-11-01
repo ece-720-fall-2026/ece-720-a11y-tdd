@@ -1,0 +1,15 @@
+{
+  "axe": {
+    "violations": 1,
+    "by_impact": {
+      "serious": 1
+    },
+    "rules": [
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "nodes": 3
+      }
+    ]
+  }
+}

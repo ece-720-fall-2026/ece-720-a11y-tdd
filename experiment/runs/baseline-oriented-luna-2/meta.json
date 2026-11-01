@@ -1,0 +1,12 @@
+{
+  "name": "baseline-oriented-luna-2",
+  "condition": "baseline-oriented",
+  "run": 2,
+  "model": "gpt-5.6-luna-medium",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:3c0b674421498c5bb9875373f3b5cfce4c31bb80eca992e82a81309aaece01a4",
+  "stride_base": "740d5704d4fe08f466e17b5a06a95fdb32dd9945",
+  "sessions": {"1":{"prompt_sha256":"43d8d743e1a17f919b1de8492fb21b4759d8d80fb25c74f19c5b201f27472f7d","commit":"bb07967fc3f268d1253792692bdf7228b43b124c","started_at":"2026-10-23T16:19:12Z","wall_s":444,"ended":"idle","agent_duration_s":null,"usage":null}},
+  "wall_s": 445,
+  "date": "2026-10-23T16:26:37Z"
+}

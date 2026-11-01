@@ -1,0 +1,12 @@
+{
+  "name": "baseline-agnostic-kimi-1",
+  "condition": "baseline-agnostic",
+  "run": 1,
+  "model": "kimi-k3-high",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:bfbaae44fdec86dd0ce7712230dec0ced29c7e536f81f62a23ad496e27be5eb1",
+  "stride_base": "823a9fd85a96a41d5b514afb5a9db12a26bb7fb8",
+  "sessions": {"1":{"prompt_sha256":"8402e9a3031170565136d647912f9c5dadfb398a2babab8ef70deabea3e76006","commit":"417879b09e4c0225904316a4f2b433adce27a43f","started_at":"2026-10-22T19:35:15Z","wall_s":1491,"ended":"exit","agent_duration_s":1467,"usage":{"inputTokens":124298,"outputTokens":15471,"cacheReadTokens":641344,"cacheWriteTokens":0}}},
+  "wall_s": 1492,
+  "date": "2026-10-22T20:00:07Z"
+}

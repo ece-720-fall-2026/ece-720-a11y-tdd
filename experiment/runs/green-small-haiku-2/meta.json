@@ -1,0 +1,13 @@
+{
+  "name": "green-small-haiku-2",
+  "condition": "green-small",
+  "run": 2,
+  "model": "haiku",
+  "cli_version": "2.1.309 (Claude Code)",
+  "image": "sha256:1b2200c2c57719c42b4df69dec1376b2de1adc7f4c4f62561354f6853aac57f3",
+  "stride_base_branch": "tests-small",
+  "stride_base": "848dceae0c10eeed7996ac67a3af84e9ba75af17",
+  "sessions": {"1":{"prompt_sha256":"6e47c7dbf3c25d5c6bf35fbed8cc6fedd38a1c856011ada59659ad61bf5915ff","commit":"d7c484ab7622a4e55a53f555ea99e0b1a8333034","started_at":"2026-10-24T05:48:19Z","wall_s":403,"ended":"exit","nudges":0,"agent_duration_s":395,"usage":{"input_tokens":50,"cache_creation_input_tokens":91515,"cache_read_input_tokens":1271295,"output_tokens":77180,"output_tokens_details":{"thinking_tokens":47782},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":91515},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}}},
+  "wall_s": 404,
+  "date": "2026-10-24T05:55:03Z"
+}

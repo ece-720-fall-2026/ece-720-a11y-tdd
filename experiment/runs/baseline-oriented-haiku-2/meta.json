@@ -1,0 +1,12 @@
+{
+  "name": "baseline-oriented-haiku-2",
+  "condition": "baseline-oriented",
+  "run": 2,
+  "model": "haiku",
+  "cli_version": "2.1.309 (Claude Code)",
+  "image": "sha256:f582442ae17e41b85a453e95399af134528c6460e3da06346649676bc122e70a",
+  "stride_base": "1cccf5650f0a9ec1abd2c3f5b346f85b6f2edeed",
+  "sessions": {"1":{"prompt_sha256":"2a757c0753bf376e330490e0f82abd133794038971485bd29b087ab5a2245faf","commit":"3aa16904969ee8be4087ed570ab030e7b66f744c","started_at":"2026-10-24T02:39:47Z","wall_s":382,"ended":"exit","nudges":0,"agent_duration_s":378,"usage":{"input_tokens":66,"cache_creation_input_tokens":51993,"cache_read_input_tokens":712803,"output_tokens":72807,"output_tokens_details":{"thinking_tokens":39647},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":51993},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}}},
+  "wall_s": 383,
+  "date": "2026-10-24T02:46:10Z"
+}

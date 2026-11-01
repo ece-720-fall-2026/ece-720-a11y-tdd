@@ -1,0 +1,12 @@
+{
+  "name": "tdd-oriented-kimi-2",
+  "condition": "tdd-oriented",
+  "run": 2,
+  "model": "kimi-k3-high",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:f586a16ea35494b87808f63941a48e733948afa3b9485532ca241a2f551dbaef",
+  "stride_base": "740d5704d4fe08f466e17b5a06a95fdb32dd9945",
+  "sessions": {"1":{"prompt_sha256":"2e340b3106479b3b38a5c99bf5662b26ba722ffa16d626b620d9bcbbeb2007e5","commit":"ba675fd8b3c23e4b317aeb278e109f6cd2c3ffa0","started_at":"2026-10-23T04:54:00Z","wall_s":2183,"ended":"exit","agent_duration_s":367,"usage":{"inputTokens":49606,"outputTokens":3816,"cacheReadTokens":72576,"cacheWriteTokens":0}},"2":{"prompt_sha256":"51f335f3ccee9c00ef2f408cb290f1ea2874e2c2679979e2a18980300b13961f","commit":"e1559fa59349d908d040ce42cf8abbbd0750abf6","started_at":"2026-10-23T05:30:23Z","wall_s":1981,"ended":"exit","agent_duration_s":156,"usage":{"inputTokens":39709,"outputTokens":13021,"cacheReadTokens":308544,"cacheWriteTokens":0}}},
+  "wall_s": 4165,
+  "date": "2026-10-23T06:03:25Z"
+}

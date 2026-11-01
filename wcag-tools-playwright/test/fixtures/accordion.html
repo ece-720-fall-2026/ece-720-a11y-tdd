@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Accordion fixture</title>
+  <style>[hidden] { display: none !important; }</style>
+</head>
+<body>
+  <main>
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions</h2>
+      <div id="items"></div>
+    </section>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const broken = new Set((params.get("break") || "").split(",").filter(Boolean));
+    const items = [["Is it waterproof?", "It is water resistant."], ["How does it fit?", "True to size."], ["Can I return it?", "Within 30 days."]];
+    const root = document.getElementById("items");
+
+    if (params.has("details")) {
+      root.innerHTML = items.map(([q, a]) => `<details><summary>${q}</summary><p>${a}</p></details>`).join("");
+    } else {
+      root.innerHTML = items.map(([q, a], i) => {
+        const button = `<button type="button" id="q${i}" aria-expanded="false" aria-controls="a${i}">${q}</button>`;
+        const header = broken.has("no-heading") ? `<div>${button}</div>` : `<h3>${button}</h3>`;
+        return `${header}<div id="a${i}" role="region" aria-labelledby="q${i}" hidden>${a}</div>`;
+      }).join("");
+      root.querySelectorAll("button").forEach((button, i) => {
+        const panel = document.getElementById(`a${i}`);
+        if (broken.has("no-controls")) button.removeAttribute("aria-controls");
+        if (broken.has("no-expanded")) button.removeAttribute("aria-expanded");
+        if (broken.has("not-tabbable")) button.tabIndex = -1;
+        if (broken.has("shown-collapsed") && i === 1) panel.hidden = false;
+        const toggle = () => {
+          const open = button.getAttribute("aria-expanded") !== "true";
+          if (!broken.has("no-expanded")) button.setAttribute("aria-expanded", String(open));
+          panel.hidden = !open;
+        };
+        if (broken.has("mouse-only")) {
+          button.addEventListener("mousedown", toggle);
+          button.addEventListener("click", (e) => e.preventDefault());
+        } else {
+          button.addEventListener("click", toggle);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

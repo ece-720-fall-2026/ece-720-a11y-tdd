@@ -1,0 +1,36 @@
+{
+  "name": "@wcag-tools/playwright",
+  "version": "0.1.0",
+  "description": "Playwright matchers that check a page against WCAG 2.2 AA and components against the WAI-ARIA Authoring Practices Guide (APG) patterns, with instructions for passing each check.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.build.json && node scripts/vendor-axe.mjs",
+    "docs": "pnpm build && node scripts/docs.mjs && pnpm build",
+    "test": "playwright test --project=fixtures",
+    "test:live": "playwright test --project=apg-live",
+    "test:calibration": "./scripts/calibration.sh",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.51.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "~1.63.0",
+    "@types/node": "^22.0.0",
+    "axe-core": "^4.14.0",
+    "typescript": "^5.0.0"
+  },
+  "packageManager": "pnpm@11.5.2"
+}
