@@ -19,7 +19,7 @@
 </head>
 <body>
 <h1>Experiment dashboard</h1>
-<p>Generated 2026-11-01T18:49:28.279Z. axe and the DOM/ARIA checks are automated (experiment/score.sh); the rest is manual (experiment/inspect.mjs). The total only appears once the manual checks are done.</p>
+<p>Generated 2026-11-01T19:22:23.001Z. axe and the DOM/ARIA checks are automated (experiment/score.sh); the rest is manual (experiment/inspect.mjs). The total only appears once the manual checks are done.</p>
 <table>
 <thead><tr>
   <th>Run</th><th>Model</th><th>axe rules</th><th>Automated checks</th><th>Manual checks</th><th>WCAG/APG total</th><th>Tokens</th><th>Time</th>
@@ -28,74 +28,182 @@
 <tr class="group"><td colspan="8">baseline-agnostic</td></tr><tr>
   <td>v2-baseline-agnostic-glm-1</td><td>baseten-glm-5.3[1m]</td>
   <td title="serious:2">2</td>
-  <td style="color:#b07d00;font-weight:600">27/38</td>
-  <td style="color:#c0392b;font-weight:600">35/51</td>
-  <td style="color:#b07d00;font-weight:600">62/89</td>
+  <td style="color:#b07d00;font-weight:600">29/39</td>
+  <td style="color:#c0392b;font-weight:600">34/50</td>
+  <td style="color:#b07d00;font-weight:600">63/89</td>
   <td>35,136</td>
   <td>4 min</td>
 </tr>
 <tr>
   <td>v2-baseline-agnostic-glm-2</td><td>baseten-glm-5.3[1m]</td>
   <td title="serious:1">1</td>
-  <td style="color:#b07d00;font-weight:600">31/38</td>
+  <td style="color:#b07d00;font-weight:600">32/39</td>
   <td style="color:#c0392b;font-weight:600">33/51</td>
-  <td style="color:#b07d00;font-weight:600">64/89</td>
+  <td style="color:#b07d00;font-weight:600">65/90</td>
   <td>23,497</td>
   <td>2 min</td>
 </tr>
 <tr>
   <td>v2-baseline-agnostic-haiku-1</td><td>haiku</td>
   <td title="serious:1">1</td>
-  <td style="color:#b07d00;font-weight:600">37/38</td>
+  <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#c0392b;font-weight:600">33/50</td>
-  <td style="color:#b07d00;font-weight:600">70/88</td>
+  <td style="color:#b07d00;font-weight:600">71/89</td>
   <td>40,386</td>
   <td>5 min</td>
 </tr>
 <tr>
   <td>v2-baseline-agnostic-haiku-2</td><td>haiku</td>
   <td title="">0</td>
-  <td style="color:#b07d00;font-weight:600">36/38</td>
+  <td style="color:#b07d00;font-weight:600">37/39</td>
   <td style="color:#b07d00;font-weight:600">41/50</td>
-  <td style="color:#b07d00;font-weight:600">77/88</td>
+  <td style="color:#b07d00;font-weight:600">78/89</td>
   <td>39,507</td>
   <td>4 min</td>
 </tr>
 <tr class="group"><td colspan="8">baseline-oriented</td></tr><tr>
+  <td>v2-baseline-oriented-glm-1</td><td>baseten-glm-5.3[1m]</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">37/39</td>
+  <td style="color:#b07d00;font-weight:600">40/51</td>
+  <td style="color:#b07d00;font-weight:600">77/90</td>
+  <td>68,508</td>
+  <td>6 min</td>
+</tr>
+<tr>
+  <td>v2-baseline-oriented-glm-2</td><td>baseten-glm-5.3[1m]</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">38/39</td>
+  <td style="color:#b07d00;font-weight:600">49/51</td>
+  <td style="color:#b07d00;font-weight:600">87/90</td>
+  <td>48,083</td>
+  <td>4 min</td>
+</tr>
+<tr>
   <td>v2-baseline-oriented-haiku-1</td><td>haiku</td>
   <td title="">0</td>
-  <td style="color:#0a7d2c;font-weight:600">38/38</td>
+  <td style="color:#0a7d2c;font-weight:600">39/39</td>
   <td style="color:#b07d00;font-weight:600">45/51</td>
-  <td style="color:#b07d00;font-weight:600">83/89</td>
+  <td style="color:#b07d00;font-weight:600">84/90</td>
   <td>71,629</td>
   <td>17 min</td>
 </tr>
+<tr>
+  <td>v2-baseline-oriented-haiku-2</td><td>haiku</td>
+  <td title="">0</td>
+  <td style="color:#0a7d2c;font-weight:600">39/39</td>
+  <td style="color:#b07d00;font-weight:600">49/51</td>
+  <td style="color:#b07d00;font-weight:600">88/90</td>
+  <td>61,587</td>
+  <td>6 min</td>
+</tr>
 <tr class="group"><td colspan="8">tdd-agnostic</td></tr><tr>
+  <td>v2-tdd-agnostic-glm-1</td><td>baseten-glm-5.3[1m]</td>
+  <td title="serious:2">2</td>
+  <td style="color:#b07d00;font-weight:600">33/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>69,140</td>
+  <td>11 min</td>
+</tr>
+<tr>
+  <td>v2-tdd-agnostic-glm-2</td><td>baseten-glm-5.3[1m]</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">35/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>65,446</td>
+  <td>8 min</td>
+</tr>
+<tr>
   <td>v2-tdd-agnostic-haiku-1</td><td>haiku</td>
   <td title="">0</td>
-  <td style="color:#b07d00;font-weight:600">37/38</td>
-  <td style="color:#999;font-weight:600">—</td>
-  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#b07d00;font-weight:600">38/39</td>
+  <td style="color:#c0392b;font-weight:600">32/49</td>
+  <td style="color:#b07d00;font-weight:600">70/88</td>
   <td>71,783</td>
   <td>17 min</td>
 </tr>
+<tr>
+  <td>v2-tdd-agnostic-haiku-2</td><td>haiku</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">35/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>58,118</td>
+  <td>24 min</td>
+</tr>
 <tr class="group"><td colspan="8">tdd-green-oriented</td></tr><tr>
+  <td>v2-tdd-green-oriented-glm-1</td><td>baseten-glm-5.3[1m]</td>
+  <td title="">0</td>
+  <td style="color:#0a7d2c;font-weight:600">39/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>88,153</td>
+  <td>10 min</td>
+</tr>
+<tr>
+  <td>v2-tdd-green-oriented-glm-2</td><td>baseten-glm-5.3[1m]</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">36/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>179,389</td>
+  <td>24 min</td>
+</tr>
+<tr>
   <td>v2-tdd-green-oriented-haiku-1</td><td>haiku</td>
   <td title="">0</td>
-  <td style="color:#b07d00;font-weight:600">37/38</td>
+  <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#999;font-weight:600">—</td>
   <td style="color:#999;font-weight:600">—</td>
   <td>107,686</td>
   <td>26 min</td>
 </tr>
+<tr>
+  <td>v2-tdd-green-oriented-haiku-2</td><td>haiku</td>
+  <td title="">0</td>
+  <td style="color:#0a7d2c;font-weight:600">39/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>112,820</td>
+  <td>33 min</td>
+</tr>
 <tr class="group"><td colspan="8">tdd-oriented</td></tr><tr>
+  <td>v2-tdd-oriented-glm-1</td><td>baseten-glm-5.3[1m]</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">33/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>173,692</td>
+  <td>17 min</td>
+</tr>
+<tr>
+  <td>v2-tdd-oriented-glm-2</td><td>baseten-glm-5.3[1m]</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">36/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>100,918</td>
+  <td>19 min</td>
+</tr>
+<tr>
   <td>v2-tdd-oriented-haiku-1</td><td>haiku</td>
   <td title="">0</td>
-  <td style="color:#b07d00;font-weight:600">37/38</td>
+  <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#999;font-weight:600">—</td>
   <td style="color:#999;font-weight:600">—</td>
   <td>103,226</td>
   <td>17 min</td>
+</tr>
+<tr>
+  <td>v2-tdd-oriented-haiku-2</td><td>haiku</td>
+  <td title="">0</td>
+  <td style="color:#b07d00;font-weight:600">38/39</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>99,240</td>
+  <td>28 min</td>
 </tr>
 </tbody>
 </table>
@@ -103,9 +211,9 @@
 <h2>Failures</h2>
 
 <details>
-  <summary>v2-baseline-agnostic-glm-1 — axe 2, automated checks failed 11, manual checks failed 16</summary>
+  <summary>v2-baseline-agnostic-glm-1 — axe 2, automated checks failed 10, manual checks failed 16</summary>
   <p>axe:</p><ul><li>color-contrast (serious, 1 nodes)</li><li>label-content-name-mismatch (serious, 4 nodes)</li></ul>
-  <p>Automated checks:</p><ul><li>page-headings: skipped levels: h2 -> h4 ("Customer help")</li><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>tip-trigger: no button named like taxes/price/info</li><li>col-group-label: no group, radiogroup or listbox named "Color"</li><li>col-state: no "Color: …" text and no color group</li><li>dlg-result: no live region or output element in the dialog</li><li>tabs-tablist: the tablist has no aria-label or aria-labelledby</li><li>tabs-panel: the selected tab has no aria-controls</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li><li>vis-reflow: page is 22px wider than a 320px viewport</li><li>vis-contrast-text: axe color-contrast: 1 nodes</li></ul>
+  <p>Automated checks:</p><ul><li>page-headings: skipped levels: h2 -> h4 ("Customer help")</li><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>tip-trigger: no button named like taxes/price/info</li><li>col-group-label: no group, radiogroup or listbox named "Color"</li><li>dlg-result: no live region or output element in the dialog</li><li>tabs-tablist: the tablist has no aria-label or aria-labelledby</li><li>tabs-panel: the selected tab has no aria-controls</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li><li>vis-reflow: page is 22px wider than a 320px viewport</li><li>vis-contrast-text: axe color-contrast: 1 nodes</li></ul>
   <p>Manual checks:</p><ul><li>page-focus-visible</li><li>tip-escape</li><li>col-tab</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-escape</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li></ul>
 </details>
 
@@ -131,6 +239,20 @@
 </details>
 
 <details>
+  <summary>v2-baseline-oriented-glm-1 — axe 0, automated checks failed 2, manual checks failed 11</summary>
+  
+  <p>Automated checks:</p><ul><li>car-region: the labelled region contains no image</li><li>car-alt: no photos with an accessible name in the gallery</li></ul>
+  <p>Manual checks:</p><ul><li>tip-focus</li><li>tip-hover</li><li>tip-escape</li><li>tip-persistent</li><li>tip-no-focus</li><li>col-tab</li><li>col-arrows</li><li>col-select</li><li>size-typeahead</li><li>size-soldout-not-pickable</li><li>dlg-focus-return</li></ul>
+</details>
+
+<details>
+  <summary>v2-baseline-oriented-glm-2 — axe 0, automated checks failed 1, manual checks failed 2</summary>
+  
+  <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
+  <p>Manual checks:</p><ul><li>tip-persistent</li><li>size-enter</li></ul>
+</details>
+
+<details>
   <summary>v2-baseline-oriented-haiku-1 — axe 0, automated checks failed 0, manual checks failed 6</summary>
   
   
@@ -138,9 +260,51 @@
 </details>
 
 <details>
-  <summary>v2-tdd-agnostic-haiku-1 — axe 0, automated checks failed 1, manual checks failed 0</summary>
+  <summary>v2-baseline-oriented-haiku-2 — axe 0, automated checks failed 0, manual checks failed 2</summary>
+  
+  
+  <p>Manual checks:</p><ul><li>tip-persistent</li><li>size-enter</li></ul>
+</details>
+
+<details>
+  <summary>v2-tdd-agnostic-glm-1 — axe 2, automated checks failed 6, manual checks failed 0</summary>
+  <p>axe:</p><ul><li>label-content-name-mismatch (serious, 1 nodes)</li><li>target-size (serious, 6 nodes)</li></ul>
+  <p>Automated checks:</p><ul><li>page-h1: the h1 is not the product name</li><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>page-target-size: axe target-size: 6 nodes</li><li>tip-trigger: no button named like taxes/price/info</li><li>dlg-result: no live region or output element in the dialog</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li></ul>
+  
+</details>
+
+<details>
+  <summary>v2-tdd-agnostic-glm-2 — axe 0, automated checks failed 4, manual checks failed 0</summary>
+  
+  <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>car-region: no region or group named like photos/gallery/carousel</li><li>dlg-result: no live region or output element in the dialog</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li></ul>
+  
+</details>
+
+<details>
+  <summary>v2-tdd-agnostic-haiku-1 — axe 0, automated checks failed 1, manual checks failed 17</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
+  <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-escape</li><li>size-focus-return</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>tabs-activate</li></ul>
+</details>
+
+<details>
+  <summary>v2-tdd-agnostic-haiku-2 — axe 0, automated checks failed 4, manual checks failed 0</summary>
+  
+  <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>car-region: no region or group named like photos/gallery/carousel</li><li>dlg-result: no live region or output element in the dialog</li><li>vis-reflow: page is 26px wider than a 320px viewport</li></ul>
+  
+</details>
+
+<details>
+  <summary>v2-tdd-green-oriented-glm-1 — axe 0, automated checks failed 0, manual checks failed 0</summary>
+  
+  
+  
+</details>
+
+<details>
+  <summary>v2-tdd-green-oriented-glm-2 — axe 0, automated checks failed 3, manual checks failed 0</summary>
+  
+  <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "👟 Stride", not a skip link</li><li>car-region: no region or group named like photos/gallery/carousel</li><li>vis-reflow: page is 29px wider than a 320px viewport</li></ul>
   
 </details>
 
@@ -152,7 +316,35 @@
 </details>
 
 <details>
+  <summary>v2-tdd-green-oriented-haiku-2 — axe 0, automated checks failed 0, manual checks failed 0</summary>
+  
+  
+  
+</details>
+
+<details>
+  <summary>v2-tdd-oriented-glm-1 — axe 0, automated checks failed 6, manual checks failed 0</summary>
+  
+  <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>crumb-links: "Trail" is not a link in the breadcrumb</li><li>dlg-result: no live region or output element in the dialog</li><li>tabs-tablist: the tablist has no aria-label or aria-labelledby</li><li>acc-association: 3 question buttons have no aria-controls pointing to an existing element</li><li>vis-reflow: page is 10px wider than a 320px viewport</li></ul>
+  
+</details>
+
+<details>
+  <summary>v2-tdd-oriented-glm-2 — axe 0, automated checks failed 3, manual checks failed 0</summary>
+  
+  <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>dlg-result: no live region or output element in the dialog</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li></ul>
+  
+</details>
+
+<details>
   <summary>v2-tdd-oriented-haiku-1 — axe 0, automated checks failed 1, manual checks failed 0</summary>
+  
+  <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
+  
+</details>
+
+<details>
+  <summary>v2-tdd-oriented-haiku-2 — axe 0, automated checks failed 1, manual checks failed 0</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
   

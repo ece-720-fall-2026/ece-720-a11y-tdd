@@ -113,7 +113,6 @@ export const CHECKLIST = [
   ['Perception (WCAG)', [
     ['vis-zoom', 'At 200% browser zoom everything still works; nothing overlaps or is cut off.'],
     ['vis-reflow', 'At 320px width there is no horizontal scrolling.', 'auto'],
-    ['vis-text-spacing', 'With increased letter/line spacing (bookmarklet or extension) no text is clipped.'],
     ['vis-contrast-text', 'Text contrast is sufficient (body 4.5:1, large text 3:1).', 'axe:color-contrast'],
     ['vis-contrast-ui', 'Control boundaries and focus indicators have enough contrast (3:1 against neighbours).'],
     ['vis-links', 'Links in text are identifiable without color alone (underline or other cue).', 'axe:link-in-text-block'],

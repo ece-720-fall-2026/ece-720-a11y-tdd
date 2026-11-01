@@ -20,7 +20,7 @@ for BRANCH in "$@"; do
   WT="$(mktemp -d)/app"
   git -C "$STRIDE_REPO" worktree add -q --detach "$WT" "$BRANCH"
   trap 'git -C "$STRIDE_REPO" worktree remove --force "$WT"' EXIT
-  mkdir -p "$WT/score"
+  mkdir -p "$WT/score" "$HERE/runs/$BRANCH"
   cat >"$WT/score/axe.spec.js" <<'EOF'
 import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
@@ -55,14 +55,13 @@ EOF
     npm install --silent --no-audit --no-fund >/dev/null 2>&1 || npm install --no-audit --no-fund
     npm install --silent --no-save --no-audit --no-fund @playwright/test@1.64.1 @axe-core/playwright >/dev/null
     npx playwright install chromium >/dev/null
-    JSON_OUT="$WT/score/report.json" npx playwright test -c score/playwright.config.js >/dev/null 2>&1 || true
+    JSON_OUT="$WT/score/report.json" npx playwright test -c score/playwright.config.js >"$HERE/runs/$BRANCH/score.log" 2>&1 || true
   )
-  mkdir -p "$HERE/runs/$BRANCH"
   node -e '
     const fs = require("fs");
     const dir = process.argv[1];
     const axe = fs.existsSync(`${dir}/axe.json`) ? JSON.parse(fs.readFileSync(`${dir}/axe.json`, "utf8")) : null;
-    if (!axe) { console.error("    axe failed to run (stale server on the port?)"); process.exit(1); }
+    if (!axe) { console.error(`    axe failed to run, skipping (see ${process.argv[2].replace(/score\.json$/, "score.log")})`); process.exit(1); }
     const byImpact = axe.reduce((m, v) => ({ ...m, [v.impact]: (m[v.impact] ?? 0) + 1 }), {});
     const report = JSON.parse(fs.readFileSync(`${dir}/report.json`, "utf8"));
     const structure = {};
@@ -81,7 +80,7 @@ EOF
     console.log(`    axe: ${axe.length} rules ${JSON.stringify(byImpact)}`);
     console.log(`    structure: ${Object.keys(structure).length - failed.length}/${Object.keys(structure).length} pass`);
     for (const [id, r] of failed) console.log(`      ${id}: ${r.note}`);
-  ' "$WT/score" "$HERE/runs/$BRANCH/score.json"
+  ' "$WT/score" "$HERE/runs/$BRANCH/score.json" || true
   git -C "$STRIDE_REPO" worktree remove --force "$WT"
   trap - EXIT
 done

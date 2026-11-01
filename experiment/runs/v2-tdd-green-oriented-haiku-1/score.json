@@ -32,6 +32,9 @@
     "car-region": {
       "result": "pass"
     },
+    "car-alt": {
+      "result": "pass"
+    },
     "tip-trigger": {
       "result": "pass"
     },

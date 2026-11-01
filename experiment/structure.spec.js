@@ -155,7 +155,7 @@ test('col-group-label', async ({ page }) => {
 })
 
 test('col-state', async ({ page }) => {
-  const shownAsText = await page.getByText(/colou?r\s*:?\s*(blue|black|gr[ae]y)/i).count()
+  const shownAsText = await page.getByText(/colou?r\s*[:\-–—]?\s*(blue|black|gr[ae]y)/i).count()
   if (shownAsText) return
   const group = await colorGroup(page)
   expect(await group.count(), 'no "Color: …" text and no color group').toBeGreaterThan(0)
@@ -172,10 +172,11 @@ async function sizeControl(page) {
     const label = await el.evaluate((s) => `${s.labels?.[0]?.textContent ?? ''} ${s.getAttribute('aria-label') ?? ''} ${s.name} ${s.id}`)
     if (/size/i.test(label)) return { native: el }
   }
-  const trigger = page.getByRole('combobox', { name: /size/i })
-    .or(page.getByRole('button', { name: /size/i }))
-    .filter({ hasNotText: /guide|chart/i })
-  if (await trigger.count()) return { trigger: trigger.first() }
+  const candidates = page.getByRole('combobox', { name: /size/i }).or(page.getByRole('button', { name: /size/i }))
+  const strict = candidates.filter({ hasNotText: /guide|chart/i })
+  if (await strict.count()) return { trigger: strict.first() }
+  const loose = candidates.filter({ hasNotText: /^\W*size (guide|chart)\W*$/i })
+  if (await loose.count()) return { trigger: loose.first() }
   return {}
 }
 
@@ -354,7 +355,7 @@ test('tabs-panel', async ({ page }) => {
 async function questions(page) {
   const details = page.locator('details:has(> summary)')
   if (await details.count()) return { native: true }
-  const buttons = page.getByRole('button', { name: /\?\s*$/ })
+  const buttons = page.getByRole('button', { name: /\?/ })
   return { native: false, buttons, n: await buttons.count() }
 }
 

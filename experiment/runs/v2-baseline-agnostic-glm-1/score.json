@@ -59,8 +59,7 @@
       "note": "no group, radiogroup or listbox named \"Color\""
     },
     "col-state": {
-      "result": "fail",
-      "note": "no \"Color: …\" text and no color group"
+      "result": "pass"
     },
     "size-collapsed": {
       "result": "pass"

@@ -23,15 +23,20 @@ if (!branch) {
 }
 execSync(`git -C "${STRIDE}" rev-parse --verify -q "refs/heads/${branch}"`, { stdio: 'pipe' })
 
-// Remove temp worktrees left behind by earlier interrupted runs.
+// Remove worktrees left behind by inspect.mjs processes that are no longer running
+// (score.sh and other open inspect.mjs windows keep theirs).
+const alive = (pid) => { try { process.kill(pid, 0); return true } catch { return false } }
 for (const line of execSync(`git -C "${STRIDE}" worktree list --porcelain`).toString().split('\n')) {
-  const m = line.match(/^worktree (.+)$/)
-  if (m && m[1].includes('/var/folders/')) {
-    try { execSync(`git -C "${STRIDE}" worktree remove --force "${m[1]}"`) } catch {}
-  }
+  const m = line.match(/^worktree (.+\/a11y-inspect\.[^/]+)\/app$/)
+  if (!m) continue
+  const pid = Number(existsSync(join(m[1], 'pid')) ? readFileSync(join(m[1], 'pid'), 'utf8') : 0)
+  if (pid && alive(pid)) continue
+  try { execSync(`git -C "${STRIDE}" worktree remove --force "${m[1]}/app"`) } catch {}
 }
 
-const WT = execSync('mktemp -d').toString().trim() + '/app'
+const TMP = execSync('mktemp -d -t a11y-inspect').toString().trim()
+writeFileSync(join(TMP, 'pid'), String(process.pid))
+const WT = join(TMP, 'app')
 execSync(`git -C "${STRIDE}" worktree add -q --detach "${WT}" "${branch}"`)
 const cleanup = () => { try { execSync(`git -C "${STRIDE}" worktree remove --force "${WT}"`) } catch {} }
 process.on('exit', cleanup)
