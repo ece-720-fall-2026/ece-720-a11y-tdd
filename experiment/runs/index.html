@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Experiment dashboard</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; margin: 2rem; color: #222 }
+  h1 { font-size: 1.4rem } h2 { font-size: 1.1rem; margin-top: 2rem }
+  table { border-collapse: collapse; width: 100% }
+  th, td { border: 1px solid #ddd; padding: .45rem .7rem; text-align: left; font-size: .9rem }
+  th { background: #f5f5f5 }
+  details { margin: .5rem 0 }
+  summary { cursor: pointer; font-weight: 600 }
+  ul { margin: .3rem 0; padding-left: 1.2rem }
+  li { font-size: .85rem }
+  a { color: #0645ad }
+  .group { background: #fafafa; font-weight: 700 }
+</style>
+</head>
+<body>
+<h1>Experiment dashboard</h1>
+<p>Generated 2026-10-27T16:34:13.540Z. axe is automated (experiment/score.sh); the rest is manual (experiment/inspect.mjs).</p>
+<table>
+<thead><tr>
+  <th>Run</th><th>Model</th><th>axe rules</th><th>WCAG/APG checks</th><th>Tokens</th><th>Time</th>
+</tr></thead>
+<tbody>
+<tr class="group"><td colspan="6">baseline-agnostic</td></tr><tr>
+  <td>v2-baseline-agnostic-haiku-1</td><td>haiku</td>
+  <td title="serious:1">1</td>
+  <td style="color:#b07d00;font-weight:600">57/74</td>
+  <td>40,386</td>
+  <td>5 min</td>
+</tr>
+<tr class="group"><td colspan="6">baseline-oriented</td></tr><tr>
+  <td>v2-baseline-oriented-haiku-1</td><td>haiku</td>
+  <td title="">0</td>
+  <td style="color:#999;font-weight:600">—</td>
+  <td>71,629</td>
+  <td>17 min</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Failures</h2>
+
+<details>
+  <summary>v2-baseline-agnostic-haiku-1 — axe 1, checks failed 17</summary>
+  <p>axe:</p><ul><li>label-content-name-mismatch (serious, 3 nodes)</li></ul>
+  <p>WCAG/APG checks:</p><ul><li>page-focus-visible</li><li>tip-escape</li><li>tip-persistent</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-escape</li><li>size-focus-return</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>tabs-activate</li></ul>
+</details>
+
+<details>
+  <summary>v2-baseline-oriented-haiku-1 — axe 0, checks failed 0</summary>
+  
+  
+</details>
+</body>
+</html>

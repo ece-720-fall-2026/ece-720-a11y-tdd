@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Carousel fixture</title>
+  <style>[hidden] { display: none !important; } .slide { width: 200px; height: 100px; background: #ddd; }</style>
+</head>
+<body>
+  <main>
+    <section id="carousel" aria-roledescription="carousel" aria-label="Trail Runner 2 photos">
+      <button type="button" id="prev" aria-controls="slides" aria-label="Previous photo">‹</button>
+      <button type="button" id="next" aria-controls="slides" aria-label="Next photo">›</button>
+      <div id="slides" aria-live="polite"></div>
+    </section>
+    <button type="button">After</button>
+  </main>
+  <script>
+    const broken = new Set((new URLSearchParams(location.search).get("break") || "").split(",").filter(Boolean));
+    const carousel = document.getElementById("carousel");
+    const slidesEl = document.getElementById("slides");
+    const photos = ["Side view", "Top view", "Sole"];
+    slidesEl.innerHTML = photos.map((alt, i) => `<div class="slide" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${photos.length}">${alt}</div>`).join("");
+    const slides = Array.from(slidesEl.children);
+    if (broken.has("no-roledescription")) carousel.removeAttribute("aria-roledescription");
+    if (broken.has("no-slide-name")) slides.forEach((s) => s.removeAttribute("aria-label"));
+    if (broken.has("no-live")) slidesEl.removeAttribute("aria-live");
+    if (broken.has("unnamed-controls")) { document.getElementById("prev").removeAttribute("aria-label"); document.getElementById("next").removeAttribute("aria-label"); }
+    let index = 0;
+    function render() {
+      slides.forEach((s, i) => { s.hidden = broken.has("all-visible") ? false : i !== index; });
+    }
+    function go(step) {
+      const next = index + step;
+      index = broken.has("no-wrap") ? Math.min(photos.length - 1, Math.max(0, next)) : (next + photos.length) % photos.length;
+      render();
+    }
+    document.getElementById("prev").addEventListener("click", () => go(-1));
+    document.getElementById("next").addEventListener("click", () => go(1));
+    render();
+  </script>
+</body>
+</html>

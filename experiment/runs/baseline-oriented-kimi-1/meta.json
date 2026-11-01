@@ -1,0 +1,12 @@
+{
+  "name": "baseline-oriented-kimi-1",
+  "condition": "baseline-oriented",
+  "run": 1,
+  "model": "kimi-k3-high",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:1e7cfb7bc6f01609433fd84ac377d99dde9bfda7bc745b759672361cbaf01e43",
+  "stride_base": "823a9fd85a96a41d5b514afb5a9db12a26bb7fb8",
+  "sessions": {"1":{"prompt_sha256":"ea5f223602747e2994743b24be5d9e4142be7b8a90d18c6aac753a1bd8932727","commit":"2e8d95c2cab16d64566c5b7e0f0869630a301aca","started_at":"2026-10-22T23:56:27Z","wall_s":2102,"ended":"exit","agent_duration_s":284,"usage":{"inputTokens":41776,"outputTokens":29466,"cacheReadTokens":1215872,"cacheWriteTokens":0}}},
+  "wall_s": 2103,
+  "date": "2026-10-23T00:31:30Z"
+}

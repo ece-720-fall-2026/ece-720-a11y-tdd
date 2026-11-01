@@ -1,0 +1,12 @@
+{
+  "name": "baseline-agnostic-luna-1",
+  "condition": "baseline-agnostic",
+  "run": 1,
+  "model": "gpt-5.6-luna-medium",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:84782b8d3a47a95745a7aaf9df6e4bc547de3925bc8c12583dc03df6ff6cc6b0",
+  "stride_base": "4eb3c2303399d9982ee0991f9dd153f9bc5f324a",
+  "sessions": {"1":{"prompt_sha256":"8402e9a3031170565136d647912f9c5dadfb398a2babab8ef70deabea3e76006","commit":"03884c4f626a18a429b812daf8de7eca573dee0f","started_at":"2026-10-22T18:24:52Z","wall_s":554,"ended":"idle","agent_duration_s":null,"usage":null}},
+  "wall_s": 556,
+  "date": "2026-10-22T18:34:07Z"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "tdd-tool-luna-3",
+  "condition": "tdd-tool",
+  "run": 3,
+  "model": "gpt-5.6-luna-medium",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:3c9830f2cbc6781a6990d8dd475977ff427e8684a58e63bf75d2a6573ab8772d",
+  "stride_base": "740d5704d4fe08f466e17b5a06a95fdb32dd9945",
+  "sessions": {"1":{"prompt_sha256":"a4a5d7c5456eba972a3975d3167766db1a01ce44886b77bd1b2b831ac7ff7c83","commit":"1d486684e45c4f800e018ad947c467081f7deb15","started_at":"2026-10-23T19:16:20Z","wall_s":101,"ended":"exit","nudges":0,"agent_duration_s":79,"usage":{"inputTokens":57,"outputTokens":5673,"cacheReadTokens":376979,"cacheWriteTokens":27121}},"2":{"prompt_sha256":"46e237ea2b27b205f343bdb8dce09e43216cd0ed8dd55c4f40776517075353a1","commit":"d329bf423cbfd8b412cc496f877f12fac71ca178","started_at":"2026-10-23T19:18:01Z","wall_s":746,"ended":"exit","nudges":1,"agent_duration_s":732,"usage":{"inputTokens":153,"outputTokens":19389,"cacheReadTokens":2234781,"cacheWriteTokens":68217}}},
+  "wall_s": 848,
+  "date": "2026-10-23T19:30:28Z"
+}

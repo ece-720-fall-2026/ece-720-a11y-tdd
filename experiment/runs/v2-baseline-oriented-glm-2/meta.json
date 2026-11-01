@@ -1,0 +1,13 @@
+{
+  "name": "v2-baseline-oriented-glm-2",
+  "condition": "baseline-oriented",
+  "run": 2,
+  "model": "baseten-glm-5.3[1m]",
+  "cli_version": "2.1.309 (Claude Code)",
+  "image": "sha256:023e600318a7ce49788d78cc09e560f40cc0389a1b60b84a06b2a85271d4dd34",
+  "stride_base_branch": "main",
+  "stride_base": "f2e0b66559c76a6c7aca745d31f9ec6ed6179775",
+  "sessions": {"1":{"prompt_sha256":"2a757c0753bf376e330490e0f82abd133794038971485bd29b087ab5a2245faf","commit":"b5d6a6c24902da842fe83b840562e4377ee9770c","started_at":"2026-10-29T21:42:56Z","wall_s":251,"ended":"exit","nudges":0,"agent_duration_s":249,"usage":{"input_tokens":33250,"cache_creation_input_tokens":0,"cache_read_input_tokens":285888,"output_tokens":14833,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}}},
+  "wall_s": 252,
+  "date": "2026-10-29T21:47:08Z"
+}

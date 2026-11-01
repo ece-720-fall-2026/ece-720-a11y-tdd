@@ -1,0 +1,13 @@
+{
+  "name": "v2-tdd-agnostic-haiku-2",
+  "condition": "tdd-agnostic",
+  "run": 2,
+  "model": "haiku",
+  "cli_version": "2.1.309 (Claude Code)",
+  "image": "sha256:29a56815edba6f3ad3ab49fcea5fd4c86df1987820ffbeb2efbb4a72fe0849fc",
+  "stride_base_branch": "main",
+  "stride_base": "f2e0b66559c76a6c7aca745d31f9ec6ed6179775",
+  "sessions": {"1":{"prompt_sha256":"7af35f3762e111168b774347f059e2f381f04c1f476460881b9341355446e970","commit":"c0d8e327c99c1108db40f64b6e3719642297517d","started_at":"2026-10-29T19:11:24Z","wall_s":1166,"ended":"exit","nudges":0,"agent_duration_s":1160,"usage":{"input_tokens":26,"cache_creation_input_tokens":68436,"cache_read_input_tokens":105743,"output_tokens":18759,"output_tokens_details":{"thinking_tokens":10936},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":68436},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}},"2":{"prompt_sha256":"46e237ea2b27b205f343bdb8dce09e43216cd0ed8dd55c4f40776517075353a1","commit":"78a5008adafe165ce66589b29dc4c59726c9db60","started_at":"2026-10-29T19:30:50Z","wall_s":262,"ended":"exit","nudges":0,"agent_duration_s":257,"usage":{"input_tokens":42,"cache_creation_input_tokens":61452,"cache_read_input_tokens":724870,"output_tokens":39291,"output_tokens_details":{"thinking_tokens":17291},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":61452},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}}},
+  "wall_s": 1429,
+  "date": "2026-10-29T19:35:12Z"
+}

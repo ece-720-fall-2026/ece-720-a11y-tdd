@@ -1,0 +1,13 @@
+{
+  "name": "v2-tdd-agnostic-glm-2",
+  "condition": "tdd-agnostic",
+  "run": 2,
+  "model": "baseten-glm-5.3[1m]",
+  "cli_version": "2.1.309 (Claude Code)",
+  "image": "sha256:731555818aa3de7027d397984fe8e3983805ef00bb86ee23a60c62126ef47994",
+  "stride_base_branch": "main",
+  "stride_base": "f2e0b66559c76a6c7aca745d31f9ec6ed6179775",
+  "sessions": {"1":{"prompt_sha256":"7af35f3762e111168b774347f059e2f381f04c1f476460881b9341355446e970","commit":"15fd4329ee0812b8744c795d1f7e73b8ae7b1256","started_at":"2026-10-29T20:41:21Z","wall_s":321,"ended":"exit","nudges":0,"agent_duration_s":313,"usage":{"input_tokens":22683,"cache_creation_input_tokens":0,"cache_read_input_tokens":107136,"output_tokens":15151,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}},"2":{"prompt_sha256":"46e237ea2b27b205f343bdb8dce09e43216cd0ed8dd55c4f40776517075353a1","commit":"e1c63bdb0b3301ff9db2360299be6e1dec4cb130","started_at":"2026-10-29T20:46:43Z","wall_s":171,"ended":"exit","nudges":0,"agent_duration_s":167,"usage":{"input_tokens":18622,"cache_creation_input_tokens":0,"cache_read_input_tokens":280512,"output_tokens":8990,"output_tokens_details":{"thinking_tokens":0},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":0},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}}},
+  "wall_s": 493,
+  "date": "2026-10-29T20:49:34Z"
+}

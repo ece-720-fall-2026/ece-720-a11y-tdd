@@ -1,0 +1,12 @@
+{
+  "name": "tdd-tool-luna-1",
+  "condition": "tdd-tool",
+  "run": 1,
+  "model": "gpt-5.6-luna-medium",
+  "cli_version": "2026.10.19-6bbf2c4",
+  "image": "sha256:6e86ce09a4c32ef8c1b19bf5362b4a45fadee839b11211cf83fa655c3eb65b2b",
+  "stride_base": "740d5704d4fe08f466e17b5a06a95fdb32dd9945",
+  "sessions": {"1":{"prompt_sha256":"a4a5d7c5456eba972a3975d3167766db1a01ce44886b77bd1b2b831ac7ff7c83","commit":"807df7db52d6db4817ec0e5a4113e021a09a9f44","started_at":"2026-10-23T17:41:54Z","wall_s":574,"ended":"idle","agent_duration_s":null,"usage":null},"2":{"prompt_sha256":"46e237ea2b27b205f343bdb8dce09e43216cd0ed8dd55c4f40776517075353a1","commit":"7741d0ba3d55e4b6bc9aab3b9938468b14d8b639","started_at":"2026-10-23T17:51:29Z","wall_s":745,"ended":"idle","agent_duration_s":null,"usage":null}},
+  "wall_s": 1321,
+  "date": "2026-10-23T18:03:55Z"
+}

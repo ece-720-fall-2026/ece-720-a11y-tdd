@@ -1,0 +1,12 @@
+{
+  "name": "tdd-green-oriented-haiku-1",
+  "condition": "tdd-green-oriented",
+  "run": 1,
+  "model": "haiku",
+  "cli_version": "2.1.309 (Claude Code)",
+  "image": "sha256:a3c119a90b0c21a1e78a958e5ab705f56bee70dcb6c5e2dd211d2eb90d6c7e9c",
+  "stride_base": "1cccf5650f0a9ec1abd2c3f5b346f85b6f2edeed",
+  "sessions": {"1":{"prompt_sha256":"d0eb18a62e6fa5d15cc0e77760d51773fc590d3210af940f81ff615e7f4e581c","commit":"3be02aa0701d38316c3de4368a7c6953e4fe8ed7","started_at":"2026-10-24T04:04:00Z","wall_s":2306,"ended":"exit","nudges":0,"agent_duration_s":2270,"usage":{"input_tokens":32,"cache_creation_input_tokens":118928,"cache_read_input_tokens":232392,"output_tokens":29048,"output_tokens_details":{"thinking_tokens":13297},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":118928},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}},"2":{"prompt_sha256":"6e47c7dbf3c25d5c6bf35fbed8cc6fedd38a1c856011ada59659ad61bf5915ff","commit":"433bb6adc3cc8e54986e9366a980e543dec40032","started_at":"2026-10-24T04:42:26Z","wall_s":534,"ended":"exit","nudges":0,"agent_duration_s":529,"usage":{"input_tokens":62,"cache_creation_input_tokens":87382,"cache_read_input_tokens":1610669,"output_tokens":96245,"output_tokens_details":{"thinking_tokens":67800},"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":0,"ephemeral_5m_input_tokens":87382},"inference_geo":"","iterations":[],"speed":"standard","fallback_credit":null}}},
+  "wall_s": 2841,
+  "date": "2026-10-24T04:51:21Z"
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Navigation fixture</title>
+  <style>ul { display: flex; gap: 12px; list-style: none; padding: 0; } .menu-item { cursor: pointer; }</style>
+</head>
+<body>
+  <header>
+    <nav id="main" aria-label="Main">
+      <ul>
+        <li><a href="#men">Men</a></li>
+        <li><a href="#women">Women</a></li>
+        <li><a href="#kids" aria-current="page">Kids</a></li>
+      </ul>
+    </nav>
+  </header>
+  <footer><nav aria-label="Footer"><a href="#help">Help</a></nav></footer>
+  <script>
+    const broken = new Set((new URLSearchParams(location.search).get("break") || "").split(",").filter(Boolean));
+    const nav = document.getElementById("main");
+    if (broken.has("no-name")) nav.removeAttribute("aria-label");
+    if (broken.has("buttons")) nav.querySelector("ul").innerHTML = ["Men", "Women", "Kids"].map((n) => `<li><button type="button">${n}</button></li>`).join("");
+    if (broken.has("menubar")) {
+      nav.querySelector("ul").setAttribute("role", "menubar");
+      nav.querySelectorAll("li").forEach((li) => li.setAttribute("role", "none"));
+      nav.querySelectorAll("a").forEach((a) => a.setAttribute("role", "menuitem"));
+    }
+    if (broken.has("skip-link")) nav.querySelectorAll("a")[1].tabIndex = -1;
+    if (broken.has("bad-current")) nav.querySelector("[aria-current]").setAttribute("aria-current", "yes");
+  </script>
+</body>
+</html>

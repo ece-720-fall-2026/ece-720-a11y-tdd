@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Breadcrumb fixture</title>
+  <style>li + li::before { content: "/"; padding: 0 4px; } ol, ul { display: flex; list-style: none; padding: 0; }</style>
+</head>
+<body>
+  <nav id="crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#trail">Trail</a></li>
+      <li><a href="#tr2" aria-current="page">Trail Runner 2</a></li>
+    </ol>
+  </nav>
+  <script>
+    const broken = new Set((new URLSearchParams(location.search).get("break") || "").split(",").filter(Boolean));
+    const nav = document.getElementById("crumbs");
+    if (broken.has("no-name")) nav.removeAttribute("aria-label");
+    if (broken.has("div")) nav.outerHTML = nav.outerHTML.replace(/^<nav/, '<div').replace(/<\/nav>$/, "</div>");
+    if (broken.has("ul")) nav.innerHTML = nav.innerHTML.replace("<ol>", "<ul>").replace("</ol>", "</ul>");
+    if (broken.has("span-step")) nav.querySelector("li").innerHTML = "<span>Shop</span>";
+    if (broken.has("no-current")) nav.querySelector("[aria-current]").removeAttribute("aria-current");
+  </script>
+</body>
+</html>

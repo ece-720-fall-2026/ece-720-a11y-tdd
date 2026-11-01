@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Status message fixture</title>
+</head>
+<body>
+  <main id="root">
+    <label for="size">Size</label>
+    <select id="size"><option value="">Select a size</option><option>US 9</option></select>
+    <button type="button" id="add">Add to cart</button>
+    <p id="status" role="status"></p>
+    <p id="size-error"></p>
+  </main>
+  <script>
+    const broken = new Set((new URLSearchParams(location.search).get("break") || "").split(",").filter(Boolean));
+    const params = new URLSearchParams(location.search);
+    const add = document.getElementById("add");
+    const size = document.getElementById("size");
+    let status = document.getElementById("status");
+    const error = document.getElementById("size-error");
+    if (params.has("size")) size.value = "US 9";
+    if (broken.has("no-region")) status.removeAttribute("role");
+    if (broken.has("late-region")) status.remove();
+
+    function act() {
+      if (!size.value) {
+        error.textContent = "Please pick a size.";
+        error.setAttribute("role", "alert");
+        if (!broken.has("unlinked-error")) {
+          size.setAttribute("aria-invalid", "true");
+          size.setAttribute("aria-describedby", "size-error");
+        }
+        return;
+      }
+      if (broken.has("late-region")) {
+        status = document.createElement("p");
+        status.setAttribute("role", "status");
+        document.getElementById("root").append(status);
+      }
+      status.textContent = "Added to cart";
+      if (broken.has("loses-focus")) add.blur();
+    }
+    if (broken.has("mouse-only")) {
+      add.addEventListener("mousedown", act);
+      add.addEventListener("click", (e) => e.preventDefault());
+    } else {
+      add.addEventListener("click", act);
+    }
+  </script>
+</body>
+</html>
