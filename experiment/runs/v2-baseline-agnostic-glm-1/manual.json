@@ -206,5 +206,9 @@
   "vis-error": {
     "result": "pass",
     "note": ""
+  },
+  "vis-zoom": {
+    "result": "pass",
+    "note": ""
   }
 }

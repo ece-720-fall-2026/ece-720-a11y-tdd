@@ -194,5 +194,13 @@
   "vis-error": {
     "result": "pass",
     "note": ""
+  },
+  "dlg-open-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-open-space": {
+    "result": "pass",
+    "note": ""
   }
 }

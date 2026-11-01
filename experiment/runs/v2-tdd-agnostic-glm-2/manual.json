@@ -194,5 +194,13 @@
   "vis-error": {
     "result": "pass",
     "note": ""
+  },
+  "wish-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "wish-space": {
+    "result": "pass",
+    "note": ""
   }
 }
