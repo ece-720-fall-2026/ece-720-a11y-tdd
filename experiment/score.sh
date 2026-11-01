@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Runs the one automated evaluation: axe-core (WCAG 2.2 AA tags) on a run branch.
+# Runs the automated evaluation on a run branch: axe-core (WCAG 2.2 AA tags) and the
+# DOM/ARIA checks in structure.spec.js (the checklist items marked 'auto' in checklist.mjs).
 # Everything else is evaluated manually with experiment/inspect.mjs.
 #   experiment/score.sh <branch>...
 #   e.g. experiment/score.sh v2-baseline-agnostic-haiku-1
-# Writes experiment/runs/<branch>/score.json with axe violations by rule and impact.
+# Writes experiment/runs/<branch>/score.json with axe violations and per-check results.
 set -euo pipefail
 
 STRIDE_REPO="${STRIDE_REPO:-$HOME/code/ualberta/stride}"
@@ -11,7 +12,7 @@ PORT="${PORT:-5199}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 
 die() { echo "error: $*" >&2; exit 1; }
-[ $# -ge 1 ] || { sed -n '2,6p' "$0"; exit 1; }
+[ $# -ge 1 ] || { sed -n '2,7p' "$0"; exit 1; }
 
 for BRANCH in "$@"; do
   git -C "$STRIDE_REPO" rev-parse --verify -q "refs/heads/$BRANCH" >/dev/null || die "no branch $BRANCH"
@@ -35,11 +36,14 @@ test('axe', async ({ page }) => {
   expect(violations).toBeDefined()
 })
 EOF
+  cp "$HERE/structure.spec.js" "$WT/score/structure.spec.js"
   cat >"$WT/score/playwright.config.js" <<EOF
 import { defineConfig, devices } from '@playwright/test'
 export default defineConfig({
   testDir: '.',
   timeout: 30_000,
+  expect: { timeout: 1_000 },
+  retries: 0,
   reporter: [['json', { outputFile: process.env.JSON_OUT }]],
   use: { baseURL: 'http://localhost:$PORT' },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
@@ -51,16 +55,32 @@ EOF
     npm install --silent --no-audit --no-fund >/dev/null 2>&1 || npm install --no-audit --no-fund
     npm install --silent --no-save --no-audit --no-fund @playwright/test@1.64.1 @axe-core/playwright >/dev/null
     npx playwright install chromium >/dev/null
-    JSON_OUT="$WT/score/axe.json.out" npx playwright test -c score/playwright.config.js axe.spec.js >/dev/null 2>&1 || true
+    JSON_OUT="$WT/score/report.json" npx playwright test -c score/playwright.config.js >/dev/null 2>&1 || true
   )
   mkdir -p "$HERE/runs/$BRANCH"
   node -e '
     const fs = require("fs");
-    const axe = fs.existsSync(`${process.argv[1]}/axe.json`) ? JSON.parse(fs.readFileSync(`${process.argv[1]}/axe.json`, "utf8")) : null;
+    const dir = process.argv[1];
+    const axe = fs.existsSync(`${dir}/axe.json`) ? JSON.parse(fs.readFileSync(`${dir}/axe.json`, "utf8")) : null;
     if (!axe) { console.error("    axe failed to run (stale server on the port?)"); process.exit(1); }
     const byImpact = axe.reduce((m, v) => ({ ...m, [v.impact]: (m[v.impact] ?? 0) + 1 }), {});
-    fs.writeFileSync(process.argv[2], JSON.stringify({ axe: { violations: axe.length, by_impact: byImpact, rules: axe } }, null, 2) + "\n");
+    const report = JSON.parse(fs.readFileSync(`${dir}/report.json`, "utf8"));
+    const structure = {};
+    const walk = (suite) => {
+      for (const s of suite.suites ?? []) walk(s);
+      if (!(suite.file ?? "").endsWith("structure.spec.js")) return;
+      for (const spec of suite.specs ?? []) {
+        const r = spec.tests[0]?.results?.at(-1);
+        const msg = (r?.error?.message ?? "").replace(/\x1b\[[0-9;]*m/g, "").split("\n")[0].replace(/^Error:\s*/, "").trim();
+        structure[spec.title] = spec.ok ? { result: "pass" } : { result: "fail", note: msg };
+      }
+    };
+    report.suites.forEach(walk);
+    const failed = Object.entries(structure).filter(([, r]) => r.result === "fail");
+    fs.writeFileSync(process.argv[2], JSON.stringify({ axe: { violations: axe.length, by_impact: byImpact, rules: axe }, structure }, null, 2) + "\n");
     console.log(`    axe: ${axe.length} rules ${JSON.stringify(byImpact)}`);
+    console.log(`    structure: ${Object.keys(structure).length - failed.length}/${Object.keys(structure).length} pass`);
+    for (const [id, r] of failed) console.log(`      ${id}: ${r.note}`);
   ' "$WT/score" "$HERE/runs/$BRANCH/score.json"
   git -C "$STRIDE_REPO" worktree remove --force "$WT"
   trap - EXIT

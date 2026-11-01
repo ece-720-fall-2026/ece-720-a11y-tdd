@@ -1,0 +1,137 @@
+{
+  "axe": {
+    "violations": 2,
+    "by_impact": {
+      "serious": 2
+    },
+    "rules": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodes": 1
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "nodes": 4
+      }
+    ]
+  },
+  "structure": {
+    "page-title": {
+      "result": "pass"
+    },
+    "page-h1": {
+      "result": "pass"
+    },
+    "page-landmarks": {
+      "result": "pass"
+    },
+    "page-headings": {
+      "result": "fail",
+      "note": "skipped levels: h2 -> h4 (\"Customer help\")"
+    },
+    "page-skip": {
+      "result": "fail",
+      "note": "first focusable element is a \"Stride\", not a skip link"
+    },
+    "crumb-nav": {
+      "result": "pass"
+    },
+    "crumb-links": {
+      "result": "pass"
+    },
+    "crumb-current": {
+      "result": "pass"
+    },
+    "car-region": {
+      "result": "pass"
+    },
+    "car-alt": {
+      "result": "pass"
+    },
+    "tip-trigger": {
+      "result": "fail",
+      "note": "no button named like taxes/price/info"
+    },
+    "col-group-label": {
+      "result": "fail",
+      "note": "no group, radiogroup or listbox named \"Color\""
+    },
+    "col-state": {
+      "result": "fail",
+      "note": "no \"Color: …\" text and no color group"
+    },
+    "size-collapsed": {
+      "result": "pass"
+    },
+    "size-expanded": {
+      "result": "pass"
+    },
+    "size-soldout-disabled": {
+      "result": "pass"
+    },
+    "dlg-role": {
+      "result": "pass"
+    },
+    "dlg-name": {
+      "result": "pass"
+    },
+    "dlg-close-button": {
+      "result": "pass"
+    },
+    "dlg-input-label": {
+      "result": "pass"
+    },
+    "dlg-unit-label": {
+      "result": "pass"
+    },
+    "dlg-result": {
+      "result": "fail",
+      "note": "no live region or output element in the dialog"
+    },
+    "qty-label": {
+      "result": "pass"
+    },
+    "qty-buttons": {
+      "result": "pass"
+    },
+    "wish-name": {
+      "result": "pass"
+    },
+    "wish-pressed": {
+      "result": "pass"
+    },
+    "tabs-tablist": {
+      "result": "fail",
+      "note": "the tablist has no aria-label or aria-labelledby"
+    },
+    "tabs-selected": {
+      "result": "pass"
+    },
+    "tabs-one-panel": {
+      "result": "pass"
+    },
+    "tabs-panel": {
+      "result": "fail",
+      "note": "the selected tab has no aria-controls"
+    },
+    "acc-operable": {
+      "result": "pass"
+    },
+    "acc-state": {
+      "result": "pass"
+    },
+    "acc-association": {
+      "result": "fail",
+      "note": "4 question buttons have no aria-controls pointing to an existing element"
+    },
+    "vis-reflow": {
+      "result": "fail",
+      "note": "page is 22px wider than a 320px viewport"
+    },
+    "vis-error-announced": {
+      "result": "pass"
+    }
+  }
+}

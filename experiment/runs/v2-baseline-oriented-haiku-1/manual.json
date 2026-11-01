@@ -1,1 +1,214 @@
-{}
+{
+  "page-tab-order": {
+    "result": "pass",
+    "note": ""
+  },
+  "page-no-trap": {
+    "result": "pass",
+    "note": ""
+  },
+  "page-focus-visible": {
+    "result": "pass",
+    "note": ""
+  },
+  "page-focus-obscured": {
+    "result": "pass",
+    "note": ""
+  },
+  "car-next-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "car-next-space": {
+    "result": "pass",
+    "note": ""
+  },
+  "car-prev": {
+    "result": "pass",
+    "note": ""
+  },
+  "car-alt": {
+    "result": "pass",
+    "note": ""
+  },
+  "tip-focus": {
+    "result": "pass",
+    "note": ""
+  },
+  "tip-hover": {
+    "result": "pass",
+    "note": ""
+  },
+  "tip-escape": {
+    "result": "pass",
+    "note": ""
+  },
+  "tip-persistent": {
+    "result": "pass",
+    "note": ""
+  },
+  "tip-no-focus": {
+    "result": "pass",
+    "note": ""
+  },
+  "col-tab": {
+    "result": "pass",
+    "note": ""
+  },
+  "col-arrows": {
+    "result": "fail",
+    "note": ""
+  },
+  "col-select": {
+    "result": "pass",
+    "note": ""
+  },
+  "col-not-color-alone": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-space": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-arrowdown": {
+    "result": "fail",
+    "note": ""
+  },
+  "size-arrows": {
+    "result": "fail",
+    "note": ""
+  },
+  "size-home-end": {
+    "result": "fail",
+    "note": ""
+  },
+  "size-typeahead": {
+    "result": "fail",
+    "note": ""
+  },
+  "size-select-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-select-space": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-escape": {
+    "result": "fail",
+    "note": ""
+  },
+  "size-focus-return": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-shown": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-soldout-not-pickable": {
+    "result": "pass",
+    "note": ""
+  },
+  "size-soldout-not-color": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-open-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-open-space": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-focus-in": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-tab-cycle": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-shift-tab-cycle": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-escape": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-focus-return": {
+    "result": "pass",
+    "note": ""
+  },
+  "dlg-inert": {
+    "result": "pass",
+    "note": ""
+  },
+  "qty-arrow-down": {
+    "result": "pass",
+    "note": ""
+  },
+  "qty-arrow-up": {
+    "result": "pass",
+    "note": ""
+  },
+  "qty-min": {
+    "result": "pass",
+    "note": ""
+  },
+  "qty-typing": {
+    "result": "pass",
+    "note": ""
+  },
+  "wish-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "wish-space": {
+    "result": "pass",
+    "note": ""
+  },
+  "tabs-arrow-right": {
+    "result": "pass",
+    "note": ""
+  },
+  "tabs-arrow-left": {
+    "result": "pass",
+    "note": ""
+  },
+  "tabs-activate": {
+    "result": "pass",
+    "note": ""
+  },
+  "acc-enter": {
+    "result": "pass",
+    "note": ""
+  },
+  "acc-space": {
+    "result": "pass",
+    "note": ""
+  },
+  "vis-zoom": {
+    "result": "pass",
+    "note": ""
+  },
+  "vis-text-spacing": {
+    "result": "skip",
+    "note": ""
+  },
+  "vis-contrast-ui": {
+    "result": "pass",
+    "note": ""
+  },
+  "vis-error": {
+    "result": "pass",
+    "note": ""
+  }
+}

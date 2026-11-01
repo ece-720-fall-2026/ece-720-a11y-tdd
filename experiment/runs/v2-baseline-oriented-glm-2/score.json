@@ -1,0 +1,115 @@
+{
+  "axe": {
+    "violations": 0,
+    "by_impact": {},
+    "rules": []
+  },
+  "structure": {
+    "page-title": {
+      "result": "pass"
+    },
+    "page-h1": {
+      "result": "pass"
+    },
+    "page-landmarks": {
+      "result": "pass"
+    },
+    "page-headings": {
+      "result": "pass"
+    },
+    "page-skip": {
+      "result": "fail",
+      "note": "first focusable element is a \"Stride\", not a skip link"
+    },
+    "crumb-nav": {
+      "result": "pass"
+    },
+    "crumb-links": {
+      "result": "pass"
+    },
+    "crumb-current": {
+      "result": "pass"
+    },
+    "car-region": {
+      "result": "pass"
+    },
+    "car-alt": {
+      "result": "pass"
+    },
+    "tip-trigger": {
+      "result": "pass"
+    },
+    "col-group-label": {
+      "result": "pass"
+    },
+    "col-state": {
+      "result": "pass"
+    },
+    "size-collapsed": {
+      "result": "pass"
+    },
+    "size-expanded": {
+      "result": "pass"
+    },
+    "size-soldout-disabled": {
+      "result": "pass"
+    },
+    "dlg-role": {
+      "result": "pass"
+    },
+    "dlg-name": {
+      "result": "pass"
+    },
+    "dlg-close-button": {
+      "result": "pass"
+    },
+    "dlg-input-label": {
+      "result": "pass"
+    },
+    "dlg-unit-label": {
+      "result": "pass"
+    },
+    "dlg-result": {
+      "result": "pass"
+    },
+    "qty-label": {
+      "result": "pass"
+    },
+    "qty-buttons": {
+      "result": "pass"
+    },
+    "wish-name": {
+      "result": "pass"
+    },
+    "wish-pressed": {
+      "result": "pass"
+    },
+    "tabs-tablist": {
+      "result": "pass"
+    },
+    "tabs-selected": {
+      "result": "pass"
+    },
+    "tabs-one-panel": {
+      "result": "pass"
+    },
+    "tabs-panel": {
+      "result": "pass"
+    },
+    "acc-operable": {
+      "result": "pass"
+    },
+    "acc-state": {
+      "result": "pass"
+    },
+    "acc-association": {
+      "result": "pass"
+    },
+    "vis-reflow": {
+      "result": "pass"
+    },
+    "vis-error-announced": {
+      "result": "pass"
+    }
+  }
+}

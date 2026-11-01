@@ -1,12 +1,22 @@
 #!/usr/bin/env node
-// Builds a single-page dashboard over experiment/runs/*/score.json + meta.json.
+// Builds a single-page dashboard over experiment/runs/*/score.json + manual.json + meta.json.
 //   node experiment/dashboard.mjs
 // Writes experiment/runs/index.html and prints the path. Open it in a browser.
 import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { ITEMS, autoResults } from './checklist.mjs'
 
 const RUNS = join(dirname(fileURLToPath(import.meta.url)), 'runs')
+const MANUAL_IDS = new Set(ITEMS.filter((i) => !i[2]).map((i) => i[0]))
+
+const frac = (results) => {
+  const answered = results.filter((r) => r.result === 'pass' || r.result === 'fail')
+  const passed = answered.filter((r) => r.result === 'pass').length
+  return answered.length
+    ? { frac: `${passed}/${answered.length}`, pct: Math.round((100 * passed) / answered.length) }
+    : { frac: '—', pct: -1 }
+}
 
 const rows = []
 for (const name of readdirSync(RUNS).sort()) {
@@ -18,14 +28,16 @@ for (const name of readdirSync(RUNS).sort()) {
   const sessions = Object.values(meta.sessions ?? {})
   const tokens = sessions.reduce((n, s) => n + ((s.usage?.input_tokens ?? 0) + (s.usage?.output_tokens ?? 0)), 0)
   const wallS = sessions.reduce((n, s) => n + (s.wall_s ?? 0), 0)
-  const manual = existsSync(join(dir, 'manual.json')) ? JSON.parse(readFileSync(join(dir, 'manual.json'), 'utf8')) : {}
-  const entries = Object.entries(manual)
-  const answered = entries.filter(([, r]) => r.result === 'pass' || r.result === 'fail')
-  const passed = answered.filter(([, r]) => r.result === 'pass').length
-  const checks = answered.length
-    ? { frac: `${passed}/${answered.length}`, pct: Math.round((100 * passed) / answered.length) }
-    : { frac: '—', pct: -1 }
-  const fails = entries.filter(([, r]) => r.result === 'fail').map(([id, r]) => `${id}${r.note ? ': ' + r.note : ''}`)
+  const manualJson = existsSync(join(dir, 'manual.json')) ? JSON.parse(readFileSync(join(dir, 'manual.json'), 'utf8')) : {}
+  const manual = Object.entries(manualJson).filter(([id]) => MANUAL_IDS.has(id))
+  const auto = Object.entries(autoResults(score))
+  const checks = {
+    auto: frac(auto.map(([, r]) => r)),
+    manual: frac(manual.map(([, r]) => r)),
+    total: manual.length ? frac([...auto, ...manual].map(([, r]) => r)) : { frac: '—', pct: -1 },
+  }
+  const failed = (entries) => entries.filter(([, r]) => r.result === 'fail').map(([id, r]) => `${id}${r.note ? ': ' + r.note : ''}`)
+  const fails = { auto: failed(auto), manual: failed(manual) }
   rows.push({
     name,
     condition: meta.condition ?? name.replace(/^v2-/, '').replace(/-(haiku|glm)-\d+$/, ''),
@@ -64,19 +76,21 @@ const html = `<!doctype html>
 </head>
 <body>
 <h1>Experiment dashboard</h1>
-<p>Generated ${new Date().toISOString()}. axe is automated (experiment/score.sh); the rest is manual (experiment/inspect.mjs).</p>
+<p>Generated ${new Date().toISOString()}. axe and the DOM/ARIA checks are automated (experiment/score.sh); the rest is manual (experiment/inspect.mjs). The total only appears once the manual checks are done.</p>
 <table>
 <thead><tr>
-  <th>Run</th><th>Model</th><th>axe rules</th><th>WCAG/APG checks</th><th>Tokens</th><th>Time</th>
+  <th>Run</th><th>Model</th><th>axe rules</th><th>Automated checks</th><th>Manual checks</th><th>WCAG/APG total</th><th>Tokens</th><th>Time</th>
 </tr></thead>
 <tbody>
 ${rows.map((r, i) => {
   const group = i === 0 || rows[i - 1].condition !== r.condition
-    ? `<tr class="group"><td colspan="6">${r.condition}</td></tr>` : ''
+    ? `<tr class="group"><td colspan="8">${r.condition}</td></tr>` : ''
   return `${group}<tr>
   <td>${r.name}</td><td>${r.model}</td>
   <td title="${r.axeByImpact}">${r.axe}</td>
-  ${cell(r.checks.frac, r.checks.pct)}
+  ${cell(r.checks.auto.frac, r.checks.auto.pct)}
+  ${cell(r.checks.manual.frac, r.checks.manual.pct)}
+  ${cell(r.checks.total.frac, r.checks.total.pct)}
   <td>${r.tokens ? r.tokens.toLocaleString('en-US') : '—'}</td>
   <td>${r.wallS ? Math.round(r.wallS / 60) + ' min' : '—'}</td>
 </tr>`
@@ -87,9 +101,10 @@ ${rows.map((r, i) => {
 <h2>Failures</h2>
 ${rows.map((r) => `
 <details>
-  <summary>${r.name} — axe ${r.axeRules.length}, checks failed ${r.fails.length}</summary>
+  <summary>${r.name} — axe ${r.axeRules.length}, automated checks failed ${r.fails.auto.length}, manual checks failed ${r.fails.manual.length}</summary>
   ${r.axeRules.length ? `<p>axe:</p><ul>${r.axeRules.map((f) => `<li>${f}</li>`).join('')}</ul>` : ''}
-  ${r.fails.length ? `<p>WCAG/APG checks:</p><ul>${r.fails.map((f) => `<li>${f}</li>`).join('')}</ul>` : ''}
+  ${r.fails.auto.length ? `<p>Automated checks:</p><ul>${r.fails.auto.map((f) => `<li>${f}</li>`).join('')}</ul>` : ''}
+  ${r.fails.manual.length ? `<p>Manual checks:</p><ul>${r.fails.manual.map((f) => `<li>${f}</li>`).join('')}</ul>` : ''}
 </details>`).join('\n')}
 </body>
 </html>
