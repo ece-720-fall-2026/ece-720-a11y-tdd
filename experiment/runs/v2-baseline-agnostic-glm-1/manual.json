@@ -200,7 +200,7 @@
     "note": ""
   },
   "vis-contrast-ui": {
-    "result": "pass",
+    "result": "fail",
     "note": ""
   },
   "vis-error": {
