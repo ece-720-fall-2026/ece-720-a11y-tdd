@@ -25,6 +25,155 @@
 
 \section{Methodology}
 
+To find out whether TDD helps LLM coding agents build accessible user interfaces, we ran a controlled experiment. An agent built the same web page from the same requirements many times, and only the prompt changed between runs. Two factors were varied in the prompt. The first is the development process, either building the page directly or following Test-Driven Development (TDD). The second is whether the prompt asks for accessibility. Everything else was kept the same in every run, including the requirements, the starting code, the tools and the environment, so any difference in the result can be traced back to the prompt.
+
+The two factors produce five conditions, and each condition ran twice with each of two models, for 20 runs in total. Every finished page was then scored against the same accessibility checks. The rest of this section describes the task given to the agent, the five conditions and their prompts, the models, how the agent was run in isolation, and the metrics used to compare the results.
+
+\subsection{The task}
+
+We built a product page for a fictional trail running shoe and wrote its requirements as 13 features. Each feature matches a standard component of the WAI-ARIA Authoring Practices Guide (APG), so every page exercises the same set of accessibility patterns (Table~\ref{tab:features}). The features are written from the shopper's point of view and never mention accessibility, so the only accessibility signal the agent receives comes from the prompt. Every run starts from the same empty React app.
+
+\begin{table}[t]
+  \centering
+  \caption{The 13 features and the APG pattern each one matches.}
+  \label{tab:features}
+  \begin{tabularx}{\columnwidth}{l X}
+    \hline
+    \textbf{Feature} & \textbf{APG pattern} \\
+    \hline
+    Store header & Landmarks (banner) \\
+    Path & Breadcrumb \\
+    Photos & Carousel \\
+    Price note & Tooltip \\
+    Color & Radio group \\
+    Size & Listbox (select-only combobox) \\
+    Size guide & Modal dialog \\
+    Quantity & Spinbutton \\
+    Add to cart & Alert (live region) \\
+    Wishlist & Toggle button \\
+    More information & Tabs \\
+    Questions & Accordion (disclosure) \\
+    Page footer & Landmarks (contentinfo) \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+\subsection{Conditions}
+
+The study compares five conditions (Table~\ref{tab:conditions}). They differ in the development process:
+\begin{itemize}
+  \item \textbf{Baseline} conditions use a single prompt that asks the agent to build the page.
+  \item \textbf{TDD} conditions use two prompts in two separate sessions.
+  \begin{itemize}
+    \item \textbf{Red phase.} The agent only writes Playwright tests for the requirements and leaves the page empty.
+    \item \textbf{Green phase.} The agent builds the page, and the existing tests must pass.
+  \end{itemize}
+\end{itemize}
+
+They also differ in whether the prompt asks for accessibility (Fig.~\ref{fig:prompts}):
+\begin{itemize}
+  \item \textbf{Agnostic} prompts never mention accessibility.
+  \item \textbf{Oriented} prompts add one sentence that asks for WCAG 2.2 AA and the APG. The sentence does not name any technique, such as keyboard support or focus handling, so the agent has to decide what accessibility means for each feature.
+\end{itemize}
+
+In the TDD conditions, the accessibility sentence can go in either session:
+\begin{itemize}
+  \item \textbf{tdd-oriented} puts it in the Red phase, so the agent must write tests that check accessibility.
+  \item \textbf{tdd-green-oriented} puts it in the Green phase, so the agent writes plain feature tests and is asked for accessibility only while building the page.
+\end{itemize}
+
+\begin{figure*}[t]
+  \centering
+  \footnotesize
+  \fbox{\parbox[t][15em]{0.3\textwidth}{\textbf{(a) Baseline}\\[0.5em]
+    Implement the product page described in \texttt{REQUIREMENTS.md}.\\[0.5em]
+    \textbf{The implementation must follow WCAG 2.2 AA and the WAI-ARIA Authoring Practices Guide (APG).}\\[0.5em]
+    When you are done, the app must install, build and start without errors, and you must check in a browser that the page renders.}}
+  \hfill
+  \fbox{\parbox[t][15em]{0.3\textwidth}{\textbf{(b) TDD, Red phase}\\[0.5em]
+    We are building the product page described in \texttt{REQUIREMENTS.md} with Test-Driven Development (TDD). You are in the Red phase: only write the Playwright tests.\\[0.5em]
+    Add only what is needed to run the tests, and leave the product page empty. Write tests for the requirements in \texttt{REQUIREMENTS.md}, but keep the suite small: one or two focused tests per requirement, not an exhaustive matrix of interactions. \textbf{The tests must also check that the page follows WCAG 2.2 AA and the WAI-ARIA Authoring Practices Guide (APG).}}}
+  \hfill
+  \fbox{\parbox[t][15em]{0.3\textwidth}{\textbf{(c) TDD, Green phase}\\[0.5em]
+    Implement the product page described in \texttt{REQUIREMENTS.md}.\\[0.5em]
+    \textbf{The implementation must follow WCAG 2.2 AA and the WAI-ARIA Authoring Practices Guide (APG).}\\[0.5em]
+    The existing tests must pass.\\[0.5em]
+    When you are done, the app must install, build and start without errors, and you must check in a browser that the page renders.}}
+  \caption{Prompts given to the agent. The \textbf{bold} sentence is the accessibility instruction and appears only in the oriented variants, which are baseline-oriented (a), tdd-oriented (b) and tdd-green-oriented (c). Without it, the prompts are the agnostic variants.}
+  \label{fig:prompts}
+\end{figure*}
+
+\begin{table*}[t]
+  \centering
+  \caption{The five experimental conditions. Fig.~\ref{fig:prompts} shows the full prompts.}
+  \label{tab:conditions}
+  \begin{tabularx}{\textwidth}{l X X}
+    \hline
+    \textbf{Condition} & \textbf{Session 1} & \textbf{Session 2} \\
+    \hline
+    baseline-agnostic & Build the page. & --- \\
+    baseline-oriented & Build the page following WCAG 2.2 AA and APG. & --- \\
+    tdd-agnostic & Write a small Playwright test suite (Red). & Build the page so the tests pass (Green). \\
+    tdd-oriented & Write a small Playwright test suite that also checks WCAG 2.2 AA and APG (Red). & Build the page so the tests pass (Green). \\
+    tdd-green-oriented & Write a small Playwright test suite (Red). & Build the page following WCAG 2.2 AA and APG so the tests pass (Green). \\
+    \hline
+  \end{tabularx}
+\end{table*}
+
+Each research question maps to one comparison between conditions:
+\begin{itemize}
+  \item \textbf{RQ1.} Baseline against TDD shows whether TDD helps.
+  \item \textbf{RQ2.} Agnostic against oriented shows how much the accessibility sentence matters.
+  \item \textbf{RQ3.} Tdd-oriented against tdd-green-oriented shows whether the sentence works better in the tests or in the implementation.
+\end{itemize}
+
+\subsection{Models and runs}
+
+Two models of different cost and reasoning ability ran through the Claude Code command-line agent (version 2.1.309):
+\begin{itemize}
+  \item \textbf{Claude Haiku}, a small low-cost model.
+  \item \textbf{GLM~5.3}, a large reasoning model.
+\end{itemize}
+Both ran with Claude Code's default reasoning settings, with extended thinking enabled and no effort level set by hand, so each model reasons as much as the agent normally lets it. Each condition ran twice with each model, which gives 5 conditions $\times$ 2 models $\times$ 2 runs $=$ 20 runs. Each run is saved as its own git branch, with one commit per session.
+
+\subsection{Running the agent}
+
+Each session runs in a new Docker container that is deleted afterwards. The container only sees a fresh copy of the app. It cannot see the other conditions, the other runs, or the evaluation code. The agent starts with no saved settings, memories, plugins or past chats, and every container has Node.js, git, Playwright browsers and Claude Code installed. The agent works on its own, with no human help. When a session ends, a script commits whatever the agent left, and the model, prompts, token usage, time and full transcript are logged.
+
+\subsection{Metrics}
+
+Every finished page is checked against 90 accessibility checks based on WCAG 2.2 AA and the APG, described in Section~\ref{sec:evaluation}. Each check covers one behaviour, for example ``Escape closes the size guide'', and ends as \emph{pass}, \emph{fail} or \emph{skip}. Of the 90 checks, 39 are automated and 51 are done by hand. A check is skipped only when it cannot be judged, and skipped checks are left out of every metric. Each check is also tagged with the WCAG success criterion it tests, or as an APG convention when no criterion applies.
+
+\textbf{Accessibility score.} The share of judged checks that pass:
+\begin{equation}
+  \text{Score} = 100 \times \frac{\text{passed}}{\text{passed} + \text{failed}}.
+\end{equation}
+For a run, \textit{passed} and \textit{failed} count its own checks. For a condition, they add up the checks of all its runs, so every judged check counts the same. The same formula over only the automated or only the manual checks gives the automated and manual scores.
+
+\textbf{Keyboard task completion.} Whether a keyboard-only user can buy the shoe. The user must be able to pick a color, open the size list and pick a size, and type a quantity, all without getting trapped. A run scores 1 if every step works and 0 otherwise.
+
+\textbf{Failed WCAG success criteria.} WCAG judges conformance per success criterion, and a criterion fails if any part of the page fails it. This metric counts the different criteria with at least one failed check.
+
+\textbf{APG widget conformance.} The number of the ten APG widgets, from the breadcrumb to the accordion, with no failed check. Each widget counts once, so a widget with many checks, such as the size list, does not dominate the result.
+
+\textbf{Severity-weighted failures.} Not every failure hurts users the same. A failure is a \emph{blocker} when a feature cannot be used by keyboard (WCAG 2.1.1 or 2.1.2), \emph{serious} for any other WCAG failure, and \emph{minor} for a missing APG convention:
+\begin{equation}
+  \text{Weighted} = 3 \times \text{blockers} + 2 \times \text{serious} + \text{minor}.
+\end{equation}
+
+\textbf{axe miss rate.} The share of failed checks that the axe-core scanner does not report:
+\begin{equation}
+  \text{Miss} = 100 \times \frac{\text{failed checks axe does not report}}{\text{all failed checks}}.
+\end{equation}
+
+\textbf{Cost.} The output tokens and the wall-clock time of each run, and the score per 10{,}000 output tokens:
+\begin{equation}
+  \text{Efficiency} = \frac{\text{Score}}{\text{output tokens} / 10{,}000}.
+\end{equation}
+
+\section{Evaluation}
+\label{sec:evaluation}
+
 \section{Results}
 
 \subsection{RQ1: Does Test-Driven Development improve the accessibility of UIs generated by LLM coding agents?}
