@@ -1,0 +1,1085 @@
+{
+  "runs": [
+    {
+      "name": "v2-baseline-agnostic-glm-1",
+      "condition": "baseline-agnostic",
+      "model": "glm",
+      "axe": 2,
+      "outputTokens": 12187,
+      "minutes": 3.8666666666666667,
+      "passed": 63,
+      "judged": 90,
+      "auto": [
+        29,
+        39
+      ],
+      "manual": [
+        34,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.3.1",
+        "1.4.10",
+        "1.4.11",
+        "1.4.13",
+        "1.4.3",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3",
+        "2.4.7",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "widgets": 4,
+      "weighted": 50,
+      "bySeverity": {
+        "blocker": 3,
+        "serious": 17,
+        "minor": 7
+      },
+      "axeMissed": 26,
+      "failed": 27
+    },
+    {
+      "name": "v2-baseline-agnostic-glm-2",
+      "condition": "baseline-agnostic",
+      "model": "glm",
+      "axe": 1,
+      "outputTokens": 9049,
+      "minutes": 2.183333333333333,
+      "passed": 65,
+      "judged": 90,
+      "auto": [
+        32,
+        39
+      ],
+      "manual": [
+        33,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.3.1",
+        "1.4.1",
+        "1.4.10",
+        "1.4.11",
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "widgets": 4,
+      "weighted": 45,
+      "bySeverity": {
+        "blocker": 3,
+        "serious": 14,
+        "minor": 8
+      },
+      "axeMissed": 24,
+      "failed": 25
+    },
+    {
+      "name": "v2-baseline-agnostic-haiku-1",
+      "condition": "baseline-agnostic",
+      "model": "haiku",
+      "axe": 1,
+      "outputTokens": 40320,
+      "minutes": 4.7,
+      "passed": 72,
+      "judged": 89,
+      "auto": [
+        38,
+        39
+      ],
+      "manual": [
+        34,
+        50
+      ],
+      "task": false,
+      "failedSC": [
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3"
+      ],
+      "widgets": 5,
+      "weighted": 30,
+      "bySeverity": {
+        "blocker": 3,
+        "serious": 7,
+        "minor": 7
+      },
+      "axeMissed": 17,
+      "failed": 17
+    },
+    {
+      "name": "v2-baseline-agnostic-haiku-2",
+      "condition": "baseline-agnostic",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 39455,
+      "minutes": 4.35,
+      "passed": 78,
+      "judged": 89,
+      "auto": [
+        37,
+        39
+      ],
+      "manual": [
+        41,
+        50
+      ],
+      "task": false,
+      "failedSC": [
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3",
+        "4.1.3"
+      ],
+      "widgets": 6,
+      "weighted": 19,
+      "bySeverity": {
+        "blocker": 2,
+        "serious": 4,
+        "minor": 5
+      },
+      "axeMissed": 11,
+      "failed": 11
+    },
+    {
+      "name": "v2-baseline-oriented-glm-1",
+      "condition": "baseline-oriented",
+      "model": "glm",
+      "axe": 0,
+      "outputTokens": 18170,
+      "minutes": 5.883333333333334,
+      "passed": 77,
+      "judged": 90,
+      "auto": [
+        37,
+        39
+      ],
+      "manual": [
+        40,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.1.1",
+        "1.3.1",
+        "1.4.13",
+        "2.1.1",
+        "2.4.3"
+      ],
+      "widgets": 5,
+      "weighted": 24,
+      "bySeverity": {
+        "blocker": 3,
+        "serious": 5,
+        "minor": 5
+      },
+      "axeMissed": 13,
+      "failed": 13
+    },
+    {
+      "name": "v2-baseline-oriented-glm-2",
+      "condition": "baseline-oriented",
+      "model": "glm",
+      "axe": 0,
+      "outputTokens": 14833,
+      "minutes": 4.183333333333334,
+      "passed": 87,
+      "judged": 90,
+      "auto": [
+        38,
+        39
+      ],
+      "manual": [
+        49,
+        51
+      ],
+      "task": true,
+      "failedSC": [
+        "1.4.13",
+        "2.4.1"
+      ],
+      "widgets": 8,
+      "weighted": 5,
+      "bySeverity": {
+        "blocker": 0,
+        "serious": 2,
+        "minor": 1
+      },
+      "axeMissed": 3,
+      "failed": 3
+    },
+    {
+      "name": "v2-baseline-oriented-haiku-1",
+      "condition": "baseline-oriented",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 71557,
+      "minutes": 16.783333333333335,
+      "passed": 84,
+      "judged": 90,
+      "auto": [
+        39,
+        39
+      ],
+      "manual": [
+        45,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "2.1.1"
+      ],
+      "widgets": 8,
+      "weighted": 8,
+      "bySeverity": {
+        "blocker": 1,
+        "serious": 0,
+        "minor": 5
+      },
+      "axeMissed": 6,
+      "failed": 6
+    },
+    {
+      "name": "v2-baseline-oriented-haiku-2",
+      "condition": "baseline-oriented",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 61523,
+      "minutes": 6.366666666666666,
+      "passed": 88,
+      "judged": 90,
+      "auto": [
+        39,
+        39
+      ],
+      "manual": [
+        49,
+        51
+      ],
+      "task": true,
+      "failedSC": [
+        "1.4.13"
+      ],
+      "widgets": 8,
+      "weighted": 3,
+      "bySeverity": {
+        "blocker": 0,
+        "serious": 1,
+        "minor": 1
+      },
+      "axeMissed": 2,
+      "failed": 2
+    },
+    {
+      "name": "v2-tdd-agnostic-glm-1",
+      "condition": "tdd-agnostic",
+      "model": "glm",
+      "axe": 2,
+      "outputTokens": 20439,
+      "minutes": 11.233333333333333,
+      "passed": 65,
+      "judged": 90,
+      "auto": [
+        33,
+        39
+      ],
+      "manual": [
+        32,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.3.1",
+        "1.4.11",
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3",
+        "2.5.8",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "widgets": 5,
+      "weighted": 43,
+      "bySeverity": {
+        "blocker": 2,
+        "serious": 14,
+        "minor": 9
+      },
+      "axeMissed": 24,
+      "failed": 25
+    },
+    {
+      "name": "v2-tdd-agnostic-glm-2",
+      "condition": "tdd-agnostic",
+      "model": "glm",
+      "axe": 0,
+      "outputTokens": 24141,
+      "minutes": 8.2,
+      "passed": 75,
+      "judged": 90,
+      "auto": [
+        35,
+        39
+      ],
+      "manual": [
+        40,
+        51
+      ],
+      "task": true,
+      "failedSC": [
+        "1.3.1",
+        "1.4.11",
+        "1.4.13",
+        "2.4.1",
+        "2.4.3",
+        "4.1.3"
+      ],
+      "widgets": 4,
+      "weighted": 26,
+      "bySeverity": {
+        "blocker": 0,
+        "serious": 11,
+        "minor": 4
+      },
+      "axeMissed": 15,
+      "failed": 15
+    },
+    {
+      "name": "v2-tdd-agnostic-haiku-1",
+      "condition": "tdd-agnostic",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 71727,
+      "minutes": 17.3,
+      "passed": 72,
+      "judged": 90,
+      "auto": [
+        38,
+        39
+      ],
+      "manual": [
+        34,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3"
+      ],
+      "widgets": 5,
+      "weighted": 32,
+      "bySeverity": {
+        "blocker": 3,
+        "serious": 8,
+        "minor": 7
+      },
+      "axeMissed": 18,
+      "failed": 18
+    },
+    {
+      "name": "v2-tdd-agnostic-haiku-2",
+      "condition": "tdd-agnostic",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 58050,
+      "minutes": 23.8,
+      "passed": 70,
+      "judged": 90,
+      "auto": [
+        35,
+        39
+      ],
+      "manual": [
+        35,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.3.1",
+        "1.4.10",
+        "1.4.11",
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3",
+        "4.1.3"
+      ],
+      "widgets": 4,
+      "weighted": 36,
+      "bySeverity": {
+        "blocker": 2,
+        "serious": 12,
+        "minor": 6
+      },
+      "axeMissed": 20,
+      "failed": 20
+    },
+    {
+      "name": "v2-tdd-green-oriented-glm-1",
+      "condition": "tdd-green-oriented",
+      "model": "glm",
+      "axe": 0,
+      "outputTokens": 33919,
+      "minutes": 10.233333333333333,
+      "passed": 81,
+      "judged": 90,
+      "auto": [
+        39,
+        39
+      ],
+      "manual": [
+        42,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.4.13",
+        "1.4.4",
+        "2.1.1",
+        "2.4.3"
+      ],
+      "widgets": 6,
+      "weighted": 16,
+      "bySeverity": {
+        "blocker": 1,
+        "serious": 5,
+        "minor": 3
+      },
+      "axeMissed": 9,
+      "failed": 9
+    },
+    {
+      "name": "v2-tdd-green-oriented-glm-2",
+      "condition": "tdd-green-oriented",
+      "model": "glm",
+      "axe": 0,
+      "outputTokens": 63976,
+      "minutes": 24.133333333333333,
+      "passed": 76,
+      "judged": 90,
+      "auto": [
+        36,
+        39
+      ],
+      "manual": [
+        40,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.3.1",
+        "1.4.1",
+        "1.4.10",
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3"
+      ],
+      "widgets": 5,
+      "weighted": 26,
+      "bySeverity": {
+        "blocker": 2,
+        "serious": 8,
+        "minor": 4
+      },
+      "axeMissed": 14,
+      "failed": 14
+    },
+    {
+      "name": "v2-tdd-green-oriented-haiku-1",
+      "condition": "tdd-green-oriented",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 107600,
+      "minutes": 25.866666666666667,
+      "passed": 83,
+      "judged": 90,
+      "auto": [
+        38,
+        39
+      ],
+      "manual": [
+        45,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.4.10",
+        "1.4.13",
+        "2.1.1"
+      ],
+      "widgets": 7,
+      "weighted": 11,
+      "bySeverity": {
+        "blocker": 1,
+        "serious": 2,
+        "minor": 4
+      },
+      "axeMissed": 7,
+      "failed": 7
+    },
+    {
+      "name": "v2-tdd-green-oriented-haiku-2",
+      "condition": "tdd-green-oriented",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 112716,
+      "minutes": 33,
+      "passed": 86,
+      "judged": 90,
+      "auto": [
+        39,
+        39
+      ],
+      "manual": [
+        47,
+        51
+      ],
+      "task": true,
+      "failedSC": [
+        "1.4.13"
+      ],
+      "widgets": 8,
+      "weighted": 5,
+      "bySeverity": {
+        "blocker": 0,
+        "serious": 1,
+        "minor": 3
+      },
+      "axeMissed": 4,
+      "failed": 4
+    },
+    {
+      "name": "v2-tdd-oriented-glm-1",
+      "condition": "tdd-oriented",
+      "model": "glm",
+      "axe": 0,
+      "outputTokens": 69130,
+      "minutes": 16.633333333333333,
+      "passed": 74,
+      "judged": 90,
+      "auto": [
+        33,
+        39
+      ],
+      "manual": [
+        41,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.3.1",
+        "1.4.10",
+        "1.4.11",
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3",
+        "4.1.2",
+        "4.1.3"
+      ],
+      "widgets": 4,
+      "weighted": 32,
+      "bySeverity": {
+        "blocker": 3,
+        "serious": 10,
+        "minor": 3
+      },
+      "axeMissed": 16,
+      "failed": 16
+    },
+    {
+      "name": "v2-tdd-oriented-glm-2",
+      "condition": "tdd-oriented",
+      "model": "glm",
+      "axe": 0,
+      "outputTokens": 34852,
+      "minutes": 18.766666666666666,
+      "passed": 80,
+      "judged": 90,
+      "auto": [
+        36,
+        39
+      ],
+      "manual": [
+        44,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.3.1",
+        "1.4.13",
+        "2.1.1",
+        "2.4.1",
+        "2.4.3",
+        "4.1.3"
+      ],
+      "widgets": 6,
+      "weighted": 19,
+      "bySeverity": {
+        "blocker": 2,
+        "serious": 5,
+        "minor": 3
+      },
+      "axeMissed": 10,
+      "failed": 10
+    },
+    {
+      "name": "v2-tdd-oriented-haiku-1",
+      "condition": "tdd-oriented",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 103144,
+      "minutes": 17.283333333333335,
+      "passed": 87,
+      "judged": 90,
+      "auto": [
+        38,
+        39
+      ],
+      "manual": [
+        49,
+        51
+      ],
+      "task": true,
+      "failedSC": [
+        "1.4.13",
+        "2.4.1"
+      ],
+      "widgets": 8,
+      "weighted": 5,
+      "bySeverity": {
+        "blocker": 0,
+        "serious": 2,
+        "minor": 1
+      },
+      "axeMissed": 3,
+      "failed": 3
+    },
+    {
+      "name": "v2-tdd-oriented-haiku-2",
+      "condition": "tdd-oriented",
+      "model": "haiku",
+      "axe": 0,
+      "outputTokens": 99148,
+      "minutes": 28.483333333333334,
+      "passed": 82,
+      "judged": 90,
+      "auto": [
+        38,
+        39
+      ],
+      "manual": [
+        44,
+        51
+      ],
+      "task": false,
+      "failedSC": [
+        "1.4.13",
+        "2.1.1",
+        "2.4.1"
+      ],
+      "widgets": 7,
+      "weighted": 13,
+      "bySeverity": {
+        "blocker": 1,
+        "serious": 3,
+        "minor": 4
+      },
+      "axeMissed": 8,
+      "failed": 8
+    }
+  ],
+  "byCondition": [
+    {
+      "condition": "baseline-agnostic",
+      "all": {
+        "runs": 4,
+        "score": 77.6536312849162,
+        "ci": [
+          71.11111111111111,
+          84.26966292134831
+        ],
+        "auto": 87.17948717948718,
+        "manual": 70.29702970297029,
+        "task": 0,
+        "failedSC": 7.5,
+        "widgets": 4.75,
+        "weighted": 36,
+        "blockers": 2.75,
+        "axe": 4,
+        "axeMissRate": 97.5,
+        "outputTokens": 25252.75,
+        "minutes": 3.775,
+        "scorePer10k": 44.88190001996936
+      },
+      "haiku": {
+        "runs": 2,
+        "score": 84.26966292134831,
+        "ci": [
+          80.89887640449439,
+          87.64044943820225
+        ],
+        "auto": 96.15384615384616,
+        "manual": 75,
+        "task": 0,
+        "failedSC": 4.5,
+        "widgets": 5.5,
+        "weighted": 24.5,
+        "blockers": 2.5,
+        "axe": 1,
+        "axeMissRate": 100,
+        "outputTokens": 39887.5,
+        "minutes": 4.525,
+        "scorePer10k": 21.13848334439564
+      },
+      "glm": {
+        "runs": 2,
+        "score": 71.11111111111111,
+        "ci": [
+          70,
+          72.22222222222223
+        ],
+        "auto": 78.2051282051282,
+        "manual": 65.68627450980392,
+        "task": 0,
+        "failedSC": 10.5,
+        "widgets": 4,
+        "weighted": 47.5,
+        "blockers": 3,
+        "axe": 3,
+        "axeMissRate": 96.15384615384616,
+        "outputTokens": 10618,
+        "minutes": 3.025,
+        "scorePer10k": 68.62531669554308
+      }
+    },
+    {
+      "condition": "baseline-oriented",
+      "all": {
+        "runs": 4,
+        "score": 93.33333333333333,
+        "ci": [
+          88.33333333333333,
+          97.22222222222223
+        ],
+        "auto": 98.07692307692308,
+        "manual": 89.70588235294117,
+        "task": 2,
+        "failedSC": 2.25,
+        "widgets": 7.25,
+        "weighted": 10,
+        "blockers": 1,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 41520.75,
+        "minutes": 8.304166666666667,
+        "scorePer10k": 35.29806558063081
+      },
+      "haiku": {
+        "runs": 2,
+        "score": 95.55555555555556,
+        "ci": [
+          93.33333333333333,
+          97.77777777777777
+        ],
+        "auto": 100,
+        "manual": 92.15686274509804,
+        "task": 1,
+        "failedSC": 1,
+        "widgets": 8,
+        "weighted": 5.5,
+        "blockers": 0.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 66540,
+        "minutes": 11.575000000000001,
+        "scorePer10k": 14.46804847082137
+      },
+      "glm": {
+        "runs": 2,
+        "score": 91.11111111111111,
+        "ci": [
+          85.55555555555556,
+          96.66666666666667
+        ],
+        "auto": 96.15384615384616,
+        "manual": 87.25490196078431,
+        "task": 1,
+        "failedSC": 3.5,
+        "widgets": 6.5,
+        "weighted": 14.5,
+        "blockers": 1.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 16501.5,
+        "minutes": 5.033333333333333,
+        "scorePer10k": 56.12808269044025
+      }
+    },
+    {
+      "condition": "tdd-agnostic",
+      "all": {
+        "runs": 4,
+        "score": 78.33333333333333,
+        "ci": [
+          74.16666666666667,
+          81.94444444444444
+        ],
+        "auto": 90.38461538461539,
+        "manual": 69.11764705882354,
+        "task": 1,
+        "failedSC": 6.75,
+        "widgets": 4.5,
+        "weighted": 34.25,
+        "blockers": 1.75,
+        "axe": 2,
+        "axeMissRate": 98.71794871794872,
+        "outputTokens": 43589.25,
+        "minutes": 15.133333333333333,
+        "scorePer10k": 23.601682500127488
+      },
+      "haiku": {
+        "runs": 2,
+        "score": 78.88888888888889,
+        "ci": [
+          77.77777777777777,
+          80
+        ],
+        "auto": 93.58974358974359,
+        "manual": 67.6470588235294,
+        "task": 0,
+        "failedSC": 6,
+        "widgets": 4.5,
+        "weighted": 34,
+        "blockers": 2.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 64888.5,
+        "minutes": 20.55,
+        "scorePer10k": 12.275906210736412
+      },
+      "glm": {
+        "runs": 2,
+        "score": 77.77777777777777,
+        "ci": [
+          72.22222222222223,
+          83.33333333333333
+        ],
+        "auto": 87.17948717948718,
+        "manual": 70.58823529411765,
+        "task": 1,
+        "failedSC": 7.5,
+        "widgets": 4.5,
+        "weighted": 34.5,
+        "blockers": 1,
+        "axe": 2,
+        "axeMissRate": 97.5,
+        "outputTokens": 22290,
+        "minutes": 9.716666666666665,
+        "scorePer10k": 34.92745878951857
+      }
+    },
+    {
+      "condition": "tdd-oriented",
+      "all": {
+        "runs": 4,
+        "score": 89.72222222222223,
+        "ci": [
+          84.44444444444444,
+          94.72222222222223
+        ],
+        "auto": 92.94871794871794,
+        "manual": 87.25490196078431,
+        "task": 1,
+        "failedSC": 5,
+        "widgets": 6.25,
+        "weighted": 17.25,
+        "blockers": 1.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 76568.5,
+        "minutes": 20.291666666666668,
+        "scorePer10k": 13.989986150183697
+      },
+      "haiku": {
+        "runs": 2,
+        "score": 93.88888888888889,
+        "ci": [
+          91.11111111111111,
+          96.66666666666667
+        ],
+        "auto": 97.43589743589743,
+        "manual": 91.17647058823529,
+        "task": 1,
+        "failedSC": 2.5,
+        "widgets": 7.5,
+        "weighted": 9,
+        "blockers": 0.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 101146,
+        "minutes": 22.883333333333333,
+        "scorePer10k": 9.280707746062884
+      },
+      "glm": {
+        "runs": 2,
+        "score": 85.55555555555556,
+        "ci": [
+          82.22222222222223,
+          88.88888888888889
+        ],
+        "auto": 88.46153846153847,
+        "manual": 83.33333333333333,
+        "task": 0,
+        "failedSC": 7.5,
+        "widgets": 5,
+        "weighted": 25.5,
+        "blockers": 2.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 51991,
+        "minutes": 17.7,
+        "scorePer10k": 18.69926455430451
+      }
+    },
+    {
+      "condition": "tdd-green-oriented",
+      "all": {
+        "runs": 4,
+        "score": 90.55555555555556,
+        "ci": [
+          86.38888888888889,
+          94.16666666666667
+        ],
+        "auto": 97.43589743589743,
+        "manual": 85.29411764705883,
+        "task": 1,
+        "failedSC": 3.75,
+        "widgets": 6.5,
+        "weighted": 14.5,
+        "blockers": 1,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 79552.75,
+        "minutes": 23.308333333333334,
+        "scorePer10k": 14.1953960230429
+      },
+      "haiku": {
+        "runs": 2,
+        "score": 93.88888888888889,
+        "ci": [
+          92.22222222222223,
+          95.55555555555556
+        ],
+        "auto": 98.71794871794872,
+        "manual": 90.19607843137256,
+        "task": 1,
+        "failedSC": 2,
+        "widgets": 7.5,
+        "weighted": 8,
+        "blockers": 0.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 110158,
+        "minutes": 29.433333333333334,
+        "scorePer10k": 8.524194380238015
+      },
+      "glm": {
+        "runs": 2,
+        "score": 87.22222222222223,
+        "ci": [
+          84.44444444444444,
+          90
+        ],
+        "auto": 96.15384615384616,
+        "manual": 80.3921568627451,
+        "task": 0,
+        "failedSC": 5.5,
+        "widgets": 5.5,
+        "weighted": 21,
+        "blockers": 1.5,
+        "axe": 0,
+        "axeMissRate": 100,
+        "outputTokens": 48947.5,
+        "minutes": 17.183333333333334,
+        "scorePer10k": 19.866597665847785
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "rq": "RQ1",
+      "a": "tdd-agnostic",
+      "b": "baseline-agnostic",
+      "diff": 0.679702048417127,
+      "cliff": 0.0625
+    },
+    {
+      "rq": "RQ1",
+      "a": "tdd-oriented",
+      "b": "baseline-oriented",
+      "diff": -3.6111111111111,
+      "cliff": -0.4375
+    },
+    {
+      "rq": "RQ1",
+      "a": "tdd-green-oriented",
+      "b": "baseline-oriented",
+      "diff": -2.7777777777777715,
+      "cliff": -0.5
+    },
+    {
+      "rq": "RQ2",
+      "a": "baseline-oriented",
+      "b": "baseline-agnostic",
+      "diff": 15.679702048417127,
+      "cliff": 0.875
+    },
+    {
+      "rq": "RQ2",
+      "a": "tdd-oriented",
+      "b": "tdd-agnostic",
+      "diff": 11.3888888888889,
+      "cliff": 0.875
+    },
+    {
+      "rq": "RQ2",
+      "a": "tdd-green-oriented",
+      "b": "tdd-agnostic",
+      "diff": 12.222222222222229,
+      "cliff": 1
+    },
+    {
+      "rq": "RQ3",
+      "a": "tdd-oriented",
+      "b": "tdd-green-oriented",
+      "diff": -0.8333333333333286,
+      "cliff": -0.125
+    }
+  ],
+  "widgets": [
+    "Breadcrumb",
+    "Photos",
+    "Price",
+    "Color",
+    "Size",
+    "Size guide",
+    "Quantity",
+    "Wishlist",
+    "More information",
+    "Questions"
+  ]
+}

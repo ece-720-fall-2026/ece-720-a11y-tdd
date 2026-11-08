@@ -123,6 +123,72 @@ export const CHECKLIST = [
 
 export const ITEMS = CHECKLIST.flatMap(([, items]) => items)
 
+// WCAG 2.2 success criterion each check tests; 'APG' marks checks that are APG
+// conventions without a WCAG criterion of their own.
+export const WCAG = {
+  'page-title': '2.4.2', 'page-lang': '3.1.1', 'page-h1': '1.3.1', 'page-landmarks': '1.3.1',
+  'page-headings': '1.3.1', 'page-skip': '2.4.1', 'page-tab-order': '2.4.3', 'page-no-trap': '2.1.2',
+  'page-focus-visible': '2.4.7', 'page-focus-obscured': '2.4.11', 'page-target-size': '2.5.8',
+  'crumb-nav': '1.3.1', 'crumb-links': '2.1.1', 'crumb-current': '1.3.1',
+  'car-region': '1.3.1', 'car-next-enter': '2.1.1', 'car-next-space': 'APG', 'car-prev': '2.1.1', 'car-alt': '1.1.1',
+  'tip-trigger': '4.1.2', 'tip-focus': '2.1.1', 'tip-hover': 'APG', 'tip-escape': '1.4.13',
+  'tip-persistent': '1.4.13', 'tip-no-focus': 'APG',
+  'col-group-label': '1.3.1', 'col-tab': '2.1.1', 'col-arrows': 'APG', 'col-select': '2.1.1',
+  'col-state': '4.1.2', 'col-not-color-alone': '1.4.1',
+  'size-collapsed': 'APG', 'size-enter': 'APG', 'size-space': 'APG', 'size-arrowdown': 'APG',
+  'size-expanded': '4.1.2', 'size-arrows': '2.1.1', 'size-home-end': 'APG', 'size-typeahead': 'APG',
+  'size-select-enter': '2.1.1', 'size-select-space': 'APG', 'size-escape': 'APG', 'size-focus-return': '2.4.3',
+  'size-shown': 'APG', 'size-soldout-disabled': '4.1.2', 'size-soldout-not-pickable': 'APG', 'size-soldout-not-color': '1.4.1',
+  'dlg-open-enter': '2.1.1', 'dlg-open-space': 'APG', 'dlg-role': '4.1.2', 'dlg-name': '4.1.2',
+  'dlg-focus-in': '2.4.3', 'dlg-tab-cycle': '2.4.3', 'dlg-shift-tab-cycle': '2.4.3', 'dlg-escape': 'APG',
+  'dlg-close-button': '4.1.2', 'dlg-focus-return': '2.4.3', 'dlg-inert': 'APG', 'dlg-input-label': '4.1.2',
+  'dlg-unit-label': '4.1.2', 'dlg-result': '4.1.3',
+  'qty-label': '4.1.2', 'qty-arrow-up': 'APG', 'qty-arrow-down': 'APG', 'qty-min': 'APG',
+  'qty-typing': '2.1.1', 'qty-buttons': '4.1.2',
+  'wish-name': '4.1.2', 'wish-enter': '2.1.1', 'wish-space': 'APG', 'wish-pressed': '4.1.2',
+  'tabs-tablist': '4.1.2', 'tabs-arrow-right': 'APG', 'tabs-arrow-left': 'APG', 'tabs-activate': '2.1.1',
+  'tabs-selected': '4.1.2', 'tabs-one-panel': 'APG', 'tabs-panel': '1.3.1',
+  'acc-operable': '2.1.1', 'acc-enter': '2.1.1', 'acc-space': 'APG', 'acc-state': '4.1.2', 'acc-association': '1.3.1',
+  'vis-zoom': '1.4.4', 'vis-reflow': '1.4.10', 'vis-contrast-text': '1.4.3', 'vis-contrast-ui': '1.4.11',
+  'vis-links': '1.4.1', 'vis-error': '3.3.1', 'vis-error-announced': '4.1.3',
+}
+for (const [id] of ITEMS) if (!WCAG[id]) throw new Error(`no WCAG mapping for ${id}`)
+
+// Keyboard purchase path: every step must pass; a step with several ids passes if any of them does.
+export const TASK_PATH = [
+  ['page-no-trap'], ['col-tab'], ['col-select'],
+  ['size-enter', 'size-space', 'size-arrowdown'], ['size-arrows'], ['size-select-enter', 'size-select-space'],
+  ['qty-typing'],
+]
+
+// The ten APG widgets are every checklist group except page structure and perception.
+export const WIDGETS = CHECKLIST.slice(1, -1).map(([group, items]) => [group.split(' — ')[0].split(' (')[0], items.map(([id]) => id)])
+
+export const severity = (id) => (WCAG[id] === 'APG' ? 'minor' : ['2.1.1', '2.1.2'].includes(WCAG[id]) ? 'blocker' : 'serious')
+export const WEIGHT = { blocker: 3, serious: 2, minor: 1 }
+
+// Metrics of one run from { id: 'pass' | 'fail' | 'skip' }.
+export function runMetrics(results) {
+  const judged = (ids) => ids.filter((id) => results[id] === 'pass' || results[id] === 'fail')
+  const passed = (ids) => ids.filter((id) => results[id] === 'pass').length
+  const ids = ITEMS.map(([id]) => id)
+  const autoIds = ITEMS.filter((i) => i[2]).map(([id]) => id)
+  const manualIds = ITEMS.filter((i) => !i[2]).map(([id]) => id)
+  const failed = ids.filter((id) => results[id] === 'fail')
+  return {
+    passed: passed(ids), judged: judged(ids).length,
+    auto: [passed(autoIds), judged(autoIds).length],
+    manual: [passed(manualIds), judged(manualIds).length],
+    task: TASK_PATH.every((step) => step.some((id) => results[id] !== 'fail')),
+    failedSC: [...new Set(failed.map((id) => WCAG[id]).filter((sc) => sc !== 'APG'))].sort(),
+    widgets: WIDGETS.filter(([, w]) => w.every((id) => results[id] !== 'fail')).length,
+    weighted: failed.reduce((n, id) => n + WEIGHT[severity(id)], 0),
+    bySeverity: Object.fromEntries(Object.keys(WEIGHT).map((s) => [s, failed.filter((id) => severity(id) === s).length])),
+    axeMissed: failed.filter((id) => !ITEMS.find((i) => i[0] === id)[2]?.startsWith('axe:')).length,
+    failed: failed.length,
+  }
+}
+
 // Result of every non-manual item for one run, from its score.json.
 // Returns { id: { result: 'pass' | 'fail' | 'unscored', note } }.
 export function autoResults(score) {
