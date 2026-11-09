@@ -190,5 +190,14 @@ For a run, \textit{passed} and \textit{failed} count its own checks. For a condi
 
 \section{Future Work}
 
+Several directions would strengthen and extend these results:
+\begin{itemize}
+  \item \textbf{More runs and models.} Each condition ran only twice per model, which is too few to test for significance. More runs per condition, and models at other points on the cost and reasoning scale, such as a frontier model at a high reasoning level, would show whether the small drop in score with TDD is real and whether it depends on the model.
+  \item \textbf{Blinded evaluation with more raters.} The manual checks were done by one evaluator who knew the condition of each run. Repeating them with the branch names hidden and with a second rater, and reporting the agreement between raters, would remove the main threat to validity.
+  \item \textbf{Other pages and applications.} This study used one product page with 13 features. Repeating it with other kinds of interfaces, such as long forms, dashboards or data tables, and with other frameworks would show whether the findings hold beyond this task.
+  \item \textbf{Context pollution.} One possible reason TDD did not help is that the tests and test-fix loops fill the agent's context and push the accessibility instruction aside. The session logs already record context size, token usage and the number of test runs, so this explanation can be tested by relating these measures to the accessibility score.
+  \item \textbf{Visual and functional quality.} Pages built with TDD sometimes looked worse, even when they were accessible. Measuring visual quality, for example with an LLM judge that scores screenshots against a fixed rubric, and functional correctness with a separate test suite, would show whether TDD trades away quality in ways this study did not capture.
+\end{itemize}
+
 \section{Conclusion}
 \end{document}

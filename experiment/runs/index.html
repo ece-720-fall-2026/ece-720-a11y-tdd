@@ -19,20 +19,154 @@
 </head>
 <body>
 <h1>Experiment dashboard</h1>
-<p>Generated 2026-11-07T23:00:00.505Z. axe and the DOM/ARIA checks are automated (experiment/score.sh); the rest is manual (experiment/inspect.mjs). The total only appears once the manual checks are done.</p>
+<p>Generated 2026-11-08T19:04:12.751Z. axe and the DOM/ARIA checks are automated (experiment/score.sh); the rest is manual (experiment/inspect.mjs). Metrics are computed by experiment/metrics.mjs.</p>
+
+<h2>Metrics by condition</h2>
 <table>
 <thead><tr>
-  <th>Run</th><th>Model</th><th>axe rules</th><th>Automated checks</th><th>Manual checks</th><th>WCAG/APG total</th><th>Tokens</th><th>Time</th>
+  <th>Condition</th><th>Model</th><th>Runs</th><th>Score</th><th>Automated</th><th>Manual</th><th>Keyboard task</th><th>Failed WCAG SC</th><th>APG widgets</th><th>Weighted failures</th><th>Blockers</th><th>axe rules</th><th>axe miss %</th><th>Output tokens</th><th>Time</th><th>Score / 10k tokens</th>
 </tr></thead>
 <tbody>
-<tr class="group"><td colspan="8">baseline-agnostic</td></tr><tr>
+<tr class="group">
+  <td>baseline-agnostic</td><td>all</td><td>4</td>
+  <td style="color:#b07d00;font-weight:600">77.7</td><td style="color:#b07d00;font-weight:600">87.2</td><td style="color:#b07d00;font-weight:600">70.3</td>
+  <td>0/4</td><td>7.5</td><td>4.8/10</td>
+  <td>36.0</td><td>2.8</td><td>4</td><td>97.5</td>
+  <td>25,253</td><td>4 min</td><td>44.9</td>
+</tr>
+<tr>
+  <td></td><td>haiku</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">84.3</td><td style="color:#b07d00;font-weight:600">96.2</td><td style="color:#b07d00;font-weight:600">75.0</td>
+  <td>0/2</td><td>4.5</td><td>5.5/10</td>
+  <td>24.5</td><td>2.5</td><td>1</td><td>100.0</td>
+  <td>39,888</td><td>5 min</td><td>21.1</td>
+</tr>
+<tr>
+  <td></td><td>glm</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">71.1</td><td style="color:#b07d00;font-weight:600">78.2</td><td style="color:#c0392b;font-weight:600">65.7</td>
+  <td>0/2</td><td>10.5</td><td>4.0/10</td>
+  <td>47.5</td><td>3.0</td><td>3</td><td>96.2</td>
+  <td>10,618</td><td>3 min</td><td>68.6</td>
+</tr>
+<tr class="group">
+  <td>baseline-oriented</td><td>all</td><td>4</td>
+  <td style="color:#b07d00;font-weight:600">93.3</td><td style="color:#b07d00;font-weight:600">98.1</td><td style="color:#b07d00;font-weight:600">89.7</td>
+  <td>2/4</td><td>2.3</td><td>7.3/10</td>
+  <td>10.0</td><td>1.0</td><td>0</td><td>100.0</td>
+  <td>41,521</td><td>8 min</td><td>35.3</td>
+</tr>
+<tr>
+  <td></td><td>haiku</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">95.6</td><td style="color:#0a7d2c;font-weight:600">100.0</td><td style="color:#b07d00;font-weight:600">92.2</td>
+  <td>1/2</td><td>1.0</td><td>8.0/10</td>
+  <td>5.5</td><td>0.5</td><td>0</td><td>100.0</td>
+  <td>66,540</td><td>12 min</td><td>14.5</td>
+</tr>
+<tr>
+  <td></td><td>glm</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">91.1</td><td style="color:#b07d00;font-weight:600">96.2</td><td style="color:#b07d00;font-weight:600">87.3</td>
+  <td>1/2</td><td>3.5</td><td>6.5/10</td>
+  <td>14.5</td><td>1.5</td><td>0</td><td>100.0</td>
+  <td>16,502</td><td>5 min</td><td>56.1</td>
+</tr>
+<tr class="group">
+  <td>tdd-agnostic</td><td>all</td><td>4</td>
+  <td style="color:#b07d00;font-weight:600">78.3</td><td style="color:#b07d00;font-weight:600">90.4</td><td style="color:#c0392b;font-weight:600">69.1</td>
+  <td>1/4</td><td>6.8</td><td>4.5/10</td>
+  <td>34.3</td><td>1.8</td><td>2</td><td>98.7</td>
+  <td>43,589</td><td>15 min</td><td>23.6</td>
+</tr>
+<tr>
+  <td></td><td>haiku</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">78.9</td><td style="color:#b07d00;font-weight:600">93.6</td><td style="color:#c0392b;font-weight:600">67.6</td>
+  <td>0/2</td><td>6.0</td><td>4.5/10</td>
+  <td>34.0</td><td>2.5</td><td>0</td><td>100.0</td>
+  <td>64,889</td><td>21 min</td><td>12.3</td>
+</tr>
+<tr>
+  <td></td><td>glm</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">77.8</td><td style="color:#b07d00;font-weight:600">87.2</td><td style="color:#b07d00;font-weight:600">70.6</td>
+  <td>1/2</td><td>7.5</td><td>4.5/10</td>
+  <td>34.5</td><td>1.0</td><td>2</td><td>97.5</td>
+  <td>22,290</td><td>10 min</td><td>34.9</td>
+</tr>
+<tr class="group">
+  <td>tdd-oriented</td><td>all</td><td>4</td>
+  <td style="color:#b07d00;font-weight:600">89.7</td><td style="color:#b07d00;font-weight:600">92.9</td><td style="color:#b07d00;font-weight:600">87.3</td>
+  <td>1/4</td><td>5.0</td><td>6.3/10</td>
+  <td>17.3</td><td>1.5</td><td>0</td><td>100.0</td>
+  <td>76,569</td><td>20 min</td><td>14.0</td>
+</tr>
+<tr>
+  <td></td><td>haiku</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">93.9</td><td style="color:#b07d00;font-weight:600">97.4</td><td style="color:#b07d00;font-weight:600">91.2</td>
+  <td>1/2</td><td>2.5</td><td>7.5/10</td>
+  <td>9.0</td><td>0.5</td><td>0</td><td>100.0</td>
+  <td>101,146</td><td>23 min</td><td>9.3</td>
+</tr>
+<tr>
+  <td></td><td>glm</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">85.6</td><td style="color:#b07d00;font-weight:600">88.5</td><td style="color:#b07d00;font-weight:600">83.3</td>
+  <td>0/2</td><td>7.5</td><td>5.0/10</td>
+  <td>25.5</td><td>2.5</td><td>0</td><td>100.0</td>
+  <td>51,991</td><td>18 min</td><td>18.7</td>
+</tr>
+<tr class="group">
+  <td>tdd-green-oriented</td><td>all</td><td>4</td>
+  <td style="color:#b07d00;font-weight:600">90.6</td><td style="color:#b07d00;font-weight:600">97.4</td><td style="color:#b07d00;font-weight:600">85.3</td>
+  <td>1/4</td><td>3.8</td><td>6.5/10</td>
+  <td>14.5</td><td>1.0</td><td>0</td><td>100.0</td>
+  <td>79,553</td><td>23 min</td><td>14.2</td>
+</tr>
+<tr>
+  <td></td><td>haiku</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">93.9</td><td style="color:#b07d00;font-weight:600">98.7</td><td style="color:#b07d00;font-weight:600">90.2</td>
+  <td>1/2</td><td>2.0</td><td>7.5/10</td>
+  <td>8.0</td><td>0.5</td><td>0</td><td>100.0</td>
+  <td>110,158</td><td>29 min</td><td>8.5</td>
+</tr>
+<tr>
+  <td></td><td>glm</td><td>2</td>
+  <td style="color:#b07d00;font-weight:600">87.2</td><td style="color:#b07d00;font-weight:600">96.2</td><td style="color:#b07d00;font-weight:600">80.4</td>
+  <td>0/2</td><td>5.5</td><td>5.5/10</td>
+  <td>21.0</td><td>1.5</td><td>0</td><td>100.0</td>
+  <td>48,948</td><td>17 min</td><td>19.9</td>
+</tr>
+</tbody>
+</table>
+<details>
+  <summary>Metric definitions</summary>
+  <ul>
+    <li><b>Score</b>: 100 × passed / (passed + failed) over all checks; a condition adds up the checks of all its runs. Skipped checks are left out.</li>
+    <li><b>Keyboard task</b>: runs where a keyboard-only user can pick a color, open the size list and pick a size, and type a quantity without getting trapped.</li>
+    <li><b>Failed WCAG SC</b>: distinct WCAG 2.2 success criteria with at least one failed check (mean per run).</li>
+    <li><b>APG widgets</b>: widgets out of 10 with no failed check (mean per run).</li>
+    <li><b>Weighted failures</b>: 3 × blockers (WCAG 2.1.1/2.1.2) + 2 × serious (other WCAG) + minor (APG only), mean per run.</li>
+    <li><b>axe miss %</b>: share of failed checks that axe does not report.</li>
+    <li><b>Score / 10k tokens</b>: run score divided by output tokens / 10,000 (mean per run).</li>
+  </ul>
+</details>
+
+<h2>Runs</h2>
+<table>
+<thead><tr>
+  <th>Run</th><th>Model</th><th>axe rules</th><th>Automated checks</th><th>Manual checks</th><th>WCAG/APG total</th><th>Keyboard task</th><th>Failed WCAG SC</th><th>APG widgets</th><th>Weighted failures</th><th>axe miss %</th><th>Output tokens</th><th>Time</th><th>Score / 10k tokens</th>
+</tr></thead>
+<tbody>
+<tr class="group"><td colspan="14">baseline-agnostic</td></tr><tr>
   <td>v2-baseline-agnostic-glm-1</td><td>baseten-glm-5.3[1m]</td>
   <td title="serious:2">2</td>
   <td style="color:#b07d00;font-weight:600">29/39</td>
   <td style="color:#c0392b;font-weight:600">34/51</td>
   <td style="color:#b07d00;font-weight:600">63/90</td>
-  <td>35,136</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.3.1, 1.4.10, 1.4.11, 1.4.13, 1.4.3, 2.1.1, 2.4.1, 2.4.3, 2.4.7, 4.1.2, 4.1.3">11</td>
+  <td>4/10</td>
+  <td title="blockers 3, serious 17, minor 7">50</td>
+  <td>96.3</td>
+  <td>12,187</td>
   <td>4 min</td>
+  <td>57.4</td>
 </tr>
 <tr>
   <td>v2-baseline-agnostic-glm-2</td><td>baseten-glm-5.3[1m]</td>
@@ -40,8 +174,14 @@
   <td style="color:#b07d00;font-weight:600">32/39</td>
   <td style="color:#c0392b;font-weight:600">33/51</td>
   <td style="color:#b07d00;font-weight:600">65/90</td>
-  <td>23,497</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.3.1, 1.4.1, 1.4.10, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.2, 4.1.3">10</td>
+  <td>4/10</td>
+  <td title="blockers 3, serious 14, minor 8">45</td>
+  <td>96.0</td>
+  <td>9,049</td>
   <td>2 min</td>
+  <td>79.8</td>
 </tr>
 <tr>
   <td>v2-baseline-agnostic-haiku-1</td><td>haiku</td>
@@ -49,8 +189,14 @@
   <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#c0392b;font-weight:600">34/50</td>
   <td style="color:#b07d00;font-weight:600">72/89</td>
-  <td>40,386</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.4.13, 2.1.1, 2.4.1, 2.4.3">4</td>
+  <td>5/10</td>
+  <td title="blockers 3, serious 7, minor 7">30</td>
+  <td>100.0</td>
+  <td>40,320</td>
   <td>5 min</td>
+  <td>20.1</td>
 </tr>
 <tr>
   <td>v2-baseline-agnostic-haiku-2</td><td>haiku</td>
@@ -58,17 +204,29 @@
   <td style="color:#b07d00;font-weight:600">37/39</td>
   <td style="color:#b07d00;font-weight:600">41/50</td>
   <td style="color:#b07d00;font-weight:600">78/89</td>
-  <td>39,507</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.3">5</td>
+  <td>6/10</td>
+  <td title="blockers 2, serious 4, minor 5">19</td>
+  <td>100.0</td>
+  <td>39,455</td>
   <td>4 min</td>
+  <td>22.2</td>
 </tr>
-<tr class="group"><td colspan="8">baseline-oriented</td></tr><tr>
+<tr class="group"><td colspan="14">baseline-oriented</td></tr><tr>
   <td>v2-baseline-oriented-glm-1</td><td>baseten-glm-5.3[1m]</td>
   <td title="">0</td>
   <td style="color:#b07d00;font-weight:600">37/39</td>
   <td style="color:#b07d00;font-weight:600">40/51</td>
   <td style="color:#b07d00;font-weight:600">77/90</td>
-  <td>68,508</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.1.1, 1.3.1, 1.4.13, 2.1.1, 2.4.3">5</td>
+  <td>5/10</td>
+  <td title="blockers 3, serious 5, minor 5">24</td>
+  <td>100.0</td>
+  <td>18,170</td>
   <td>6 min</td>
+  <td>47.1</td>
 </tr>
 <tr>
   <td>v2-baseline-oriented-glm-2</td><td>baseten-glm-5.3[1m]</td>
@@ -76,8 +234,14 @@
   <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#b07d00;font-weight:600">49/51</td>
   <td style="color:#b07d00;font-weight:600">87/90</td>
-  <td>48,083</td>
+  <td style="color:#0a7d2c;font-weight:600">yes</td>
+  <td title="1.4.13, 2.4.1">2</td>
+  <td>8/10</td>
+  <td title="blockers 0, serious 2, minor 1">5</td>
+  <td>100.0</td>
+  <td>14,833</td>
   <td>4 min</td>
+  <td>65.2</td>
 </tr>
 <tr>
   <td>v2-baseline-oriented-haiku-1</td><td>haiku</td>
@@ -85,8 +249,14 @@
   <td style="color:#0a7d2c;font-weight:600">39/39</td>
   <td style="color:#b07d00;font-weight:600">45/51</td>
   <td style="color:#b07d00;font-weight:600">84/90</td>
-  <td>71,629</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="2.1.1">1</td>
+  <td>8/10</td>
+  <td title="blockers 1, serious 0, minor 5">8</td>
+  <td>100.0</td>
+  <td>71,557</td>
   <td>17 min</td>
+  <td>13.0</td>
 </tr>
 <tr>
   <td>v2-baseline-oriented-haiku-2</td><td>haiku</td>
@@ -94,17 +264,29 @@
   <td style="color:#0a7d2c;font-weight:600">39/39</td>
   <td style="color:#b07d00;font-weight:600">49/51</td>
   <td style="color:#b07d00;font-weight:600">88/90</td>
-  <td>61,587</td>
+  <td style="color:#0a7d2c;font-weight:600">yes</td>
+  <td title="1.4.13">1</td>
+  <td>8/10</td>
+  <td title="blockers 0, serious 1, minor 1">3</td>
+  <td>100.0</td>
+  <td>61,523</td>
   <td>6 min</td>
+  <td>15.9</td>
 </tr>
-<tr class="group"><td colspan="8">tdd-agnostic</td></tr><tr>
+<tr class="group"><td colspan="14">tdd-agnostic</td></tr><tr>
   <td>v2-tdd-agnostic-glm-1</td><td>baseten-glm-5.3[1m]</td>
   <td title="serious:2">2</td>
   <td style="color:#b07d00;font-weight:600">33/39</td>
   <td style="color:#c0392b;font-weight:600">32/51</td>
   <td style="color:#b07d00;font-weight:600">65/90</td>
-  <td>69,140</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.3.1, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 2.5.8, 4.1.2, 4.1.3">9</td>
+  <td>5/10</td>
+  <td title="blockers 2, serious 14, minor 9">43</td>
+  <td>96.0</td>
+  <td>20,439</td>
   <td>11 min</td>
+  <td>35.3</td>
 </tr>
 <tr>
   <td>v2-tdd-agnostic-glm-2</td><td>baseten-glm-5.3[1m]</td>
@@ -112,8 +294,14 @@
   <td style="color:#b07d00;font-weight:600">35/39</td>
   <td style="color:#b07d00;font-weight:600">40/51</td>
   <td style="color:#b07d00;font-weight:600">75/90</td>
-  <td>65,446</td>
+  <td style="color:#0a7d2c;font-weight:600">yes</td>
+  <td title="1.3.1, 1.4.11, 1.4.13, 2.4.1, 2.4.3, 4.1.3">6</td>
+  <td>4/10</td>
+  <td title="blockers 0, serious 11, minor 4">26</td>
+  <td>100.0</td>
+  <td>24,141</td>
   <td>8 min</td>
+  <td>34.5</td>
 </tr>
 <tr>
   <td>v2-tdd-agnostic-haiku-1</td><td>haiku</td>
@@ -121,8 +309,14 @@
   <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#c0392b;font-weight:600">34/51</td>
   <td style="color:#b07d00;font-weight:600">72/90</td>
-  <td>71,783</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.4.13, 2.1.1, 2.4.1, 2.4.3">4</td>
+  <td>5/10</td>
+  <td title="blockers 3, serious 8, minor 7">32</td>
+  <td>100.0</td>
+  <td>71,727</td>
   <td>17 min</td>
+  <td>11.2</td>
 </tr>
 <tr>
   <td>v2-tdd-agnostic-haiku-2</td><td>haiku</td>
@@ -130,17 +324,29 @@
   <td style="color:#b07d00;font-weight:600">35/39</td>
   <td style="color:#c0392b;font-weight:600">35/51</td>
   <td style="color:#b07d00;font-weight:600">70/90</td>
-  <td>58,118</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.3.1, 1.4.10, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.3">8</td>
+  <td>4/10</td>
+  <td title="blockers 2, serious 12, minor 6">36</td>
+  <td>100.0</td>
+  <td>58,050</td>
   <td>24 min</td>
+  <td>13.4</td>
 </tr>
-<tr class="group"><td colspan="8">tdd-green-oriented</td></tr><tr>
+<tr class="group"><td colspan="14">tdd-green-oriented</td></tr><tr>
   <td>v2-tdd-green-oriented-glm-1</td><td>baseten-glm-5.3[1m]</td>
   <td title="">0</td>
   <td style="color:#0a7d2c;font-weight:600">39/39</td>
   <td style="color:#b07d00;font-weight:600">42/51</td>
   <td style="color:#b07d00;font-weight:600">81/90</td>
-  <td>88,153</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.4.13, 1.4.4, 2.1.1, 2.4.3">4</td>
+  <td>6/10</td>
+  <td title="blockers 1, serious 5, minor 3">16</td>
+  <td>100.0</td>
+  <td>33,919</td>
   <td>10 min</td>
+  <td>26.5</td>
 </tr>
 <tr>
   <td>v2-tdd-green-oriented-glm-2</td><td>baseten-glm-5.3[1m]</td>
@@ -148,8 +354,14 @@
   <td style="color:#b07d00;font-weight:600">36/39</td>
   <td style="color:#b07d00;font-weight:600">40/51</td>
   <td style="color:#b07d00;font-weight:600">76/90</td>
-  <td>179,389</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.3.1, 1.4.1, 1.4.10, 1.4.13, 2.1.1, 2.4.1, 2.4.3">7</td>
+  <td>5/10</td>
+  <td title="blockers 2, serious 8, minor 4">26</td>
+  <td>100.0</td>
+  <td>63,976</td>
   <td>24 min</td>
+  <td>13.2</td>
 </tr>
 <tr>
   <td>v2-tdd-green-oriented-haiku-1</td><td>haiku</td>
@@ -157,8 +369,14 @@
   <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#b07d00;font-weight:600">45/51</td>
   <td style="color:#b07d00;font-weight:600">83/90</td>
-  <td>107,686</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.4.10, 1.4.13, 2.1.1">3</td>
+  <td>7/10</td>
+  <td title="blockers 1, serious 2, minor 4">11</td>
+  <td>100.0</td>
+  <td>107,600</td>
   <td>26 min</td>
+  <td>8.6</td>
 </tr>
 <tr>
   <td>v2-tdd-green-oriented-haiku-2</td><td>haiku</td>
@@ -166,17 +384,29 @@
   <td style="color:#0a7d2c;font-weight:600">39/39</td>
   <td style="color:#b07d00;font-weight:600">47/51</td>
   <td style="color:#b07d00;font-weight:600">86/90</td>
-  <td>112,820</td>
+  <td style="color:#0a7d2c;font-weight:600">yes</td>
+  <td title="1.4.13">1</td>
+  <td>8/10</td>
+  <td title="blockers 0, serious 1, minor 3">5</td>
+  <td>100.0</td>
+  <td>112,716</td>
   <td>33 min</td>
+  <td>8.5</td>
 </tr>
-<tr class="group"><td colspan="8">tdd-oriented</td></tr><tr>
+<tr class="group"><td colspan="14">tdd-oriented</td></tr><tr>
   <td>v2-tdd-oriented-glm-1</td><td>baseten-glm-5.3[1m]</td>
   <td title="">0</td>
   <td style="color:#b07d00;font-weight:600">33/39</td>
   <td style="color:#b07d00;font-weight:600">41/51</td>
   <td style="color:#b07d00;font-weight:600">74/90</td>
-  <td>173,692</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.3.1, 1.4.10, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.2, 4.1.3">9</td>
+  <td>4/10</td>
+  <td title="blockers 3, serious 10, minor 3">32</td>
+  <td>100.0</td>
+  <td>69,130</td>
   <td>17 min</td>
+  <td>11.9</td>
 </tr>
 <tr>
   <td>v2-tdd-oriented-glm-2</td><td>baseten-glm-5.3[1m]</td>
@@ -184,8 +414,14 @@
   <td style="color:#b07d00;font-weight:600">36/39</td>
   <td style="color:#b07d00;font-weight:600">44/51</td>
   <td style="color:#b07d00;font-weight:600">80/90</td>
-  <td>100,918</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.3.1, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.3">6</td>
+  <td>6/10</td>
+  <td title="blockers 2, serious 5, minor 3">19</td>
+  <td>100.0</td>
+  <td>34,852</td>
   <td>19 min</td>
+  <td>25.5</td>
 </tr>
 <tr>
   <td>v2-tdd-oriented-haiku-1</td><td>haiku</td>
@@ -193,8 +429,14 @@
   <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#b07d00;font-weight:600">49/51</td>
   <td style="color:#b07d00;font-weight:600">87/90</td>
-  <td>103,226</td>
+  <td style="color:#0a7d2c;font-weight:600">yes</td>
+  <td title="1.4.13, 2.4.1">2</td>
+  <td>8/10</td>
+  <td title="blockers 0, serious 2, minor 1">5</td>
+  <td>100.0</td>
+  <td>103,144</td>
   <td>17 min</td>
+  <td>9.4</td>
 </tr>
 <tr>
   <td>v2-tdd-oriented-haiku-2</td><td>haiku</td>
@@ -202,8 +444,14 @@
   <td style="color:#b07d00;font-weight:600">38/39</td>
   <td style="color:#b07d00;font-weight:600">44/51</td>
   <td style="color:#b07d00;font-weight:600">82/90</td>
-  <td>99,240</td>
+  <td style="color:#c0392b;font-weight:600">no</td>
+  <td title="1.4.13, 2.1.1, 2.4.1">3</td>
+  <td>7/10</td>
+  <td title="blockers 1, serious 3, minor 4">13</td>
+  <td>100.0</td>
+  <td>99,148</td>
   <td>28 min</td>
+  <td>9.2</td>
 </tr>
 </tbody>
 </table>
@@ -211,140 +459,140 @@
 <h2>Failures</h2>
 
 <details>
-  <summary>v2-baseline-agnostic-glm-1 — axe 2, automated checks failed 10, manual checks failed 17</summary>
+  <summary>v2-baseline-agnostic-glm-1 — axe 2, automated checks failed 10, manual checks failed 17, failed WCAG SC: 1.3.1, 1.4.10, 1.4.11, 1.4.13, 1.4.3, 2.1.1, 2.4.1, 2.4.3, 2.4.7, 4.1.2, 4.1.3</summary>
   <p>axe:</p><ul><li>color-contrast (serious, 1 nodes)</li><li>label-content-name-mismatch (serious, 4 nodes)</li></ul>
   <p>Automated checks:</p><ul><li>page-headings: skipped levels: h2 -> h4 ("Customer help")</li><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>tip-trigger: no button named like taxes/price/info</li><li>col-group-label: no group, radiogroup or listbox named "Color"</li><li>dlg-result: no live region or output element in the dialog</li><li>tabs-tablist: the tablist has no aria-label or aria-labelledby</li><li>tabs-panel: the selected tab has no aria-controls</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li><li>vis-reflow: page is 22px wider than a 320px viewport</li><li>vis-contrast-text: axe color-contrast: 1 nodes</li></ul>
   <p>Manual checks:</p><ul><li>page-focus-visible</li><li>tip-escape</li><li>col-tab</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-escape</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>vis-contrast-ui</li></ul>
 </details>
 
 <details>
-  <summary>v2-baseline-agnostic-glm-2 — axe 1, automated checks failed 7, manual checks failed 18</summary>
+  <summary>v2-baseline-agnostic-glm-2 — axe 1, automated checks failed 7, manual checks failed 18, failed WCAG SC: 1.3.1, 1.4.1, 1.4.10, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.2, 4.1.3</summary>
   <p>axe:</p><ul><li>link-in-text-block (serious, 2 nodes)</li></ul>
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>tip-trigger: no button named like taxes/price/info</li><li>dlg-result: no live region or output element in the dialog</li><li>tabs-panel: the selected tab has no aria-controls</li><li>acc-association: 3 question buttons have no aria-controls pointing to an existing element</li><li>vis-reflow: page is 7px wider than a 320px viewport</li><li>vis-links: axe link-in-text-block: 2 nodes</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>col-tab</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-escape</li><li>size-focus-return</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-escape</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>vis-contrast-ui</li></ul>
 </details>
 
 <details>
-  <summary>v2-baseline-agnostic-haiku-1 — axe 1, automated checks failed 1, manual checks failed 16</summary>
+  <summary>v2-baseline-agnostic-haiku-1 — axe 1, automated checks failed 1, manual checks failed 16, failed WCAG SC: 1.4.13, 2.1.1, 2.4.1, 2.4.3</summary>
   <p>axe:</p><ul><li>label-content-name-mismatch (serious, 3 nodes)</li></ul>
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-escape</li><li>size-focus-return</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>tabs-activate</li></ul>
 </details>
 
 <details>
-  <summary>v2-baseline-agnostic-haiku-2 — axe 0, automated checks failed 2, manual checks failed 9</summary>
+  <summary>v2-baseline-agnostic-haiku-2 — axe 0, automated checks failed 2, manual checks failed 9, failed WCAG SC: 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.3</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>dlg-result: no live region or output element in the dialog</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>dlg-tab-cycle</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>tabs-activate</li></ul>
 </details>
 
 <details>
-  <summary>v2-baseline-oriented-glm-1 — axe 0, automated checks failed 2, manual checks failed 11</summary>
+  <summary>v2-baseline-oriented-glm-1 — axe 0, automated checks failed 2, manual checks failed 11, failed WCAG SC: 1.1.1, 1.3.1, 1.4.13, 2.1.1, 2.4.3</summary>
   
   <p>Automated checks:</p><ul><li>car-region: the labelled region contains no image</li><li>car-alt: no photos with an accessible name in the gallery</li></ul>
   <p>Manual checks:</p><ul><li>tip-focus</li><li>tip-hover</li><li>tip-escape</li><li>tip-persistent</li><li>tip-no-focus</li><li>col-tab</li><li>col-arrows</li><li>col-select</li><li>size-typeahead</li><li>size-soldout-not-pickable</li><li>dlg-focus-return</li></ul>
 </details>
 
 <details>
-  <summary>v2-baseline-oriented-glm-2 — axe 0, automated checks failed 1, manual checks failed 2</summary>
+  <summary>v2-baseline-oriented-glm-2 — axe 0, automated checks failed 1, manual checks failed 2, failed WCAG SC: 1.4.13, 2.4.1</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
   <p>Manual checks:</p><ul><li>tip-persistent</li><li>size-enter</li></ul>
 </details>
 
 <details>
-  <summary>v2-baseline-oriented-haiku-1 — axe 0, automated checks failed 0, manual checks failed 6</summary>
+  <summary>v2-baseline-oriented-haiku-1 — axe 0, automated checks failed 0, manual checks failed 6, failed WCAG SC: 2.1.1</summary>
   
   
   <p>Manual checks:</p><ul><li>col-arrows</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-escape</li></ul>
 </details>
 
 <details>
-  <summary>v2-baseline-oriented-haiku-2 — axe 0, automated checks failed 0, manual checks failed 2</summary>
+  <summary>v2-baseline-oriented-haiku-2 — axe 0, automated checks failed 0, manual checks failed 2, failed WCAG SC: 1.4.13</summary>
   
   
   <p>Manual checks:</p><ul><li>tip-persistent</li><li>size-enter</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-agnostic-glm-1 — axe 2, automated checks failed 6, manual checks failed 19</summary>
+  <summary>v2-tdd-agnostic-glm-1 — axe 2, automated checks failed 6, manual checks failed 19, failed WCAG SC: 1.3.1, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 2.5.8, 4.1.2, 4.1.3</summary>
   <p>axe:</p><ul><li>label-content-name-mismatch (serious, 1 nodes)</li><li>target-size (serious, 6 nodes)</li></ul>
   <p>Automated checks:</p><ul><li>page-h1: the h1 is not the product name</li><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>page-target-size: axe target-size: 6 nodes</li><li>tip-trigger: no button named like taxes/price/info</li><li>dlg-result: no live region or output element in the dialog</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-select-enter</li><li>size-select-space</li><li>size-escape</li><li>size-focus-return</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-escape</li><li>dlg-focus-return</li><li>dlg-inert</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>vis-contrast-ui</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-agnostic-glm-2 — axe 0, automated checks failed 4, manual checks failed 11</summary>
+  <summary>v2-tdd-agnostic-glm-2 — axe 0, automated checks failed 4, manual checks failed 11, failed WCAG SC: 1.3.1, 1.4.11, 1.4.13, 2.4.1, 2.4.3, 4.1.3</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>car-region: no region or group named like photos/gallery/carousel</li><li>dlg-result: no live region or output element in the dialog</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>size-enter</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-escape</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>vis-contrast-ui</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-agnostic-haiku-1 — axe 0, automated checks failed 1, manual checks failed 17</summary>
+  <summary>v2-tdd-agnostic-haiku-1 — axe 0, automated checks failed 1, manual checks failed 17, failed WCAG SC: 1.4.13, 2.1.1, 2.4.1, 2.4.3</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-escape</li><li>size-focus-return</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>tabs-activate</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-agnostic-haiku-2 — axe 0, automated checks failed 4, manual checks failed 16</summary>
+  <summary>v2-tdd-agnostic-haiku-2 — axe 0, automated checks failed 4, manual checks failed 16, failed WCAG SC: 1.3.1, 1.4.10, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.3</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>car-region: no region or group named like photos/gallery/carousel</li><li>dlg-result: no live region or output element in the dialog</li><li>vis-reflow: page is 26px wider than a 320px viewport</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>col-arrows</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-focus-return</li><li>dlg-focus-in</li><li>dlg-tab-cycle</li><li>dlg-shift-tab-cycle</li><li>dlg-focus-return</li><li>tabs-arrow-right</li><li>tabs-arrow-left</li><li>tabs-activate</li><li>vis-contrast-ui</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-green-oriented-glm-1 — axe 0, automated checks failed 0, manual checks failed 9</summary>
+  <summary>v2-tdd-green-oriented-glm-1 — axe 0, automated checks failed 0, manual checks failed 9, failed WCAG SC: 1.4.13, 1.4.4, 2.1.1, 2.4.3</summary>
   
   
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-typeahead</li><li>vis-zoom</li><li>dlg-focus-in</li><li>dlg-focus-return</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-green-oriented-glm-2 — axe 0, automated checks failed 3, manual checks failed 11</summary>
+  <summary>v2-tdd-green-oriented-glm-2 — axe 0, automated checks failed 3, manual checks failed 11, failed WCAG SC: 1.3.1, 1.4.1, 1.4.10, 1.4.13, 2.1.1, 2.4.1, 2.4.3</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "👟 Stride", not a skip link</li><li>car-region: no region or group named like photos/gallery/carousel</li><li>vis-reflow: page is 29px wider than a 320px viewport</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>col-not-color-alone</li><li>size-arrowdown</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-select-enter</li><li>size-select-space</li><li>size-focus-return</li><li>dlg-focus-in</li><li>dlg-focus-return</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-green-oriented-haiku-1 — axe 0, automated checks failed 1, manual checks failed 6</summary>
+  <summary>v2-tdd-green-oriented-haiku-1 — axe 0, automated checks failed 1, manual checks failed 6, failed WCAG SC: 1.4.10, 1.4.13, 2.1.1</summary>
   
   <p>Automated checks:</p><ul><li>vis-reflow: page is 15px wider than a 320px viewport</li></ul>
   <p>Manual checks:</p><ul><li>tip-persistent</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-typeahead</li><li>size-soldout-not-pickable</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-green-oriented-haiku-2 — axe 0, automated checks failed 0, manual checks failed 4</summary>
+  <summary>v2-tdd-green-oriented-haiku-2 — axe 0, automated checks failed 0, manual checks failed 4, failed WCAG SC: 1.4.13</summary>
   
   
   <p>Manual checks:</p><ul><li>tip-persistent</li><li>size-arrowdown</li><li>size-home-end</li><li>size-typeahead</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-oriented-glm-1 — axe 0, automated checks failed 6, manual checks failed 10</summary>
+  <summary>v2-tdd-oriented-glm-1 — axe 0, automated checks failed 6, manual checks failed 10, failed WCAG SC: 1.3.1, 1.4.10, 1.4.11, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.2, 4.1.3</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>crumb-links: "Trail" is not a link in the breadcrumb</li><li>dlg-result: no live region or output element in the dialog</li><li>tabs-tablist: the tablist has no aria-label or aria-labelledby</li><li>acc-association: 3 question buttons have no aria-controls pointing to an existing element</li><li>vis-reflow: page is 10px wider than a 320px viewport</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-select-enter</li><li>size-select-space</li><li>size-focus-return</li><li>dlg-focus-in</li><li>vis-contrast-ui</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-oriented-glm-2 — axe 0, automated checks failed 3, manual checks failed 7</summary>
+  <summary>v2-tdd-oriented-glm-2 — axe 0, automated checks failed 3, manual checks failed 7, failed WCAG SC: 1.3.1, 1.4.13, 2.1.1, 2.4.1, 2.4.3, 4.1.3</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li><li>dlg-result: no live region or output element in the dialog</li><li>acc-association: 4 question buttons have no aria-controls pointing to an existing element</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>size-arrows</li><li>size-home-end</li><li>size-typeahead</li><li>size-select-enter</li><li>size-select-space</li><li>size-focus-return</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-oriented-haiku-1 — axe 0, automated checks failed 1, manual checks failed 2</summary>
+  <summary>v2-tdd-oriented-haiku-1 — axe 0, automated checks failed 1, manual checks failed 2, failed WCAG SC: 1.4.13, 2.4.1</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
   <p>Manual checks:</p><ul><li>tip-persistent</li><li>size-typeahead</li></ul>
 </details>
 
 <details>
-  <summary>v2-tdd-oriented-haiku-2 — axe 0, automated checks failed 1, manual checks failed 7</summary>
+  <summary>v2-tdd-oriented-haiku-2 — axe 0, automated checks failed 1, manual checks failed 7, failed WCAG SC: 1.4.13, 2.1.1, 2.4.1</summary>
   
   <p>Automated checks:</p><ul><li>page-skip: first focusable element is a "Stride", not a skip link</li></ul>
   <p>Manual checks:</p><ul><li>tip-escape</li><li>tip-persistent</li><li>col-arrows</li><li>col-select</li><li>size-arrowdown</li><li>size-typeahead</li><li>size-soldout-not-pickable</li></ul>
