@@ -186,6 +186,29 @@ For a run, \textit{passed} and \textit{failed} count its own checks. For a condi
 
 \section{Threats to Validity}
 
+\subsection{Construct Validity}
+
+\begin{itemize}
+  \item \textbf{Checklist design.} One author created the checklist, linked each check to WCAG and set its severity. These choices may affect the scores. To reduce this risk, the checklist follows WCAG 2.2 AA and the APG, and every run uses the same final checklist.
+  \item \textbf{Accessibility versus usability.} Passing the checklist does not mean that a page is usable by everyone. The study used automated tools and keyboard tests, but no screen readers or users with disabilities.
+\end{itemize}
+
+\subsection{Internal Validity}
+
+\begin{itemize}
+  \item \textbf{Unblinded evaluation.} Only one evaluation was executed and the evaluator knew each run's condition. Future work should hide the conditions and use more raters.
+  \item \textbf{Model configuration.} The models used different providers, and Claude Code controlled their reasoning settings. These differences may affect the results so it is not possible to directly compare reasoning ability.
+\end{itemize}
+
+\subsection{External Validity}
+
+\begin{itemize}
+  \item \textbf{One task.} This experiment used one React product page with 13 APG-based features. The findings may not apply to other interfaces, domains or frameworks.
+  \item \textbf{Two models and one coding agent.} This study tested only Claude Haiku and GLM~5.3 through Claude Code. Other models and coding agents may behave differently.
+  \item \textbf{Prompt-based TDD.} An LLM followed two TDD prompts and wrote a small test suite. Human-written tests, larger suites or another TDD process may give different results.
+  \item \textbf{Short accessibility instruction.} The oriented prompts used one sentence asking for WCAG 2.2 AA and APG compliance. More detailed requirements like examples or design-system guidance may improve the results.
+\end{itemize}
+
 \section{Related Work}
 
 \section{Future Work}
