@@ -72,7 +72,7 @@ const summaryRows = SUMMARY.byCondition.flatMap((c) => ['all', 'haiku', 'glm'].m
   <td>${m === 'all' ? c.condition : ''}</td><td>${m}</td><td>${r.runs}</td>
   ${pctCell(r.score)}${pctCell(r.auto)}${pctCell(r.manual)}
   <td>${r.task}/${r.runs}</td><td>${f1(r.failedSC)}</td><td>${f1(r.widgets)}/${WIDGETS.length}</td>
-  <td>${f1(r.weighted)}</td><td>${f1(r.blockers)}</td><td>${r.axe}</td><td>${f1(r.axeMissRate)}</td>
+  ${pctCell(r.weightedScore)}<td>${f1(r.blockers)}</td><td>${r.axe}</td><td>${f1(r.axeMissRate)}</td>
   <td>${Math.round(r.outputTokens).toLocaleString('en-US')}</td><td>${Math.round(r.minutes)} min</td><td>${f1(r.scorePer10k)}</td>
 </tr>`
 })).join('\n')
@@ -103,7 +103,7 @@ const html = `<!doctype html>
 <h2>Metrics by condition</h2>
 <table>
 <thead><tr>
-  <th>Condition</th><th>Model</th><th>Runs</th><th>Score</th><th>Automated</th><th>Manual</th><th>Keyboard task</th><th>Failed WCAG SC</th><th>APG widgets</th><th>Weighted failures</th><th>Blockers</th><th>axe rules</th><th>axe miss %</th><th>Output tokens</th><th>Time</th><th>Score / 10k tokens</th>
+  <th>Condition</th><th>Model</th><th>Runs</th><th>Score</th><th>Automated</th><th>Manual</th><th>Keyboard task</th><th>Failed WCAG SC</th><th>APG widgets</th><th>Weighted score</th><th>Blockers</th><th>axe rules</th><th>axe miss %</th><th>Output tokens</th><th>Time</th><th>Score / 10k tokens</th>
 </tr></thead>
 <tbody>
 ${summaryRows}
@@ -116,7 +116,7 @@ ${summaryRows}
     <li><b>Keyboard task</b>: runs where a keyboard-only user can pick a color, open the size list and pick a size, and type a quantity without getting trapped.</li>
     <li><b>Failed WCAG SC</b>: distinct WCAG 2.2 success criteria with at least one failed check (mean per run).</li>
     <li><b>APG widgets</b>: widgets out of ${WIDGETS.length} with no failed check (mean per run).</li>
-    <li><b>Weighted failures</b>: 3 × blockers (WCAG 2.1.1/2.1.2) + 2 × serious (other WCAG) + minor (APG only), mean per run.</li>
+    <li><b>Weighted score</b>: 100 × (1 − weighted failed checks / maximum possible weight of judged checks). Blockers weigh 3, serious WCAG failures 2, and APG-only failures 1.</li>
     <li><b>axe miss %</b>: share of failed checks that axe does not report.</li>
     <li><b>Score / 10k tokens</b>: run score divided by output tokens / 10,000 (mean per run).</li>
   </ul>
@@ -125,7 +125,7 @@ ${summaryRows}
 <h2>Runs</h2>
 <table>
 <thead><tr>
-  <th>Run</th><th>Model</th><th>axe rules</th><th>Automated checks</th><th>Manual checks</th><th>WCAG/APG total</th><th>Keyboard task</th><th>Failed WCAG SC</th><th>APG widgets</th><th>Weighted failures</th><th>axe miss %</th><th>Output tokens</th><th>Time</th><th>Score / 10k tokens</th>
+  <th>Run</th><th>Model</th><th>axe rules</th><th>Automated checks</th><th>Manual checks</th><th>WCAG/APG total</th><th>Keyboard task</th><th>Failed WCAG SC</th><th>APG widgets</th><th>Weighted score</th><th>axe miss %</th><th>Output tokens</th><th>Time</th><th>Score / 10k tokens</th>
 </tr></thead>
 <tbody>
 ${rows.map((r, i) => {
@@ -140,7 +140,7 @@ ${rows.map((r, i) => {
   ${yes(r.metrics.task)}
   <td title="${r.metrics.failedSC.join(', ')}">${r.metrics.failedSC.length}</td>
   <td>${r.metrics.widgets}/${WIDGETS.length}</td>
-  <td title="blockers ${r.metrics.bySeverity.blocker}, serious ${r.metrics.bySeverity.serious}, minor ${r.metrics.bySeverity.minor}">${r.metrics.weighted}</td>
+  <td title="weighted failures ${r.metrics.weighted}/${r.metrics.weightedMax}; blockers ${r.metrics.bySeverity.blocker}, serious ${r.metrics.bySeverity.serious}, minor ${r.metrics.bySeverity.minor}">${f1(r.metrics.weightedScore)}</td>
   <td>${r.metrics.failed ? f1((100 * r.metrics.axeMissed) / r.metrics.failed) : '—'}</td>
   <td>${r.metrics.outputTokens.toLocaleString('en-US')}</td>
   <td>${r.wallS ? Math.round(r.wallS / 60) + ' min' : '—'}</td>

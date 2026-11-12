@@ -175,6 +175,8 @@ export function runMetrics(results) {
   const autoIds = ITEMS.filter((i) => i[2]).map(([id]) => id)
   const manualIds = ITEMS.filter((i) => !i[2]).map(([id]) => id)
   const failed = ids.filter((id) => results[id] === 'fail')
+  const weighted = failed.reduce((n, id) => n + WEIGHT[severity(id)], 0)
+  const weightedMax = judged(ids).reduce((n, id) => n + WEIGHT[severity(id)], 0)
   return {
     passed: passed(ids), judged: judged(ids).length,
     auto: [passed(autoIds), judged(autoIds).length],
@@ -182,7 +184,9 @@ export function runMetrics(results) {
     task: TASK_PATH.every((step) => step.some((id) => results[id] !== 'fail')),
     failedSC: [...new Set(failed.map((id) => WCAG[id]).filter((sc) => sc !== 'APG'))].sort(),
     widgets: WIDGETS.filter(([, w]) => w.every((id) => results[id] !== 'fail')).length,
-    weighted: failed.reduce((n, id) => n + WEIGHT[severity(id)], 0),
+    weighted,
+    weightedMax,
+    weightedScore: weightedMax ? 100 * (1 - weighted / weightedMax) : NaN,
     bySeverity: Object.fromEntries(Object.keys(WEIGHT).map((s) => [s, failed.filter((id) => severity(id) === s).length])),
     axeMissed: failed.filter((id) => !ITEMS.find((i) => i[0] === id)[2]?.startsWith('axe:')).length,
     failed: failed.length,

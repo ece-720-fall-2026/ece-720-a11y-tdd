@@ -70,6 +70,7 @@ export function summarize(runs) {
       failedSC: mean(sub.map((r) => r.failedSC.length)),
       widgets: mean(sub.map((r) => r.widgets)),
       weighted: mean(sub.map((r) => r.weighted)),
+      weightedScore: 100 * (1 - sub.reduce((n, r) => n + r.weighted, 0) / sub.reduce((n, r) => n + r.weightedMax, 0)),
       blockers: mean(sub.map((r) => r.bySeverity.blocker)),
       axe: sub.reduce((n, r) => n + r.axe, 0),
       axeMissRate: pct(sub.reduce((n, r) => n + r.axeMissed, 0), sub.reduce((n, r) => n + r.failed, 0)),
@@ -97,11 +98,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const summary = summarize(runs)
   writeFileSync(join(RUNS, 'metrics.json'), JSON.stringify({ runs, ...summary }, null, 2) + '\n')
   const f = (x, d = 1) => (Number.isNaN(x) ? '—' : x.toFixed(d))
-  console.log('condition            model  n  score  95% CI        auto  manual  task  failedSC  widgets/10  weighted  blockers  axe  axeMiss%  outTok   min  score/10k')
+  console.log('condition            model  n  score  95% CI        auto  manual  task  failedSC  widgets/10  weighted%  blockers  axe  axeMiss%  outTok   min  score/10k')
   for (const c of summary.byCondition) for (const m of ['all', 'haiku', 'glm']) {
     const r = c[m]
     console.log([c.condition.padEnd(20), m.padEnd(5), String(r.runs).padStart(2), f(r.score).padStart(6), `[${f(r.ci[0])}, ${f(r.ci[1])}]`.padEnd(13), f(r.auto).padStart(5), f(r.manual).padStart(6),
-      `${r.task}/${r.runs}`.padStart(5), f(r.failedSC).padStart(8), f(r.widgets).padStart(10), f(r.weighted).padStart(9), f(r.blockers).padStart(8), String(r.axe).padStart(4),
+      `${r.task}/${r.runs}`.padStart(5), f(r.failedSC).padStart(8), f(r.widgets).padStart(10), f(r.weightedScore).padStart(9), f(r.blockers).padStart(8), String(r.axe).padStart(4),
       f(r.axeMissRate).padStart(8), String(Math.round(r.outputTokens)).padStart(7), f(r.minutes, 0).padStart(5), f(r.scorePer10k).padStart(10)].join(' '))
   }
   console.log('\nRQ   comparison                                  score diff  Cliff delta')
