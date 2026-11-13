@@ -311,7 +311,10 @@ explicit mention of accessibility in the prompt does improve accessibility in th
 \FloatBarrier
 
 \subsection{RQ3: Does it matter where the accessibility requirement goes in a TDD workflow: in the tests (Red phase) or in the implementation prompt (Green phase)?}
-
+The instruction to follow accessibility guidelines in \textit{Tdd-oriented} were mentioned in the prompt that requested the LLM to 
+generate the tests. The accessibility instructions for \textit{Tdd-green-oriented} were included in the test implementation (second) 
+prompt (Table \ref{tab:conditions}). As Table \ref{tab:rq3-placement} highlights, there is no significant difference between \textit{Tdd-oriented}
+and \textit{Tdd-green-oriented}'s accessibility scores. 
 \begin{table}[H]
   \centering
   \caption{TDD score when the accessibility instruction appears in Red or Green. Intervals are 95\% bootstrap intervals over runs.}
