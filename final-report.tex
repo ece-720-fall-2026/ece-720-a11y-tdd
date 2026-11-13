@@ -314,7 +314,8 @@ explicit mention of accessibility in the prompt does improve accessibility in th
 The instruction to follow accessibility guidelines in \textit{Tdd-oriented} were mentioned in the prompt that requested the LLM to 
 generate the tests. The accessibility instructions for \textit{Tdd-green-oriented} were included in the test implementation (second) 
 prompt (Table \ref{tab:conditions}). As Table \ref{tab:rq3-placement} highlights, there is no significant difference between \textit{Tdd-oriented}
-and \textit{Tdd-green-oriented}'s accessibility scores. 
+and \textit{Tdd-green-oriented}'s accessibility scores. However, the runtime for the two processes differed slightly, with the \textit{Tdd-green-oriented} 
+runs taking, on average, 3 minutes longer than the \textit{Tdd-oriented} runs \cite{2026dashboard}. 
 \begin{table}[H]
   \centering
   \caption{TDD score when the accessibility instruction appears in Red or Green. Intervals are 95\% bootstrap intervals over runs.}
@@ -543,4 +544,9 @@ Several directions would strengthen and extend these results:
 \end{itemize}
 
 \section{Conclusion}
+
+\begin{thebibliography}{1}
+  \bibitem{2026dashboard}
+  GitHub, ``ece-720-fall-2026,'' Oct. 1, 2026. [Online]. Available: https://github.com/ece-720-fall-2026/ece-720-a11y-tdd/blob/main/experiment/runs/index.html
+\end{thebibliography}  
 \end{document}
