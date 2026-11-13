@@ -225,6 +225,14 @@ The charts show 95\% bootstrap intervals based on 10{,}000 resamples of the runs
   \label{fig:rq1-score}
 \end{figure}
 
+Fig.~\ref{fig:rq1-score} depicts the accessibility scores of the runs we've conducted. The \textit{oriented} runs scored higher than the 
+\textit{agnostic} runs on accessibility, by about 10-12\%. However, the TDD runs did not improve the average scores for accessibility. 
+In fact, based off of our limited runs, the scores for the \textit{TDD oriented} runs were lower than that of the \textit{baseline oriented} 
+runs. The lower score for the TDD runs may be due to the LLM prioritising the TDD portion of the prompt over the accessibility. The 
+\textit{TDD oriented} runs also failed to improve accessibility on the secondary accessibility outcomes (Table \ref{tab:rq1}), with the 
+weighted score of \textit{baseline oriented} (94.1\%) being higher than that of \textit{TDD green oriented} (91.5\%) and 
+\textit{TDD oriented} (89.9\%). 
+
 \begin{table}[H]
   \centering
   \caption{Secondary accessibility outcomes. Keyboard reports successful runs out of four; WCAG and APG are means per run. Higher weighted scores are better.}
@@ -245,6 +253,15 @@ The charts show 95\% bootstrap intervals based on 10{,}000 resamples of the runs
 \FloatBarrier
 
 \subsection{RQ2: How much does explicitly asking for accessibility (WCAG 2.2 AA and APG) change the outcome, compared with the development process?}
+
+As \textit{TDD oriented green} does not have an \textit{agnostic} comparison, we will only compare the other four processes. 
+The \textit{oriented} prompts explicitly mentioned accessibility while the \textit{agnostic} prompts had no mention of accessibility 
+(Fig. \ref{fig:prompts}). Table \ref{tab:rq2-instruction} shows that both the baseline and TDD \textit{oriented} runs showed improvements in accessibility over their 
+\textit{agnostic} counterparts, by roughly 15\% and 11\% respectively. For the baseline comparison, the \textit{oriented} runs showed 
+significant improvements over the \textit{agnostic} runs in the keyboard task completion (2/4 vs 0/4 respectively) and APG widget 
+conformance (7.3/10 vs 4.8/10 respectively) categories, while the TDD \textit{oriented} runs showed minor improvements in the failed 
+WCAG success criteria (6.8 vs 5) and the APG widget conformance (6.3/10 vs 4.5/10) categories. From these runs, it is clear that the 
+explicit mention of accessibility in the prompt does improve accessibility in the final product. 
 
 \begin{table}[H]
   \centering
