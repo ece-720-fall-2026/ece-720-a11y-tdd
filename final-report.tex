@@ -58,6 +58,21 @@ For example, an accessible modal dialog should allow users to navigate using a k
 
 \subsection{Test-Driven Development:}
 
+Test-Driven Development (TDD) is a software development approach where tests are written before writing the actual code. TDD follows three main stages: Red, Green, and Refactor. In the Red phase, developers write tests for the expected functions of the application, which initially fail because the code has not yet been developed. In the Green phase, the code is written to make these tests pass. Finally, in the Refactor phase, the code is improved without changing its functionality.
+
+TDD uses tests to clearly define how an application should work, making the requirements easier to understand. When accessibility requirements are included in these tests, they help ensure that features such as keyboard navigation, focus management, and interactive components work correctly. In this research, LLM coding agents follow a two-step TDD process. First, generating Playwright tests during the Red phase, and then develop the application during the Green phase. The study compares whether providing accessibility instructions during the Red or Green phase affects the accessibility of the generated web interfaces.
+
+\subsection{LLM Based Coding Agents:}
+
+Large Language Models (LLMs) are trained using large amounts of text and programming code, which helps them understand software requirements and generate code from natural language instructions. LLM-based coding agents use these models along with development tools to create and modify files, run commands, manage software dependencies, and test applications. Unlike traditional code completion tools, coding agents can perform several development tasks independently and use test results to identify and fix errors.
+
+However, LLM coding agents may generate applications that work correctly but do not fully meet accessibility requirements. This means that an application can perform its intended functions while still being difficult for users with disabilities to access or use. In this study, two LLMs, Claude Haiku and GLM 5.3, use the Claude Code framework to develop the same web interface under different conditions. The project examines whether providing clear accessibility instructions or using Test-Driven Development (TDD) helps these agents generate more accessible web applications.
+
+\subsection{Accessibility Testing Approaches:}
+
+Accessibility testing is the process of checking whether web applications follow accessibility standards and can be used by people who depend on assistive technologies. Automated testing tools help identify common accessibility issues, such as missing labels, incorrect ARIA attributes, and errors in page structure. Tools like ESLint with the jsx-a11y plugin check React code for accessibility issues, while axe-core checks web pages for accessibility violations. Playwright is used to test how users interact with web applications, including keyboard navigation, component functionality, and keyboard focus.
+
+However, automated tools cannot detect all accessibility problems. Some issues, such as difficult keyboard interactions, unclear descriptions, and incorrect focus behaviour, require manual testing. Therefore, combining automated and manual testing helps provide a more complete evaluation of web accessibility. In this project, both methods are used to evaluate the generated web interfaces through 90 accessibility checks, including 39 automated checks and 51 manual checks, based on WCAG 2.2 Level AA and APG guidelines.
 
 \section{Methodology}
 
