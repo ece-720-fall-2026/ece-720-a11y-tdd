@@ -23,6 +23,7 @@
 \maketitle
 
 \begin{abstract}
+  ONESH'S PORTION
 \end{abstract}
 
 \section{Introduction}
@@ -35,10 +36,10 @@ This study, titled a11y – TDD: An Accessibility -First Approach to Test-Driven
 
 The primary contributions of this study are: 
 \begin{itemize}
-\item \textbf{Improving accessibility through TDD :} Comparing test-first development with direct code generation to understand how TDD affects the accessibility of LLM-generated web interfaces.
-\item \textbf{Impact of accessibility instructions :} Examining whether asking LLM coding agents to follow WCAG 2.2 AA and APG guidelines improves the accessibility of generated web interfaces.
-\item \textbf{Comparing accessibility instructions in Red and Green phases :} Evaluating whether providing accessibility instructions during test generation (Red phase) or test implementation (Green Phase) provides better accessibility results.
-\item \textbf{Evaluation of development efficiency : }Comparing the accessibility results and output token usage of different development approaches to understand their efficiency.
+  \item \textbf{Improving accessibility through TDD :} Comparing test-first development with direct code generation to understand how TDD affects the accessibility of LLM-generated web interfaces.
+  \item \textbf{Impact of accessibility instructions :} Examining whether asking LLM coding agents to follow WCAG 2.2 AA and APG guidelines improves the accessibility of generated web interfaces.
+  \item \textbf{Comparing accessibility instructions in Red and Green phases :} Evaluating whether providing accessibility instructions during test generation (Red phase) or test implementation (Green Phase) provides better accessibility results.
+  \item \textbf{Evaluation of development efficiency : }Comparing the accessibility results and output token usage of different development approaches to understand their efficiency.
 \end{itemize}
 
 \section{Background}
@@ -333,6 +334,12 @@ runs taking, on average, 3 minutes longer than the \textit{Tdd-oriented} runs \c
 
 \subsection{RQ4: Which accessibility requirements do LLM agents satisfy reliably, and which do they fail regardless of process or instruction?}
 
+The \textit{agnostic} runs were able to generate the product page while
+successfully implementing many of the features (Table \ref{tab:features}). Notable
+exceptions here are the information tabs, price tooltip, and size list (Fig. \ref{fig:rq4-components}).
+While most of the features were significantly improved in the \textit{oriented}
+runs, price tooltip and size list only showed minor improvements. 
+
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
@@ -399,6 +406,21 @@ runs taking, on average, 3 minutes longer than the \textit{Tdd-oriented} runs \c
   \caption{Pass rate by accessibility component. Agnostic contains eight runs and oriented contains twelve. Error bars show 95\% bootstrap intervals over runs.}
   \label{fig:rq4-components}
 \end{figure}
+Looking at the results of the runs from the perspective of the checks
+(Fig \ref{fig:rq4-failures}), all of the checks that the \textit{agnostic}
+runs failed were improved in the \textit{oriented} runs, with the exception of "tooltip
+hover persistence". Tooltip hover persistence is an accessibility criterion
+which states that the information presented by the tooltip must remain
+visible when the user hovers their mouse above it, and it must only 
+disappear when the mouse is moved away, the "escape" key is 
+engaged, or the information is no longer valid \cite{w3c2026hover}. The \textit{oriented}
+runs failed this check more than the \textit{agnostic} runs by roughly 10\%.
+It is possible that certain accessibility rules were overlooked by the LLMs
+and this is the cause for the discrepancy. It may be worth exploring, in future
+research, whether the explicit mention of following the tooltip hover persistence
+accessibility criterion results in a significant improvement.
+
+TALK ABOUT SIZE TYPEAHEAD. 
 
 \begin{figure}[H]
   \centering
@@ -548,5 +570,8 @@ Several directions would strengthen and extend these results:
 \begin{thebibliography}{1}
   \bibitem{2026dashboard}
   GitHub, ``ece-720-fall-2026,'' Oct. 1, 2026. [Online]. Available: https://github.com/ece-720-fall-2026/ece-720-a11y-tdd/blob/main/experiment/runs/index.html
+
+  \bibitem{w3c2026hover}
+  World Wide Web Consortium, "Content on Hover or Focus (Level AA)" Jul. 12, 2026. [Online]. Available: https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html
 \end{thebibliography}  
 \end{document}
