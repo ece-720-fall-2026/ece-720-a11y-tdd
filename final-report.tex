@@ -218,10 +218,11 @@ The weighted score is then:
   \text{Weighted score} = 100 - f.
 \end{equation}
 
-\textbf{Token efficiency.} The accessibility score per 10{,}000 output tokens:
+\textbf{Token efficiency.} For a fair comparison with the single-session baseline, efficiency uses only the implementation session's output tokens:
 \begin{equation}
-  \text{Efficiency} = \frac{\text{Score}}{\text{output tokens} / 10{,}000}.
+  \text{Efficiency} = \frac{\text{Score}}{\text{implementation output tokens} / 10{,}000}.
 \end{equation}
+Total tokens and test-generation tokens are reported separately as TDD overhead.
 The charts show 95\% bootstrap intervals based on 10{,}000 resamples of the runs.
 
 \section{Evaluation}
@@ -572,7 +573,7 @@ TALK ABOUT SIZE TYPEAHEAD.
     \begin{axis}[
       xbar, width=0.85\columnwidth, height=5.2cm,
       xmin=0, xmax=80,
-      xlabel={Accessibility score per 10{,}000 output tokens},
+      xlabel={Score per 10{,}000 implementation tokens},
       symbolic y coords={tdd-green-oriented,tdd-oriented,baseline-oriented,tdd-agnostic,baseline-agnostic},
       ytick=data,
       yticklabel style={font=\scriptsize},
@@ -596,17 +597,40 @@ TALK ABOUT SIZE TYPEAHEAD.
       ] {
         condition efficiency plus minus
         baseline-agnostic 44.9 23.7 23.7
-        tdd-agnostic 23.6 11.3 11.3
-        baseline-oriented 35.3 25.4 20.8
-        tdd-oriented 14.0 8.1 4.7
-        tdd-green-oriented 14.2 7.8 5.7
+        tdd-agnostic 43.5 31.0 26.2
+        baseline-oriented 35.3 20.8 20.8
+        tdd-oriented 19.5 7.6 4.7
+        tdd-green-oriented 20.0 13.9 9.1
       };
     \end{axis}
   \end{tikzpicture}
-  \caption{Accessibility score per 10{,}000 output tokens. Error bars show 95\% bootstrap intervals over runs.}
+  \caption{Accessibility score per 10{,}000 implementation-session output tokens. Error bars show 95\% bootstrap intervals over runs.}
   \label{fig:rq5-efficiency}
 \end{figure}
 \FloatBarrier
+
+\begin{table}[H]
+  \centering
+  \caption{Mean output tokens by phase. Baseline has no test-generation phase.}
+  \label{tab:rq5-tokens}
+  \footnotesize
+  \begin{tabularx}{\columnwidth}{X r r r}
+    \hline
+    \textbf{Condition} & \textbf{Tests} & \textbf{Implementation} & \textbf{Total} \\
+    \hline
+    baseline-agnostic & --- & 25{,}253 & 25{,}253 \\
+    tdd-agnostic & 14{,}139 & 29{,}451 & 43{,}589 \\
+    baseline-oriented & --- & 41{,}521 & 41{,}521 \\
+    tdd-oriented & 26{,}141 & 50{,}427 & 76{,}569 \\
+    tdd-green-oriented & 18{,}234 & 61{,}319 & 79{,}553 \\
+    \hline
+  \end{tabularx}
+\end{table}
+\FloatBarrier
+
+Fig.~\ref{fig:rq5-efficiency} shows that TDD had little effect on implementation efficiency without accessibility instructions. With accessibility instructions, however, both TDD conditions were less efficient than baseline, and moving the instruction between the Red and Green phases made little difference. This suggests that the additional cost was not caused only by generating tests, but the agents also used more tokens while implementing against them without achieving higher accessibility scores.
+
+Table~\ref{tab:rq5-tokens} confirms that test generation added further overhead to the complete TDD workflow. Future work should examine which activities during the Green phase caused the extra token use.
 
 \section{Threats to Validity}
 
